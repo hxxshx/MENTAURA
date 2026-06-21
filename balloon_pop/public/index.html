@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balloon Pop Mindfulness</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+  
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a8e6cf 0%, #88c999 25%, #7fb3d3 50%, #a593c2 75%, #c5b9cd 100%);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    animation: breathingBackground 8s ease-in-out infinite alternate;
+  }
+  
+  @keyframes breathingBackground {
+    0% { filter: brightness(1) saturate(1); }
+    100% { filter: brightness(1.05) saturate(1.1); }
+  }
+  
+  /* Animated background particles */
+  .bg-particle {
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 6s infinite ease-in-out;
+    z-index: 0;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+  }
+  
+  .game-container {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header with glassmorphism */
+  .header {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    background: linear-gradient(45deg, 
+        #972ac3,   /* deep purple */
+        #8b29b1,   /* very dark violet */
+        #9b59b6,   /* soft lavender */
+        #640078 );
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .stat-card {
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 12px 20px;
+    min-width: 100px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  .stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+  }
+  
+  .stat-value {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    padding: 12px 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn:hover::before {
+    left: 100%;
+  }
+  
+  .btn-start {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    color: white;
+    box-shadow: 0 10px 30px rgba(17, 153, 142, 0.4);
+  }
+  
+  .btn-start:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(17, 153, 142, 0.6);
+  }
+  
+  .btn-stop {
+    background: linear-gradient(135deg, #ff416c, #ff4757);
+    color: white;
+    box-shadow: 0 10px 30px rgba(255, 65, 108, 0.4);
+  }
+  
+  .btn-stop:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 65, 108, 0.6);
+  }
+  
+  .btn-scores {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  }
+  
+  .btn-scores:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+  }
+  
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+  
+  /* Game area */
+  #gameArea {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Beautiful therapeutic balloons */
+  .balloon {
+    position: absolute;
+    width: 95px;
+    height: 120px;
+    cursor: pointer;
+    animation: floatUp linear forwards;
+    transform-origin: center bottom;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.25));
+  }
+  
+  .balloon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 85%;
+    background: var(--balloon-color);
+    border-radius: 50%;
+    box-shadow: 
+      inset -12px -12px 15px rgba(0, 0, 0, 0.1),
+      inset 12px 12px 15px rgba(255, 255, 255, 0.4);
+  }
+  
+  .balloon::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
+    background: linear-gradient(180deg, #8b4513, #654321);
+    border-radius: 1px;
+  }
+  
+  /* Add a subtle highlight shine effect */
+  .balloon .shine {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 20px;
+    height: 28px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), transparent);
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+  
+  .balloon:hover {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.35)) brightness(1.1);
+  }
+  
+  @keyframes floatUp {
+    0% { 
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% { 
+      transform: translateY(-150px) rotate(10deg);
+      opacity: 0;
+    }
+  }
+  
+  .balloon.popping {
+    animation: balloonPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  @keyframes balloonPop {
+    0% { 
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.3) rotate(15deg);
+      opacity: 0.8;
+    }
+    100% { 
+      transform: scale(0) rotate(45deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Particle system for balloon pop */
+  .pop-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleExplode 0.8s ease-out forwards;
+  }
+  
+  @keyframes particleExplode {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--dx), var(--dy)) scale(0);
+      opacity: 0;
+    }
+  }
+  
+  /* Score popup */
+  .score-popup {
+    position: absolute;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2rem;
+    pointer-events: none;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    animation: scoreFloat 1s ease-out forwards;
+    z-index: 1000;
+  }
+  
+  @keyframes scoreFloat {
+    0% {
+      transform: translateY(0) scale(0.5);
+      opacity: 0;
+    }
+    20% {
+      transform: translateY(-10px) scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-80px) scale(1);
+      opacity: 0;
+    }
+  }
+  
+  /* Motivational messages */
+  .motivation-message {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2000;
+    animation: motivationPop 2s ease-out forwards;
+    text-align: center;
+    max-width: 90%;
+  }
+  
+  @keyframes motivationPop {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.5);
+    }
+    20% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.2);
+    }
+    80% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) scale(1);
+    }
+  }
+  
+  /* Streak indicator */
+  .streak-indicator {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .streak-indicator.show {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  .streak-text {
+    color: #feca57;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .streak-count {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  /* High Score Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+  }
+  
+  .modal {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 70vh;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #feca57, #ff9ff3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .score-entry {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .score-rank {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #feca57;
+    min-width: 40px;
+  }
+  
+  .score-details {
+    flex: 1;
+    text-align: left;
+    margin: 0 15px;
+  }
+  
+  .score-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .score-date {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .close-modal {
+    background: linear-gradient(135deg, #ff416c, #ff4757);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .close-modal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 65, 108, 0.4);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .stats-container {
+      gap: 15px;
+    }
+    
+    .stat-card {
+      padding: 10px 15px;
+      min-width: 80px;
+    }
+    
+    .stat-value {
+      font-size: 1.1rem;
+    }
+    
+    .controls {
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+    
+    .balloon {
+      width: 75px;
+      height: 95px;
+    }
+    
+    .motivation-message {
+      font-size: 1.8rem;
+    }
+    
+    .streak-indicator {
+      right: 15px;
+      padding: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- Background particles -->
+  <div class="bg-particles"></div>
+  
+  <div class="game-container">
+    <div class="header">
+      <h1 class="title">🎈 Balloon PopZone 🎈</h1>
+      
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-label">Score</div>
+          <div class="stat-value" id="score">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Time</div>
+          <div class="stat-value" id="timer">0s</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Popped</div>
+          <div class="stat-value" id="totalPopped">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Best</div>
+          <div class="stat-value" id="highScore">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Today</div>
+          <div class="stat-value" id="todayGames">0</div>
+        </div>
+      </div>
+      
+      <div class="controls">
+        <button class="btn btn-start" id="startBtn">Start Game</button>
+        <button class="btn btn-stop" id="stopBtn" disabled>Stop Game</button>
+        <button class="btn btn-scores" id="scoresBtn">High Scores</button>
+      </div>
+    </div>
+    
+    <div id="gameArea"></div>
+    
+    <!-- Streak indicator -->
+    <div class="streak-indicator" id="streakIndicator">
+      <div class="streak-text">Streak!</div>
+      <div class="streak-count" id="streakCount">0</div>
+    </div>
+    
+    <!-- Motivational messages -->
+    <div class="motivation-message" id="motivationMessage"></div>
+  </div>
+  
+  <!-- High Scores Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h2>🏆 High Scores 🏆</h2>
+      <div id="scoresContainer">
+        <!-- Scores will be populated here -->
+      </div>
+      <button class="close-modal" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+<script>
+// Game state
+let gameState = {
+  score: 0,
+  totalPopped: 0,
+  balloons: [],
+  running: false,
+  elapsedTime: 0,
+  streak: 0,
+  maxStreak: 0,
+  balloonSpeed: 6,
+  spawnRate: 800,
+  sessionStartTime: null,
+  gameId: null
+};
+
+// DOM elements
+const gameArea = document.getElementById('gameArea');
+const scoreEl = document.getElementById('score');
+const timerEl = document.getElementById('timer');
+const totalPoppedEl = document.getElementById('totalPopped');
+const highScoreEl = document.getElementById('highScore');
+const todayGamesEl = document.getElementById('todayGames');
+const startBtn = document.getElementById('startBtn');
+const stopBtn = document.getElementById('stopBtn');
+const scoresBtn = document.getElementById('scoresBtn');
+const streakIndicator = document.getElementById('streakIndicator');
+const streakCount = document.getElementById('streakCount');
+const motivationMessage = document.getElementById('motivationMessage');
+const modalOverlay = document.getElementById('modalOverlay');
+const scoresContainer = document.getElementById('scoresContainer');
+
+// Game intervals
+let balloonInterval, gameInterval, timerInterval;
+
+// Balloon colors - therapeutic and calming palette
+const balloonColors = [
+  'linear-gradient(135deg, #a8e6cf, #88d8a8)', // Soft mint green
+  'linear-gradient(135deg, #ffd3e1, #fd9bb8)', // Gentle pink
+  'linear-gradient(135deg, #a8d8ea, #7fb3d3)', // Calming blue
+  'linear-gradient(135deg, #c5b9cd, #a593c2)', // Soothing lavender
+  'linear-gradient(135deg, #ffe5b4, #ffcc70)', // Warm peach
+  'linear-gradient(135deg, #d4c5f9, #b8a9eb)', // Soft purple
+  'linear-gradient(135deg, #b8f2ff, #89e5ff)', // Tranquil cyan
+  'linear-gradient(135deg, #f8e6a0, #f4d35e)', // Sunny yellow
+  'linear-gradient(135deg, #e8f5e8, #c8e6c9)', // Fresh green
+  'linear-gradient(135deg, #ffeaa7, #fab1a0)', // Coral sunset
+];
+
+// Motivational messages based on balloons popped
+const motivationalMessages = {
+  5: ["Great start! 🌟", "You're getting warmed up! 🔥", "Nice aim! 🎯"],
+  10: ["Way to go! 🎉", "You're on fire! 🔥", "Awesome job! ✨", "Keep it up! 💪"],
+  15: ["You're amazing! 🌟", "Fantastic! 🎊", "Incredible! ⚡", "Superb! 🎆"],
+  25: ["You're unstoppable! 🚀", "Phenomenal! 💎", "Outstanding! 🏆", "Legendary! ⭐"],
+  35: ["You're a balloon master! 👑", "Absolutely incredible! 🌈", "Mind-blowing! 🎭", "You're the champion! 🥇"],
+  50: ["BALLOON WIZARD! 🧙‍♂️", "UNBELIEVABLE! 🤯", "You're breaking records! 📈", "GODLIKE! ⚡"],
+  75: ["BALLOON DEITY! 👑", "TRANSCENDENT! 🌌", "BEYOND AMAZING! 🚀", "ULTIMATE MASTER! 🎯"],
+  100: ["🎈 BALLOON LEGEND 🎈", "💫 COSMIC ACHIEVEMENT 💫", "🌟 STELLAR PERFORMANCE 🌟", "👑 BALLOON ROYALTY 👑"]
+};
+
+// Enhanced Sound effects for mental health and relaxation
+class SoundManager {
+  constructor() {
+    this.audioContext = null;
+    this.sounds = {};
+    this.masterGain = null;
+    this.reverbNode = null;
+    // Pentatonic scale frequencies for therapeutic sounds (C major pentatonic)
+    this.healingNotes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25];
+    this.init();
+  }
+  
+  async init() {
+    try {
+      this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      this.masterGain = this.audioContext.createGain();
+      this.masterGain.gain.setValueAtTime(0.3, this.audioContext.currentTime); // Gentle volume
+      this.masterGain.connect(this.audioContext.destination);
+      
+      // Create a simple reverb for ambient feel
+      this.createReverb();
+    } catch (e) {
+      console.log('Web Audio API not supported');
+    }
+  }
+  
+  createReverb() {
+    if (!this.audioContext) return;
+    
+    // Create convolution reverb for spacious, calming sound
+    this.reverbNode = this.audioContext.createConvolver();
+    const reverbTime = 2.0;
+    const sampleRate = this.audioContext.sampleRate;
+    const length = sampleRate * reverbTime;
+    const impulse = this.audioContext.createBuffer(2, length, sampleRate);
+    
+    for (let channel = 0; channel < 2; channel++) {
+      const channelData = impulse.getChannelData(channel);
+      for (let i = 0; i < length; i++) {
+        const decay = Math.pow(1 - (i / length), 2);
+        channelData[i] = (Math.random() * 2 - 1) * decay * 0.1;
+      }
+    }
+    
+    this.reverbNode.buffer = impulse;
+  }
+  
+  // Therapeutic pop sound - soft and pleasant
+  playPop(noteIndex = 0, duration = 0.4) {
+    if (!this.audioContext) return;
+    
+    const frequency = this.healingNotes[noteIndex % this.healingNotes.length];
+    
+    // Create a gentle bell-like sound
+    const oscillator1 = this.audioContext.createOscillator();
+    const oscillator2 = this.audioContext.createOscillator();
+    const gainNode = this.audioContext.createGain();
+    const filter = this.audioContext.createBiquadFilter();
+    
+    // Dual oscillators for richness
+    oscillator1.frequency.setValueAtTime(frequency, this.audioContext.currentTime);
+    oscillator2.frequency.setValueAtTime(frequency * 2.01, this.audioContext.currentTime); // Slight detune
+    oscillator1.type = 'sine';
+    oscillator2.type = 'triangle';
+    
+    // Gentle low-pass filter for softness
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(frequency * 3, this.audioContext.currentTime);
+    filter.Q.setValueAtTime(1, this.audioContext.currentTime);
+    
+    // Connect with reverb for ambient feel
+    oscillator1.connect(filter);
+    oscillator2.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(this.masterGain);
+    
+    // Add subtle reverb
+    if (this.reverbNode) {
+      const reverbGain = this.audioContext.createGain();
+      reverbGain.gain.setValueAtTime(0.2, this.audioContext.currentTime);
+      filter.connect(reverbGain);
+      reverbGain.connect(this.reverbNode);
+      this.reverbNode.connect(this.masterGain);
+    }
+    
+    // Gentle envelope - slow attack, long release for calmness
+    gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+    gainNode.gain.linearRampToValueAtTime(0.15, this.audioContext.currentTime + 0.05);
+    gainNode.gain.exponentialRampToValueAtTime(0.1, this.audioContext.currentTime + 0.2);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + duration);
+    
+    oscillator1.start(this.audioContext.currentTime);
+    oscillator2.start(this.audioContext.currentTime);
+    oscillator1.stop(this.audioContext.currentTime + duration);
+    oscillator2.stop(this.audioContext.currentTime + duration);
+  }
+  
+  // Gentle celebration - soothing chord progression
+  playCelebration() {
+    if (!this.audioContext) return;
+    
+    // Play a calming chord progression (I - vi - IV - V in C major)
+    const chords = [
+      [0, 2, 4], // C major (healing notes indices)
+      [5, 0, 2], // A minor
+      [3, 5, 0], // F major
+      [4, 6, 1]  // G major
+    ];
+    
+    chords.forEach((chord, i) => {
+      setTimeout(() => {
+        chord.forEach((noteIndex, j) => {
+          setTimeout(() => {
+            this.playPop(noteIndex, 1.0);
+          }, j * 100);
+        });
+      }, i * 400);
+    });
+  }
+  
+  // Gentle streak sound - ascending but calm
+  playStreak(streakLevel = 1) {
+    if (!this.audioContext) return;
+    
+    // Play a gentle ascending pattern
+    const pattern = [0, 2, 4, 5]; // C, E, G, A - peaceful progression
+    const noteCount = Math.min(pattern.length, streakLevel);
+    
+    for (let i = 0; i < noteCount; i++) {
+      setTimeout(() => {
+        this.playPop(pattern[i], 0.8);
+      }, i * 150);
+    }
+  }
+  
+  // Mindful achievement sound - like wind chimes
+  playAchievement() {
+    if (!this.audioContext) return;
+    
+    // Create a wind chime-like sound with multiple gentle tones
+    const chimeNotes = [0, 2, 4, 5, 7]; // Pentatonic selection
+    
+    chimeNotes.forEach((noteIndex, i) => {
+      setTimeout(() => {
+        this.playPop(noteIndex, 1.5);
+      }, i * 200 + Math.random() * 100); // Slight randomness like real chimes
+    });
+    
+    // Add a second layer with higher octave
+    setTimeout(() => {
+      chimeNotes.slice(0, 3).forEach((noteIndex, i) => {
+        setTimeout(() => {
+          this.playPop((noteIndex + 5) % this.healingNotes.length, 1.2);
+        }, i * 250);
+      });
+    }, 600);
+  }
+  
+  // Peaceful game over sound
+  playGameOver(isHighScore = false) {
+    if (!this.audioContext) return;
+    
+    if (isHighScore) {
+      // Gentle celebration
+      this.playAchievement();
+      setTimeout(() => this.playCelebration(), 1000);
+    } else {
+      // Peaceful resolution - descending but not sad
+      const resolution = [4, 2, 0]; // G, E, C - gentle closure
+      resolution.forEach((noteIndex, i) => {
+        setTimeout(() => {
+          this.playPop(noteIndex, 1.5);
+        }, i * 300);
+      });
+    }
+  }
+  
+  // Ambient background tone for focus (optional)
+  playAmbientTone() {
+    if (!this.audioContext) return;
+    
+    const drone = this.audioContext.createOscillator();
+    const droneGain = this.audioContext.createGain();
+    
+    drone.frequency.setValueAtTime(130.81, this.audioContext.currentTime); // C3 - very low
+    drone.type = 'sine';
+    
+    droneGain.gain.setValueAtTime(0, this.audioContext.currentTime);
+    droneGain.gain.linearRampToValueAtTime(0.02, this.audioContext.currentTime + 2);
+    
+    drone.connect(droneGain);
+    droneGain.connect(this.masterGain);
+    
+    drone.start();
+    
+    // Stop after 30 seconds
+    setTimeout(() => {
+      droneGain.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + 2);
+      setTimeout(() => drone.stop(), 2100);
+    }, 30000);
+  }
+}
+
+const soundManager = new SoundManager();
+
+// MongoDB-style data management (localStorage for demo, but structured for MongoDB)
+class GameDataManager {
+  constructor() {
+    this.dbName = 'balloonPopGame';
+    this.init();
+  }
+  
+  init() {
+    if (!localStorage.getItem(this.dbName)) {
+      const initialData = {
+        highScores: [],
+        playerStats: {
+          totalGames: 0,
+          totalBalloons: 0,
+          bestStreak: 0,
+          totalPlayTime: 0
+        },
+        dailyStats: {}
+      };
+      localStorage.setItem(this.dbName, JSON.stringify(initialData));
+    }
+  }
+  
+  getData() {
+    return JSON.parse(localStorage.getItem(this.dbName));
+  }
+  
+  saveData(data) {
+    localStorage.setItem(this.dbName, JSON.stringify(data));
+  }
+  
+  // Save game session (MongoDB document structure)
+  saveGameSession(gameData) {
+    const data = this.getData();
+    const now = new Date();
+    const dateKey = now.toISOString().split('T')[0]; // YYYY-MM-DD
+    
+    const session = {
+      _id: gameData.gameId || this.generateId(),
+      score: gameData.score,
+      ballonsPopped: gameData.totalPopped,
+      maxStreak: gameData.maxStreak,
+      playTime: gameData.elapsedTime,
+      date: now.toISOString(),
+      dateKey: dateKey,
+      timestamp: now.getTime()
+    };
+    
+    // Add to high scores
+    data.highScores.push(session);
+    data.highScores.sort((a, b) => b.score - a.score);
+    data.highScores = data.highScores.slice(0, 10); // Keep top 10
+    
+    // Update player stats
+    data.playerStats.totalGames++;
+    data.playerStats.totalBalloons += gameData.totalPopped;
+    data.playerStats.bestStreak = Math.max(data.playerStats.bestStreak, gameData.maxStreak);
+    data.playerStats.totalPlayTime += gameData.elapsedTime;
+    
+    // Update daily stats
+    if (!data.dailyStats[dateKey]) {
+      data.dailyStats[dateKey] = {
+        games: 0,
+        bestScore: 0,
+        totalBalloons: 0,
+        totalTime: 0
+      };
+    }
+    
+    data.dailyStats[dateKey].games++;
+    data.dailyStats[dateKey].bestScore = Math.max(data.dailyStats[dateKey].bestScore, gameData.score);
+    data.dailyStats[dateKey].totalBalloons += gameData.totalPopped;
+    data.dailyStats[dateKey].totalTime += gameData.elapsedTime;
+    
+    this.saveData(data);
+    return session;
+  }
+  
+  getHighScore() {
+    const data = this.getData();
+    return data.highScores.length > 0 ? data.highScores[0].score : 0;
+  }
+  
+  getTodayGames() {
+    const data = this.getData();
+    const today = new Date().toISOString().split('T')[0];
+    return data.dailyStats[today] ? data.dailyStats[today].games : 0;
+  }
+  
+  getHighScores(limit = 10) {
+    const data = this.getData();
+    return data.highScores.slice(0, limit);
+  }
+  
+  generateId() {
+    return 'game_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  }
+  
+  isNewHighScore(score) {
+    return score > this.getHighScore();
+  }
+}
+
+const gameDataManager = new GameDataManager();
+
+// Initialize background particles
+function createBackgroundParticles() {
+  const container = document.querySelector('.bg-particles');
+  for (let i = 0; i < 20; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'bg-particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%';
+    particle.style.width = (Math.random() * 6 + 4) + 'px';
+    particle.style.height = particle.style.width;
+    particle.style.animationDelay = Math.random() * 6 + 's';
+    particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+    container.appendChild(particle);
+  }
+}
+
+// Show motivational message
+function showMotivationalMessage(count) {
+  const thresholds = Object.keys(motivationalMessages).map(Number).sort((a, b) => a - b);
+  const threshold = thresholds.find(t => count === t);
+  
+  if (threshold && motivationalMessages[threshold]) {
+    const messages = motivationalMessages[threshold];
+    const message = messages[Math.floor(Math.random() * messages.length)];
+    
+    motivationMessage.textContent = message;
+    motivationMessage.style.opacity = '1';
+    motivationMessage.style.animation = 'none';
+    
+    // Trigger reflow
+    motivationMessage.offsetHeight;
+    
+    motivationMessage.style.animation = 'motivationPop 2s ease-out forwards';
+    
+    // Play celebration sound for major milestones
+    if (count >= 25) {
+      soundManager.playAchievement();
+    } else if (count >= 10) {
+      soundManager.playCelebration();
+    }
+    
+    // Add screen shake effect for big milestones
+    if (count >= 50) {
+      document.body.style.animation = 'shake 0.5s ease-in-out';
+      setTimeout(() => {
+        document.body.style.animation = '';
+      }, 500);
+    }
+  }
+}
+
+// Create balloon with simple shine effect
+function createBalloon() {
+  const balloon = document.createElement('div');
+  balloon.className = 'balloon';
+  
+  const color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+  balloon.style.setProperty('--balloon-color', color);
+  
+  // Add simple shine effect for prettier balloons
+  const shine = document.createElement('div');
+  shine.className = 'shine';
+  balloon.appendChild(shine);
+  
+  const left = Math.random() * (gameArea.offsetWidth - 95); // Adjusted for slightly bigger balloons
+  balloon.style.left = left + 'px';
+  balloon.style.animationDuration = (gameState.balloonSpeed + Math.random() * 3) + 's';
+  
+  gameArea.appendChild(balloon);
+  gameState.balloons.push(balloon);
+  
+  balloon.addEventListener('click', () => popBalloon(balloon));
+  
+  // Auto-remove balloon when animation ends (simple check like before)
+  balloon.addEventListener('animationend', () => {
+    if (balloon.parentNode && !balloon.classList.contains('popping')) {
+      removeBalloon(balloon);
+      gameState.streak = 0; // Reset streak on missed balloon
+      updateStreakDisplay();
+    }
+  });
+}
+
+// Pop balloon with effects
+function popBalloon(balloon) {
+  if (balloon.classList.contains('popping')) return;
+  
+  balloon.classList.add('popping');
+  
+  // Update score and stats
+  const points = Math.min(10 + gameState.streak, 50);
+  gameState.score += points;
+  gameState.totalPopped++;
+  gameState.streak++;
+  
+  if (gameState.streak > gameState.maxStreak) {
+    gameState.maxStreak = gameState.streak;
+  }
+  
+  updateDisplay();
+  
+  // Create pop effects
+  createPopParticles(balloon);
+  createScorePopup(balloon, points);
+  
+  // Show motivational message at milestones
+  showMotivationalMessage(gameState.totalPopped);
+  
+  // Play therapeutic sounds based on streak and pattern
+  if (gameState.streak % 10 === 0 && gameState.streak > 0) {
+    soundManager.playAchievement();
+    showStreakIndicator();
+  } else if (gameState.streak >= 5) {
+    soundManager.playStreak(Math.min(gameState.streak, 4));
+    showStreakIndicator();
+  } else {
+    // Use healing note patterns based on total balloons popped
+    const noteIndex = gameState.totalPopped % soundManager.healingNotes.length;
+    soundManager.playPop(noteIndex);
+  }
+  
+  // Remove balloon
+  setTimeout(() => removeBalloon(balloon), 400);
+  
+  // Increase difficulty gradually
+  if (gameState.totalPopped % 10 === 0) {
+    gameState.balloonSpeed = Math.max(3, gameState.balloonSpeed - 0.2);
+    gameState.spawnRate = Math.max(400, gameState.spawnRate - 50);
+    restartBalloonSpawning();
+  }
+}
+
+// Create particle explosion effect
+function createPopParticles(balloon) {
+  const rect = balloon.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  
+  const particleCount = Math.min(8 + gameState.streak, 20);
+  
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'pop-particle';
+    
+    const angle = (i / particleCount) * Math.PI * 2;
+    const distance = 60 + Math.random() * 40 + gameState.streak * 2;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance;
+    
+    particle.style.left = centerX + 'px';
+    particle.style.top = centerY + 'px';
+    particle.style.setProperty('--dx', dx + 'px');
+    particle.style.setProperty('--dy', dy + 'px');
+    particle.style.background = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+    
+    document.body.appendChild(particle);
+    
+    setTimeout(() => particle.remove(), 800);
+  }
+}
+
+// Create score popup
+function createScorePopup(balloon, points) {
+  const popup = document.createElement('div');
+  popup.className = 'score-popup';
+  popup.textContent = '+' + points;
+  popup.style.left = balloon.offsetLeft + balloon.offsetWidth / 2 + 'px';
+  popup.style.top = balloon.offsetTop + 'px';
+  
+  if (gameState.streak >= 10) {
+    popup.style.background = 'linear-gradient(45deg, #feca57, #ff9ff3)';
+    popup.style.webkitBackgroundClip = 'text';
+    popup.style.webkitTextFillColor = 'transparent';
+    popup.style.fontSize = '2.5rem';
+  } else if (gameState.streak >= 5) {
+    popup.style.background = 'linear-gradient(45deg, #48dbfb, #ff9ff3)';
+    popup.style.webkitBackgroundClip = 'text';
+    popup.style.webkitTextFillColor = 'transparent';
+  }
+  
+  gameArea.appendChild(popup);
+  setTimeout(() => popup.remove(), 1000);
+}
+
+// Show streak indicator
+function showStreakIndicator() {
+  streakCount.textContent = gameState.streak;
+  streakIndicator.classList.add('show');
+  
+  if (gameState.streak >= 10) {
+    streakIndicator.style.background = 'rgba(255, 215, 0, 0.2)';
+    streakIndicator.style.border = '2px solid rgba(255, 215, 0, 0.5)';
+  } else {
+    streakIndicator.style.background = 'rgba(255, 255, 255, 0.1)';
+    streakIndicator.style.border = '1px solid rgba(255, 255, 255, 0.3)';
+  }
+  
+  setTimeout(() => {
+    streakIndicator.classList.remove('show');
+  }, 2000);
+}
+
+// Remove balloon
+function removeBalloon(balloon) {
+  if (balloon.parentNode) {
+    balloon.parentNode.removeChild(balloon);
+  }
+  gameState.balloons = gameState.balloons.filter(b => b !== balloon);
+}
+
+// Update display
+function updateDisplay() {
+  scoreEl.textContent = gameState.score;
+  timerEl.textContent = gameState.elapsedTime + 's';
+  totalPoppedEl.textContent = gameState.totalPopped;
+  highScoreEl.textContent = gameDataManager.getHighScore();
+  todayGamesEl.textContent = gameDataManager.getTodayGames();
+}
+
+// Restart balloon spawning with new rate
+function restartBalloonSpawning() {
+  if (gameState.running && balloonInterval) {
+    clearInterval(balloonInterval);
+    balloonInterval = setInterval(createBalloon, gameState.spawnRate);
+  }
+}
+
+// Start game
+function startGame() {
+  if (gameState.running) return;
+  
+  // Reset game state
+  gameState = {
+    ...gameState,
+    score: 0,
+    totalPopped: 0,
+    balloons: [],
+    running: true,
+    elapsedTime: 0,
+    streak: 0,
+    balloonSpeed: 6,
+    spawnRate: 800,
+    sessionStartTime: new Date(),
+    gameId: gameDataManager.generateId()
+  };
+  
+  updateDisplay();
+  updateStreakDisplay();
+  
+  // UI updates
+  startBtn.disabled = true;
+  stopBtn.disabled = false;
+  
+  // Start intervals
+  balloonInterval = setInterval(createBalloon, gameState.spawnRate);
+  
+  gameInterval = setInterval(() => {
+    // Clean up off-screen balloons
+    gameState.balloons.forEach(balloon => {
+      const rect = balloon.getBoundingClientRect();
+      if (rect.top + rect.height < 0) {
+        removeBalloon(balloon);
+      }
+    });
+  }, 500);
+  
+  timerInterval = setInterval(() => {
+    gameState.elapsedTime++;
+    updateDisplay();
+  }, 1000);
+  
+  // Enable audio context on user interaction
+  if (soundManager.audioContext?.state === 'suspended') {
+    soundManager.audioContext.resume();
+  }
+  
+  // Optional: Start gentle ambient background tone for focus
+  // Uncomment the line below if you want subtle background ambient sounds
+  // soundManager.playAmbientTone();
+}
+
+// Stop game
+function stopGame() {
+  if (!gameState.running) return;
+  
+  gameState.running = false;
+  
+  // UI updates
+  startBtn.disabled = false;
+  stopBtn.disabled = true;
+  
+  // Clear intervals
+  clearInterval(balloonInterval);
+  clearInterval(gameInterval);
+  clearInterval(timerInterval);
+  
+  // Clean up balloons
+  gameState.balloons.forEach(balloon => removeBalloon(balloon));
+  gameState.balloons = [];
+  
+  // Save game session to database
+  const session = gameDataManager.saveGameSession(gameState);
+  const isNewHighScore = gameDataManager.isNewHighScore(gameState.score);
+  
+  // Play appropriate end game sound
+  soundManager.playGameOver(isNewHighScore);
+  
+  // Show final motivational message
+  let endMessage = `Game Over! 🎈 Final Score: ${gameState.score}`;
+  if (isNewHighScore) {
+    endMessage = `🎉 NEW HIGH SCORE! 🎉\nScore: ${gameState.score}`;
+  } else if (gameState.totalPopped >= 50) {
+    endMessage = `Amazing run! 🌟\nScore: ${gameState.score}`;
+  } else if (gameState.totalPopped >= 25) {
+    endMessage = `Great job! 🎯\nScore: ${gameState.score}`;
+  }
+  
+  motivationMessage.textContent = endMessage;
+  motivationMessage.style.opacity = '1';
+  motivationMessage.style.animation = 'none';
+  motivationMessage.offsetHeight; // Trigger reflow
+  motivationMessage.style.animation = 'motivationPop 3s ease-out forwards';
+  
+  updateDisplay();
+}
+
+// Update streak display
+function updateStreakDisplay() {
+  if (gameState.streak >= 3) {
+    showStreakIndicator();
+  }
+}
+
+// Show high scores modal
+function showHighScores() {
+  const scores = gameDataManager.getHighScores();
+  scoresContainer.innerHTML = '';
+  
+  if (scores.length === 0) {
+    scoresContainer.innerHTML = '<p style="color: white; text-align: center; padding: 20px;">No high scores yet! Play a game to set your first record! 🎈</p>';
+  } else {
+    scores.forEach((score, index) => {
+      const entry = document.createElement('div');
+      entry.className = 'score-entry';
+      
+      const date = new Date(score.date);
+      const dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+      
+      entry.innerHTML = `
+        <div class="score-rank">#${index + 1}</div>
+        <div class="score-details">
+          <div class="score-value">${score.score} points</div>
+          <div class="score-date">${score.ballonsPopped} balloons • ${score.playTime}s • ${dateStr}</div>
+        </div>
+      `;
+      
+      // Highlight top 3 scores
+      if (index === 0) {
+        entry.style.background = 'rgba(255, 215, 0, 0.2)';
+        entry.style.border = '2px solid rgba(255, 215, 0, 0.5)';
+      } else if (index === 1) {
+        entry.style.background = 'rgba(192, 192, 192, 0.2)';
+        entry.style.border = '2px solid rgba(192, 192, 192, 0.5)';
+      } else if (index === 2) {
+        entry.style.background = 'rgba(205, 127, 50, 0.2)';
+        entry.style.border = '2px solid rgba(205, 127, 50, 0.5)';
+      }
+      
+      scoresContainer.appendChild(entry);
+    });
+  }
+  
+  modalOverlay.style.display = 'flex';
+}
+
+// Close modal
+function closeModal() {
+  modalOverlay.style.display = 'none';
+}
+
+// Add shake animation for big milestones
+const shakeKeyframes = `
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+    20%, 40%, 60%, 80% { transform: translateX(2px); }
+  }
+`;
+const styleSheet = document.createElement('style');
+styleSheet.textContent = shakeKeyframes;
+document.head.appendChild(styleSheet);
+
+// Event listeners
+startBtn.addEventListener('click', startGame);
+stopBtn.addEventListener('click', stopGame);
+scoresBtn.addEventListener('click', showHighScores);
+
+// Close modal when clicking outside
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) {
+    closeModal();
+  }
+});
+
+// Keyboard controls
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'Space') {
+    e.preventDefault();
+    if (gameState.running) {
+      stopGame();
+    } else {
+      startGame();
+    }
+  }
+  if (e.code === 'Escape') {
+    closeModal();
+  }
+  if (e.code === 'KeyH') {
+    showHighScores();
+  }
+});
+
+// Initialize
+createBackgroundParticles();
+updateDisplay();
+gameState.soundVariations = soundManager.soundVariations;
+
+// Add CSS for additional visual effects
+const additionalCSS = `
+  .stat-card.highlight {
+    background: rgba(255, 215, 0, 0.3) !important;
+    border: 2px solid rgba(255, 215, 0, 0.8) !important;
+    transform: translateY(-5px) scale(1.05) !important;
+  }
+  
+  .new-high-score {
+    animation: newHighScore 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes newHighScore {
+    0% { transform: scale(1); filter: brightness(1); }
+    100% { transform: scale(1.1); filter: brightness(1.3); }
+  }
+`;
+
+const additionalStyle = document.createElement('style');
+additionalStyle.textContent = additionalCSS;
+document.head.appendChild(additionalStyle);
+
+// Highlight new high scores in real-time
+function checkAndHighlightHighScore() {
+  if (gameState.running && gameState.score > gameDataManager.getHighScore()) {
+    scoreEl.parentElement.classList.add('highlight', 'new-high-score');
+  } else {
+    scoreEl.parentElement.classList.remove('highlight', 'new-high-score');
+  }
+}
+
+// Update the popBalloon function to check for high scores
+const originalPopBalloon = popBalloon;
+popBalloon = function(balloon) {
+  originalPopBalloon(balloon);
+  checkAndHighlightHighScore();
+};
+
+console.log('🎈 Balloon Pop Zen initialized! 🎈');
+console.log('💡 Tip: Press H to view high scores, Space to start/stop game!');
+</script>
+</body>
+</html>

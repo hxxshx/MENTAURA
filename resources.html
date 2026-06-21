@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Resources - MentAura</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation - Same as homepage -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Language Dropdown Top Left -->
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="ur">Urdu</a>
+                    <a href="#" data-lang="hi">Hindi</a>
+                    <a href="#" data-lang="ta">Tamil</a>
+                    <a href="#" data-lang="te">Telugu</a>
+                    <a href="#" data-lang="ml">Malayalam</a>
+                    <a href="#" data-lang="kn">Kannada</a>
+                </div>
+            </div>
+
+            <!-- Centered Navigation Menu -->
+
+
+            <!-- Centered Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" id="homeNav">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" id="servicesNav">Services</a></li>
+                <li><a href="chatbot.html" class="nav-link" id="aiChatNav">AI Chat</a></li>
+                <li><a href="booking.html" class="nav-link" id="bookSessionNav">Book Session</a></li>
+                <li><a href="resources.html" class="nav-link active" id="resourcesNav">Resources</a></li>
+                <li><a href="admin.html" class="nav-link" id="adminNav">Admin Dashboard</a></li>
+                <li><a href="analytics.html" class="nav-link" id="analyticsNav">Analytics</a></li>
+                <li><a href="forum.html" class="nav-link" id="communityNav">Community</a></li>
+            </ul>
+
+            <!-- Auth Buttons Right Side -->
+            <div class="nav-auth-buttons">
+                <a href="mentaura-auth/index.html" class="btn-login" id="loginBtn">Login</a>
+                <a href="mentaura-auth/signup.html" class="btn-signup" id="signupBtn">Sign Up</a>
+            </div>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Same Style as AI Chat and Booking -->
+    <section class="resources-hero-centered">
+        <div class="hero-text-overlay-centered">
+            <h1 class="resources-title-centered">Mental Health Resources</h1>
+        </div>
+        <div class="resources-background-centered">
+            <div class="resources-icon-centered">
+                <i class="fas fa-brain"></i>
+                <div class="pulse-ring-centered"></div>
+                <div class="pulse-ring-centered-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-content-section">
+        <div class="container">
+            <!-- Resource Navigation Tabs -->
+            <div class="resource-tabs">
+                <button class="tab-btn active" data-tab="videos">
+                    <i class="fas fa-video"></i>
+                    <span>Videos</span>
+                </button>
+                <button class="tab-btn" data-tab="articles">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Articles</span>
+                </button>
+                <button class="tab-btn" data-tab="games">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Games</span>
+                </button>
+                <button class="tab-btn" data-tab="meditation">
+                    <i class="fas fa-lotus-position"></i>
+                    <span>Meditation</span>
+                </button>
+                <button class="tab-btn" data-tab="journaling">
+                    <i class="fas fa-journal-whills"></i>
+                    <span>Journaling</span>
+                </button>
+                <button class="tab-btn" data-tab="hygiene">
+                    <i class="fas fa-heart"></i>
+                    <span>Self Care</span>
+                </button>
+            </div>
+
+            <!-- Videos Section -->
+            <div class="resource-content active" id="videos-content">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-video"></i>
+                        Multilingual Video Resources
+                    </h2>
+                    <p class="section-subtitle">Watch helpful videos in your preferred language to overcome stress,
+                        anxiety, and psychological challenges</p>
+                </div>
+
+                <!-- Language Filter for Videos -->
+                <div class="video-filters">
+                    <button class="filter-btn active" data-lang="all">All Languages</button>
+                    <button class="filter-btn" data-lang="en">English</button>
+                    <button class="filter-btn" data-lang="ur">Urdu</button>
+                    <button class="filter-btn" data-lang="hi">Hindi</button>
+                    <button class="filter-btn" data-lang="ta">Tamil</button>
+                    <button class="filter-btn" data-lang="te">Telugu</button>
+                    <button class="filter-btn" data-lang="ml">Malayalam</button>
+                    <button class="filter-btn" data-lang="kn">Kannada</button>
+                </div>
+
+                <div class="videos-grid">
+                    <!-- YouTube Embedded Videos -->
+                    <div class="video-card" data-lang="en" data-category="stress">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Wh5HyJ1rxzk" title="Mental Health Video 1"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Mental Health & Wellness</h4>
+                            <p>Comprehensive guide to mental health and wellness practices</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> General Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="anxiety">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/eGVWRvNe1-A" title="Anxiety Management"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Anxiety Management Techniques</h4>
+                            <p>Effective strategies to manage and overcome anxiety</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Anxiety Relief</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="mindfulness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/qUz93CyNIz0" title="Mindfulness Practice"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Mindfulness & Meditation</h4>
+                            <p>Learn mindfulness techniques and meditation practices</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Mindfulness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="depression">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/TK5KOXLT15g" title="Depression Support"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Depression Recovery Guide</h4>
+                            <p>Understanding and overcoming depression with professional guidance</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Depression Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="stress">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/HB1snh5ArVw" title="Stress Management"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Stress Management Techniques</h4>
+                            <p>Learn effective breathing exercises and mindfulness practices to reduce daily stress</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Stress Relief</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="therapy">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/0fL-pn80s-c" title="Therapy & Counseling"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Therapy & Counseling Guide</h4>
+                            <p>Understanding the benefits of therapy and counseling</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Therapy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="relationships">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/_KuUXz5gjgw" title="Healthy Relationships"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Building Healthy Relationships</h4>
+                            <p>Essential skills for maintaining healthy personal relationships</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Relationships</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="selfcare">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/i_rl2lRVd5U" title="Self Care" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Self Care & Wellness</h4>
+                            <p>Comprehensive self-care practices for mental and physical health</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Self Care</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="ur" data-category="anxiety">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/bLAKSnyL-is" title="Anxiety Management Urdu"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>بے چینی سے نپٹنا - Anxiety Management</h4>
+                            <p>Practical techniques to manage anxiety and panic attacks in Urdu</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Urdu</span>
+                                <span class="category"><i class="fas fa-tag"></i> Anxiety Relief</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="mindfulness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/nlD9HiRiLZ4" title="Advanced Mindfulness"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Advanced Mindfulness Practice</h4>
+                            <p>Deep mindfulness techniques for experienced practitioners</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Mindfulness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="therapy">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/qBvteLRUATQ" title="Therapeutic Techniques"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Therapeutic Techniques</h4>
+                            <p>Professional therapeutic approaches for mental health</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Therapy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Zg-BbCvQ8RA" title="Mental Wellness"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Mental Wellness Journey</h4>
+                            <p>Comprehensive approach to mental wellness and personal growth</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="ta" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/J-OuuT1cpCE" title="Improve Mental Health Tamil"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>மன ஆரோக்கியம் - Improve Mental Health</h4>
+                            <p>Doctor's guide to improving mental well-being in Tamil</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Tamil</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="ta" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/mclCfICXmBU"
+                                title="Schizophrenia Awareness Tamil" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>மனச்சிதைவு நோய் - Schizophrenia Awareness</h4>
+                            <p>Educational video about schizophrenia and mental health in Tamil</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Tamil</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="ta" data-category="depression">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/LUqooYlqT9o" title="Overcoming Depression Tamil"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>மனச்சோர்வை வெல்வது - Overcoming Depression</h4>
+                            <p>A doctor's personal journey and advice on overcoming depression</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Tamil</span>
+                                <span class="category"><i class="fas fa-tag"></i> Depression Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="ta" data-category="depression">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/SsDRrwwX-dc" title="Depression Solution Tamil"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>தனிமை மற்றும் மனச்சோர்வு - Depression Solution</h4>
+                            <p>Psychotherapist interview on dealing with deep sadness and loneliness</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Tamil</span>
+                                <span class="category"><i class="fas fa-tag"></i> Depression Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="sleep">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/LrJctzWmGaI" title="Sleep Health" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Better Sleep Habits</h4>
+                            <p>Creating healthy sleep routines for better mental health</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Sleep Health</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="te" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/eGg9TNkSIA8"
+                                title="Mental Health Disorders Telugu" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>మానసిక సమస్యలు - Psychological Disorders</h4>
+                            <p>Clarification about psychological disorders by health experts in Telugu</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Telugu</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="te" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/UxMHHPpvLQc"
+                                title="Importance of Mental Health Telugu" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>మానసిక ఆరోగ్యం ప్రాముఖ్యత - Importance of Mental Health</h4>
+                            <p>Dr. Madhu Vamshi discusses psychiatric problems and mental health in Telugu</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Telugu</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="te" data-category="depression">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/AFKai7mZMFI" title="Overcoming Depression Telugu"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>ఒత్తిడి మరియు డిప్రెషన్ - Overcoming Depression</h4>
+                            <p>Dr. Kalyan Chakravarthy explains how to overcome depression and stress</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Telugu</span>
+                                <span class="category"><i class="fas fa-tag"></i> Depression Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="te" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/hhipAWBoce4" title="Change Mental Health Telugu"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>మానసిక ఆరోగ్యం మార్పు - Change Your Mental Health</h4>
+                            <p>Dr. Gowri Devi on transforming mental health and dealing with depression</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Telugu</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="therapy">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/8rJMyhW2oNY" title="Counseling Support"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Counseling & Support</h4>
+                            <p>Understanding the importance of professional counseling</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Therapy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/DlJDK9s3n7A" title="Mental Health Wellness"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Mental Health & Wellness</h4>
+                            <p>Comprehensive mental health and wellness strategies</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="hi" data-category="depression">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/AW7F1yyDIyg" title="Depression Recovery Hindi"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>अवसाद से मुकाबला - Depression Recovery</h4>
+                            <p>Understanding and overcoming depression with Hindi guidance</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Hindi</span>
+                                <span class="category"><i class="fas fa-tag"></i> Depression Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="hi" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/ypAHnzD04rg"
+                                title="Dealing with Loneliness Hindi" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>अकेलेपन से कैसे निपटें - Dealing with Loneliness</h4>
+                            <p>Practical solutions for loneliness and mental strength in Hindi</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Hindi</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="hi" data-category="depression">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/_6ggzXbIQDs" title="Depression Therapy Hindi"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>डिप्रेशन थेरेपी - Depression Therapy</h4>
+                            <p>Expert psychiatric advice on overcoming depression in Hindi</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Hindi</span>
+                                <span class="category"><i class="fas fa-tag"></i> Depression Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="hi" data-category="anxiety">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/kq1A7gSQIys" title="Anxiety Treatment Hindi"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>घबराहट का इलाज - Anxiety Treatment</h4>
+                            <p>Medical treatment and management of anxiety in Hindi</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Hindi</span>
+                                <span class="category"><i class="fas fa-tag"></i> Anxiety Relief</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="en" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/TXMzjaSWaBw" title="Advanced Wellness"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Advanced Wellness Practices</h4>
+                            <p>Advanced techniques for mental and emotional wellness</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> English</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Malayalam Videos -->
+                    <div class="video-card" data-lang="ml" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/ohKqLE3CM44"
+                                title="Boost Mental Health Malayalam" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>മാനസിക ആരോഗ്യം - Boost Your Mental Health</h4>
+                            <p>Dr. Danish Salim explains how to boost mental health completely in Malayalam</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Malayalam</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="ml" data-category="stress">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/JHkJdEpIpzc"
+                                title="Handle Mental Stress Malayalam" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>മാനസിക സമ്മർദ്ദം - Handle Mental Stress</h4>
+                            <p>Dr. Manoj Johnson on how to handle and overcoming mental stress</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Malayalam</span>
+                                <span class="category"><i class="fas fa-tag"></i> Stress Relief</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="ml" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Wxy_M602q8I" title="What is Insight Malayalam"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>ഉൾക്കാഴ്ച - What is Insight?</h4>
+                            <p>Mental Health Awareness Series focusing on psychological insight by Dhanya Varma</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Malayalam</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="ml" data-category="depression">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/WIWYp_zKsBc" title="Is this Depression Malayalam"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>വിഷാദരോഗം - Is This Depression?</h4>
+                            <p>Expert interview discussing symptoms and reality of depression in Malayalam</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Malayalam</span>
+                                <span class="category"><i class="fas fa-tag"></i> Depression Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kannada Videos -->
+                    <div class="video-card" data-lang="kn" data-category="anxiety">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/PiGNZmk4Hlw"
+                                title="Anxiety Depression Stress Kannada" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>ಆತಂಕ ಮತ್ತು ಖಿನ್ನತೆ - Anxiety & Depression</h4>
+                            <p>Dr. Pavitra KS discusses solutions for anxiety, depression, and stress in Kannada</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Kannada</span>
+                                <span class="category"><i class="fas fa-tag"></i> Anxiety Relief</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="kn" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/SeXZKHSY9cE"
+                                title="Mental Health Awareness Kannada" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>ಮಾನಸಿಕ ಆರೋಗ್ಯ - Mental Health Awareness</h4>
+                            <p>Dr. Sachin Nagendrappa explains the importance of mental health in Kannada</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Kannada</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="kn" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/0-pwY8uhOBs" title="Manage Mental Health Kannada"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>ಮಾನಸಿಕ ಆರೋಗ್ಯ ನಿರ್ವಹಣೆ - Manage Mental Health</h4>
+                            <p>Dr. Rajesh M provides practical tips to manage mental health in Kannada</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Kannada</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-lang="kn" data-category="wellness">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/HRoPuo4KDr4" title="Good Mental Health Kannada"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>ಉತ್ತಮ ಮಾನಸಿಕ ಆರೋಗ್ಯ - Good Mental Health</h4>
+                            <p>Interview with senior psychiatrist Dr. C.R. Chandrashekhar on mental well-being</p>
+                            <div class="video-meta">
+                                <span class="language"><i class="fas fa-globe"></i> Kannada</span>
+                                <span class="category"><i class="fas fa-tag"></i> Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Articles Section -->
+            <div class="resource-content" id="articles-content">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-newspaper"></i>
+                        Mental Health Articles
+                    </h2>
+                    <p class="section-subtitle">Expert-written articles on psychology, mental wellness, and personal
+                        growth</p>
+                </div>
+
+                <div class="articles-grid">
+                    <article class="article-card">
+                        <div class="article-image">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Psychology</span>
+                            <h3>Understanding Anxiety Disorders</h3>
+                            <p>A comprehensive guide to recognizing and managing different types of anxiety disorders...
+                            </p>
+                            <div class="article-meta">
+                                <span><i class="fas fa-clock"></i> 8 min read</span>
+                                <span><i class="fas fa-user"></i> Dr. Sarah Khan</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-image">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Wellness</span>
+                            <h3>The Science of Happiness</h3>
+                            <p>Research-backed strategies to boost your mood and overall life satisfaction...</p>
+                            <div class="article-meta">
+                                <span><i class="fas fa-clock"></i> 12 min read</span>
+                                <span><i class="fas fa-user"></i> Dr. Ahmad Ali</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-image">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Relationships</span>
+                            <h3>Building Healthy Relationships</h3>
+                            <p>Essential communication skills and boundaries for stronger connections...</p>
+                            <div class="article-meta">
+                                <span><i class="fas fa-clock"></i> 10 min read</span>
+                                <span><i class="fas fa-user"></i> Dr. Fatima Sheikh</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-image">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Sleep</span>
+                            <h3>Sleep and Mental Health</h3>
+                            <p>How quality sleep affects your mental wellbeing and practical tips for better rest...</p>
+                            <div class="article-meta">
+                                <span><i class="fas fa-clock"></i> 6 min read</span>
+                                <span><i class="fas fa-user"></i> Dr. Rajesh Sharma</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-image">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Wellness</span>
+                            <h3>Exercise for Mental Health</h3>
+                            <p>The powerful connection between physical activity and psychological wellbeing...</p>
+                            <div class="article-meta">
+                                <span><i class="fas fa-clock"></i> 9 min read</span>
+                                <span><i class="fas fa-user"></i> Dr. Priya Patel</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-image">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Mindfulness</span>
+                            <h3>Mindfulness in Daily Life</h3>
+                            <p>Simple practices to bring awareness and presence into your everyday routine...</p>
+                            <div class="article-meta">
+                                <span><i class="fas fa-clock"></i> 7 min read</span>
+                                <span><i class="fas fa-user"></i> Dr. Zara Ahmed</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Mental Games Section -->
+
+
+            <div class="resource-content" id="games-content">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-gamepad"></i>
+                        Interactive Mental Health Games
+                    </h2>
+                    <p class="section-subtitle">Engaging games and activities to improve cognitive function and reduce
+                        stress</p>
+                </div>
+
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div class="game-content">
+                            <h3>Memory Master</h3>
+                            <p>Improve your memory and cognitive function with fun pattern recognition games</p>
+                            <div class="game-meta">
+                                <span><i class="fas fa-clock"></i> 5-10 min</span>
+                                <span><i class="fas fa-brain"></i> Cognitive</span>
+                            </div>
+                            <button class="game-btn" onclick="openFullscreenGame('puzzle')">Play Now</button>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="game-content">
+                            <h3>Breathing Buddy</h3>
+                            <p>Interactive breathing exercises with visual guides to reduce anxiety and stress</p>
+                            <div class="game-meta">
+                                <span><i class="fas fa-clock"></i> 3-5 min</span>
+                                <span><i class="fas fa-heart"></i> Relaxation</span>
+                            </div>
+                            <button class="game-btn" onclick="openFullscreenGame('breathing_app')">Start
+                                Session</button>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="game-content">
+                            <h3>Emotion Compass</h3>
+                            <p>Interactive mood tracking game with personalized insights and tips</p>
+                            <div class="game-meta">
+                                <span><i class="fas fa-clock"></i> 2-3 min</span>
+                                <span><i class="fas fa-chart-line"></i> Tracking</span>
+                            </div>
+                            <button class="game-btn" onclick="openFullscreenGame('emotion_compass')">Track Mood</button>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="game-content">
+                            <h3>Wellness Fish</h3>
+                            <p>Emotional regulation through gameplay - collect positive emotions, avoid negative ones
+                            </p>
+                            <div class="game-meta">
+                                <span><i class="fas fa-clock"></i> 10-15 min</span>
+                                <span><i class="fas fa-fish"></i> Emotional</span>
+                            </div>
+                            <button class="game-btn" onclick="openFullscreenGame('snake')">Begin Journey</button>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="game-content">
+                            <h3>Balloon Pop</h3>
+                            <p>Quick stress-relief activities and mini-games for instant relaxation</p>
+                            <div class="game-meta">
+                                <span><i class="fas fa-clock"></i> 3-7 min</span>
+                                <span><i class="fas fa-leaf"></i> Relief</span>
+                            </div>
+                            <button class="game-btn" onclick="openFullscreenGame('balloon_pop')">Relax Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meditation Section -->
+        <div class="resource-content" id="meditation-content">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-lotus-position"></i>
+                    Meditation & Mindfulness Guides
+                </h2>
+                <p class="section-subtitle">Guided meditation sessions and mindfulness practices for inner peace</p>
+            </div>
+
+            <div class="meditation-categories">
+                <div class="meditation-category">
+                    <h3><i class="fas fa-seedling"></i> Beginner Meditation</h3>
+                    <div class="meditation-sessions">
+                        <div class="session-card">
+                            <div class="session-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="session-info">
+                                <h4>5-Minute Morning Meditation</h4>
+                                <p>Start your day with calm and focus</p>
+                                <span class="duration">5 min</span>
+                            </div>
+                            <button class="session-btn" onclick="playMeditation('morning-5')">Play</button>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="session-info">
+                                <h4>Body Scan Relaxation</h4>
+                                <p>Release tension throughout your body</p>
+                                <span class="duration">10 min</span>
+                            </div>
+                            <button class="session-btn" onclick="playMeditation('body-scan')">Play</button>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="session-info">
+                                <h4>Breathing Basics</h4>
+                                <p>Learn fundamental breathing techniques</p>
+                                <span class="duration">7 min</span>
+                            </div>
+                            <button class="session-btn" onclick="playMeditation('breathing-basics')">Play</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meditation-category">
+                    <h3><i class="fas fa-tree"></i> Advanced Practice</h3>
+                    <div class="meditation-sessions">
+                        <div class="session-card">
+                            <div class="session-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="session-info">
+                                <h4>Deep Mindfulness</h4>
+                                <p>Extended awareness practice</p>
+                                <span class="duration">20 min</span>
+                            </div>
+                            <button class="session-btn" onclick="playMeditation('deep-mindfulness')">Play</button>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="session-info">
+                                <h4>Loving-Kindness Meditation</h4>
+                                <p>Cultivate compassion and love</p>
+                                <span class="duration">15 min</span>
+                            </div>
+                            <button class="session-btn" onclick="playMeditation('loving-kindness')">Play</button>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="session-info">
+                                <h4>Chakra Balancing</h4>
+                                <p>Align your energy centers</p>
+                                <span class="duration">25 min</span>
+                            </div>
+                            <button class="session-btn" onclick="playMeditation('chakra-balance')">Play</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meditation-category">
+                    <h3><i class="fas fa-moon"></i> Sleep Meditations</h3>
+                    <div class="meditation-sessions">
+                        <div class="session-card">
+                            <div class="session-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="session-info">
+                                <h4>Bedtime Relaxation</h4>
+                                <p>Prepare your mind for sleep</p>
+                                <span class="duration">12 min</span>
+                            </div>
+                            <button class="session-btn" onclick="playMeditation('bedtime')">Play</button>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="session-info">
+                                <h4>Sleep Stories</h4>
+                                <p>Peaceful narratives for rest</p>
+                                <span class="duration">30 min</span>
+                            </div>
+                            <button class="session-btn" onclick="playMeditation('sleep-stories')">Play</button>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="session-info">
+                                <h4>Night Time Body Scan</h4>
+                                <p>Release the day's tension</p>
+                                <span class="duration">18 min</span>
+                            </div>
+                            <button class="session-btn" onclick="playMeditation('night-body-scan')">Play</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Journaling Section -->
+        <div class="resource-content" id="journaling-content">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-journal-whills"></i>
+                    Journaling Guides & Prompts
+                </h2>
+                <p class="section-subtitle">Structured journaling exercises to process emotions and track personal
+                    growth</p>
+            </div>
+
+            <div class="journaling-tools">
+                <div class="journal-categories">
+                    <div class="journal-category">
+                        <div class="category-header">
+                            <h3><i class="fas fa-heart"></i> Gratitude Journaling</h3>
+                            <p>Practice appreciation and positive thinking</p>
+                        </div>
+                        <div class="journal-prompts">
+                            <div class="prompt-card">
+                                <h4>Daily Gratitude</h4>
+                                <p>What are three things you're grateful for today?</p>
+                                <button class="prompt-btn" onclick="startJournaling('gratitude-daily')">Start
+                                    Writing</button>
+                            </div>
+                            <div class="prompt-card">
+                                <h4>Weekly Reflection</h4>
+                                <p>What positive moments stood out this week?</p>
+                                <button class="prompt-btn" onclick="startJournaling('gratitude-weekly')">Start
+                                    Writing</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="journal-category">
+                        <div class="category-header">
+                            <h3><i class="fas fa-brain"></i> Mental Health Check-in</h3>
+                            <p>Process emotions and mental state</p>
+                        </div>
+                        <div class="journal-prompts">
+                            <div class="prompt-card">
+                                <h4>Mood Tracker</h4>
+                                <p>How are you feeling right now and why?</p>
+                                <button class="prompt-btn" onclick="startJournaling('mood-tracker')">Start
+                                    Writing</button>
+                            </div>
+                            <div class="prompt-card">
+                                <h4>Anxiety Processing</h4>
+                                <p>What's causing you worry and how can you address it?</p>
+                                <button class="prompt-btn" onclick="startJournaling('anxiety-process')">Start
+                                    Writing</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="journal-category">
+                        <div class="category-header">
+                            <h3><i class="fas fa-target"></i> Goal Setting</h3>
+                            <p>Plan and track your personal development</p>
+                        </div>
+                        <div class="journal-prompts">
+                            <div class="prompt-card">
+                                <h4>Daily Intentions</h4>
+                                <p>What do you want to accomplish today?</p>
+                                <button class="prompt-btn" onclick="startJournaling('daily-goals')">Start
+                                    Writing</button>
+                            </div>
+                            <div class="prompt-card">
+                                <h4>Monthly Review</h4>
+                                <p>Reflect on your progress and set new goals</p>
+                                <button class="prompt-btn" onclick="startJournaling('monthly-review')">Start
+                                    Writing</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="journal-category">
+                        <div class="category-header">
+                            <h3><i class="fas fa-users"></i> Relationship Reflection</h3>
+                            <p>Explore your connections with others</p>
+                        </div>
+                        <div class="journal-prompts">
+                            <div class="prompt-card">
+                                <h4>Family Dynamics</h4>
+                                <p>How are your family relationships affecting you?</p>
+                                <button class="prompt-btn" onclick="startJournaling('family-reflect')">Start
+                                    Writing</button>
+                            </div>
+                            <div class="prompt-card">
+                                <h4>Friendship Growth</h4>
+                                <p>What do you value in your friendships?</p>
+                                <button class="prompt-btn" onclick="startJournaling('friendship-value')">Start
+                                    Writing</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Journal Templates -->
+                <div class="journal-templates">
+                    <h3><i class="fas fa-file-alt"></i> Downloadable Templates</h3>
+                    <div class="templates-grid">
+                        <div class="template-card">
+                            <div class="template-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4>Weekly Mental Health Planner</h4>
+                            <p>Structured template for weekly self-care planning</p>
+                            <button class="download-btn" onclick="downloadTemplate('weekly-planner')">Download
+                                PDF</button>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="template-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4>Emotion Processing Worksheet</h4>
+                            <p>Guide for working through difficult emotions</p>
+                            <button class="download-btn" onclick="downloadTemplate('emotion-worksheet')">Download
+                                PDF</button>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="template-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4>Goal Setting Framework</h4>
+                            <p>Comprehensive goal planning and tracking sheet</p>
+                            <button class="download-btn" onclick="downloadTemplate('goal-framework')">Download
+                                PDF</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add this section after the journal-templates div -->
+                <div class="saved-journal-entries">
+                    <h3><i class="fas fa-book-open"></i> My Journal Entries</h3>
+                    <div class="entries-container" id="savedEntriesContainer">
+                        <p class="no-entries-message" id="noEntriesMessage">No saved entries yet. Start journaling to
+                            see your entries here!</p>
+                        <div class="entries-list" id="entriesList"></div>
+                    </div>
+                    <div class="entries-actions">
+                        <button class="entries-btn" onclick="loadSavedEntries()">
+                            <i class="fas fa-refresh"></i> Refresh Entries
+                        </button>
+                        <button class="entries-btn" onclick="exportAllEntries()">
+                            <i class="fas fa-download"></i> Export All Entries
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Self Care/Hygiene Section -->
+        <div class="resource-content" id="hygiene-content">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-heart"></i>
+                    Self Care & Hygiene Guides
+                </h2>
+                <p class="section-subtitle">Comprehensive guides for physical and mental self-care practices</p>
+            </div>
+
+            <div class="self-care-categories">
+                <div class="care-category">
+                    <h3><i class="fas fa-body"></i> Physical Self Care</h3>
+                    <div class="care-items">
+                        <div class="care-card">
+                            <div class="care-icon">
+                                <i class="fas fa-shower"></i>
+                            </div>
+                            <div class="care-content">
+                                <h4>Personal Hygiene Routine</h4>
+                                <p>Essential daily hygiene practices for mental and physical wellbeing</p>
+                                <ul class="care-checklist">
+                                    <li><i class="fas fa-check"></i> Daily shower and oral care</li>
+                                    <li><i class="fas fa-check"></i> Regular grooming habits</li>
+                                    <li><i class="fas fa-check"></i> Clean clothing and environment</li>
+                                    <li><i class="fas fa-check"></i> Skincare routine</li>
+                                </ul>
+                                <button class="care-btn" onclick="viewGuide('hygiene-routine')">View Full Guide</button>
+                            </div>
+                        </div>
+
+                        <div class="care-card">
+                            <div class="care-icon">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <div class="care-content">
+                                <h4>Sleep Hygiene</h4>
+                                <p>Creating healthy sleep habits for better mental health</p>
+                                <ul class="care-checklist">
+                                    <li><i class="fas fa-check"></i> Consistent sleep schedule</li>
+                                    <li><i class="fas fa-check"></i> Comfortable sleep environment</li>
+                                    <li><i class="fas fa-check"></i> Pre-sleep routine</li>
+                                    <li><i class="fas fa-check"></i> Screen time limits</li>
+                                </ul>
+                                <button class="care-btn" onclick="viewGuide('sleep-hygiene')">View Full Guide</button>
+                            </div>
+                        </div>
+
+                        <div class="care-card">
+                            <div class="care-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="care-content">
+                                <h4>Nutrition & Hydration</h4>
+                                <p>Nourishing your body for optimal mental health</p>
+                                <ul class="care-checklist">
+                                    <li><i class="fas fa-check"></i> Balanced meal planning</li>
+                                    <li><i class="fas fa-check"></i> Regular eating schedule</li>
+                                    <li><i class="fas fa-check"></i> Adequate water intake</li>
+                                    <li><i class="fas fa-check"></i> Mindful eating practices</li>
+                                </ul>
+                                <button class="care-btn" onclick="viewGuide('nutrition-guide')">View Full Guide</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="care-category">
+                    <h3><i class="fas fa-brain"></i> Mental Self Care</h3>
+                    <div class="care-items">
+                        <div class="care-card">
+                            <div class="care-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="care-content">
+                                <h4>Emotional Boundaries</h4>
+                                <p>Protecting your mental space and energy</p>
+                                <ul class="care-checklist">
+                                    <li><i class="fas fa-check"></i> Learning to say no</li>
+                                    <li><i class="fas fa-check"></i> Setting healthy limits</li>
+                                    <li><i class="fas fa-check"></i> Recognizing energy drains</li>
+                                    <li><i class="fas fa-check"></i> Self-advocacy skills</li>
+                                </ul>
+                                <button class="care-btn" onclick="viewGuide('emotional-boundaries')">View Full
+                                    Guide</button>
+                            </div>
+                        </div>
+
+                        <div class="care-card">
+                            <div class="care-icon">
+                                <i class="fas fa-pause"></i>
+                            </div>
+                            <div class="care-content">
+                                <h4>Stress Management</h4>
+                                <p>Daily practices to manage and reduce stress</p>
+                                <ul class="care-checklist">
+                                    <li><i class="fas fa-check"></i> Breathing techniques</li>
+                                    <li><i class="fas fa-check"></i> Progressive muscle relaxation</li>
+                                    <li><i class="fas fa-check"></i> Time management skills</li>
+                                    <li><i class="fas fa-check"></i> Mindfulness practices</li>
+                                </ul>
+                                <button class="care-btn" onclick="viewGuide('stress-management')">View Full
+                                    Guide</button>
+                            </div>
+                        </div>
+
+                        <div class="care-card">
+                            <div class="care-icon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="care-content">
+                                <h4>Positive Self-Talk</h4>
+                                <p>Developing a kinder inner voice</p>
+                                <ul class="care-checklist">
+                                    <li><i class="fas fa-check"></i> Identifying negative patterns</li>
+                                    <li><i class="fas fa-check"></i> Reframing techniques</li>
+                                    <li><i class="fas fa-check"></i> Affirmation practices</li>
+                                    <li><i class="fas fa-check"></i> Self-compassion exercises</li>
+                                </ul>
+                                <button class="care-btn" onclick="viewGuide('positive-self-talk')">View Full
+                                    Guide</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="care-category">
+                    <h3><i class="fas fa-users"></i> Social Self Care</h3>
+                    <div class="care-items">
+                        <div class="care-card">
+                            <div class="care-icon">
+                                <i class="fas fa-heart-hands"></i>
+                            </div>
+                            <div class="care-content">
+                                <h4>Healthy Relationships</h4>
+                                <p>Building and maintaining supportive connections</p>
+                                <ul class="care-checklist">
+                                    <li><i class="fas fa-check"></i> Communication skills</li>
+                                    <li><i class="fas fa-check"></i> Conflict resolution</li>
+                                    <li><i class="fas fa-check"></i> Building trust</li>
+                                    <li><i class="fas fa-check"></i> Social boundaries</li>
+                                </ul>
+                                <button class="care-btn" onclick="viewGuide('healthy-relationships')">View Full
+                                    Guide</button>
+                            </div>
+                        </div>
+
+                        <div class="care-card">
+                            <div class="care-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="care-content">
+                                <h4>Environment Care</h4>
+                                <p>Creating supportive living and work spaces</p>
+                                <ul class="care-checklist">
+                                    <li><i class="fas fa-check"></i> Decluttering practices</li>
+                                    <li><i class="fas fa-check"></i> Organizing systems</li>
+                                    <li><i class="fas fa-check"></i> Creating calm spaces</li>
+                                    <li><i class="fas fa-check"></i> Natural elements</li>
+                                </ul>
+                                <button class="care-btn" onclick="viewGuide('environment-care')">View Full
+                                    Guide</button>
+                            </div>
+                        </div>
+
+                        <div class="care-card">
+                            <div class="care-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="care-content">
+                                <h4>Self-Care Scheduling</h4>
+                                <p>Making time for yourself consistently</p>
+                                <ul class="care-checklist">
+                                    <li><i class="fas fa-check"></i> Daily self-care rituals</li>
+                                    <li><i class="fas fa-check"></i> Weekly check-ins</li>
+                                    <li><i class="fas fa-check"></i> Monthly activities</li>
+                                    <li><i class="fas fa-check"></i> Emergency self-care plan</li>
+                                </ul>
+                                <button class="care-btn" onclick="viewGuide('selfcare-scheduling')">View Full
+                                    Guide</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Self Care Tracker -->
+            <div class="self-care-tracker">
+                <h3><i class="fas fa-chart-line"></i> Self Care Tracker</h3>
+                <p>Track your daily self-care activities and build healthy habits</p>
+                <div class="tracker-interface">
+                    <div class="tracker-categories">
+                        <div class="tracker-category">
+                            <h4>Physical Care</h4>
+                            <div class="activity-checkboxes">
+                                <label><input type="checkbox"> Exercise</label>
+                                <label><input type="checkbox"> Hygiene routine</label>
+                                <label><input type="checkbox"> Healthy eating</label>
+                                <label><input type="checkbox"> Adequate sleep</label>
+                            </div>
+                        </div>
+                        <div class="tracker-category">
+                            <h4>Mental Care</h4>
+                            <div class="activity-checkboxes">
+                                <label><input type="checkbox"> Meditation</label>
+                                <label><input type="checkbox"> Journaling</label>
+                                <label><input type="checkbox"> Reading</label>
+                                <label><input type="checkbox"> Relaxation</label>
+                            </div>
+                        </div>
+                        <div class="tracker-category">
+                            <h4>Social Care</h4>
+                            <div class="activity-checkboxes">
+                                <label><input type="checkbox"> Connect with friends</label>
+                                <label><input type="checkbox"> Family time</label>
+                                <label><input type="checkbox"> Community activity</label>
+                                <label><input type="checkbox"> Help someone</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="tracker-save-btn" onclick="saveTrackerData()">Save Today's Activities</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MentAura</span>
+                    </div>
+                    <p>Your trusted companion for mental wellness and personal growth.</p>
+                </div>
+
+                <div class="footer-support">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="help-center.html">Help Center</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Support</h3>
+                    <a href="mailto:support@mentaura.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        support@mentaura.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 MentAura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Game/Activity Modals -->
+    <div id="gameModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="gameTitle">Game Title</h2>
+                <button class="modal-close" onclick="closeGameModal()">&times;</button>
+            </div>
+            <div id="gameContent" class="modal-content">
+                <!-- Game content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Journaling Modal -->
+    <div id="journalModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="journalTitle">Journaling Prompt</h2>
+                <button class="modal-close" onclick="closeJournalModal()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div id="journalPrompt" class="journal-prompt-text"></div>
+                <textarea id="journalText" placeholder="Start writing your thoughts here..." rows="10"></textarea>
+                <div class="journal-actions">
+                    <button class="btn btn-primary" onclick="saveJournalEntry()">Save Entry</button>
+                    <button class="btn btn-secondary" onclick="closeJournalModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCc3U-JuAKv7og6rmbGPsrSZDUKEAWIVsA",
+            authDomain: "mentaura-psycho.firebaseapp.com",
+            projectId: "mentaura-psycho",
+            storageBucket: "mentaura-psycho.firebasestorage.app",
+            messagingSenderId: "494209814922",
+            appId: "1:494209814922:web:1e848bc224730a29d5f873",
+            measurementId: "G-GNCMBLJPHT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        window.firebaseAuth = firebase.auth();
+        window.firebaseDB = firebase.firestore();
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/resources.js?v=1.1"></script>
+    <script src="js/meditation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Session - MentAura</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation - Same as homepage -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Language Dropdown (Top Left) -->
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">हिंदी</a>
+                    <a href="#" data-lang="ta">Tamil</a>
+                    <a href="#" data-lang="te">Telugu</a>
+                    <a href="#" data-lang="kn">Kannada</a>
+                    <a href="#" data-lang="ml">Malayalam</a>
+                </div>
+            </div>
+
+
+            <!-- Centered Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" id="homeNav">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" id="servicesNav">Services</a></li>
+                <li><a href="chatbot.html" class="nav-link" id="aiChatNav">AI Chat</a></li>
+                <li><a href="#" class="nav-link active" id="bookSessionNav">Book Session</a></li>
+                <li><a href="resources.html" class="nav-link" id="resourcesNav">Resources</a></li>
+                <li><a href="admin.html" class="nav-link" id="adminNav">Admin Dashboard</a></li>
+                <li><a href="analytics.html" class="nav-link" id="analyticsNav">Analytics</a></li>
+                <li><a href="forum.html" class="nav-link" id="communityNav">Community</a></li>
+            </ul>
+
+            <!-- Auth Buttons -->
+            <div class="nav-auth-buttons">
+                <a href="mentaura-auth/signup.html" class="btn btn-signup" id="signupBtn">Signup</a>
+                <a href="mentaura-auth/index.html" class="btn btn-login" id="loginBtn">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Book Session Hero Section -->
+    <section class="book-session-hero-centered">
+        <div class="container">
+            <!-- Background Calendar Icon with Ripple Effect -->
+            <div class="calendar-background-centered">
+                <div class="book-session-icon-centered">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="pulse-ring-centered"></div>
+                    <div class="pulse-ring-centered-2"></div>
+                </div>
+            </div>
+
+            <!-- Hero Text Content -->
+            <div class="hero-text-overlay-centered">
+                <h1 class="book-session-title-centered">Book Session</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Session Services - NEW ORDER -->
+    <section class="session-services-section">
+        <div class="container">
+
+            <!-- Session Services Grid - UPDATED ORDER -->
+            <div class="session-services-grid-reordered">
+
+                <!-- FIRST ROW -->
+                <!-- Book New Session -->
+                <div class="service-box" id="bookSessionBox">
+                    <div class="service-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Book Session</h3>
+                        <p>Schedule a new counseling session with our professional therapists. Free and confidential
+                            support.</p>
+                        <button class="service-btn" onclick="openBookingModal()">
+                            <span>Book Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Session - UPDATED -->
+                <div class="service-box" id="liveSessionBox">
+                    <div class="service-icon">
+                        <i class="fas fa-video-camera"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Live Session</h3>
+                        <p>Join live sessions instantly with available counselors or enter your scheduled session at the
+                            right time.</p>
+                        <div class="live-session-options">
+                            <button class="service-btn" onclick="joinInstantSession()">
+                                <span>Join Instant Session</span>
+                                <i class="fas fa-bolt"></i>
+                            </button>
+                            <button class="service-btn secondary" onclick="joinScheduledSession()" id="scheduledBtn">
+                                <span>Join Scheduled Session</span>
+                                <i class="fas fa-clock"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Sessions -->
+                <div class="service-box" id="upcomingSessionsBox">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Upcoming Sessions</h3>
+                        <p>View all your booked sessions that are yet to be attended. Manage your schedule effectively.
+                        </p>
+                        <div class="upcoming-preview" id="upcomingPreview">
+                            <!-- Dynamic content will be loaded here -->
+                            <div class="no-upcoming">
+                                <p>No upcoming sessions</p>
+                                <button class="service-btn" onclick="openBookingModal()">
+                                    <span>Schedule Session</span>
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECOND ROW -->
+                <!-- Previous Sessions -->
+                <div class="service-box" id="previousSessionsBox">
+                    <div class="service-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Previous Sessions</h3>
+                        <p>View details of your past counseling sessions and track your mental health journey.</p>
+                        <div class="sessions-preview" id="sessionsPreview">
+                            <!-- Dynamic content will be loaded here -->
+                            <div class="no-sessions">
+                                <p>No previous sessions found</p>
+                                <button class="service-btn" onclick="openBookingModal()">
+                                    <span>Book Your First Session</span>
+                                    <i class="fas fa-calendar-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session Recordings -->
+                <div class="service-box" id="sessionRecordingsBox">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Session Recordings</h3>
+                        <p>Access recordings of your previous sessions for reference and reflection (with your consent).
+                        </p>
+                        <div class="recordings-preview" id="recordingsPreview">
+                            <!-- Dynamic content will be loaded here -->
+                            <div class="no-recordings">
+                                <p>No recorded sessions available</p>
+                                <button class="service-btn secondary" disabled>
+                                    <span>No Recordings</span>
+                                    <i class="fas fa-video-slash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Support -->
+                <div class="service-box emergency-box">
+                    <div class="service-icon emergency">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Crisis Support</h3>
+                        <p>If you're in immediate danger or having thoughts of self-harm, reach out for help
+                            immediately.</p>
+                        <div class="crisis-contacts">
+                            <button class="service-btn emergency" onclick="callEmergency('911')">
+                                <span>Emergency: 911</span>
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="service-btn emergency" onclick="callEmergency('988')">
+                                <span>Crisis Line: 988</span>
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="modal-overlay" onclick="closeBookingModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Your Session</h2>
+                <button class="modal-close" onclick="closeBookingModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Step Indicator -->
+                <div class="booking-steps">
+                    <div class="step active" id="step1">
+                        <div class="step-number">1</div>
+                        <span>Personal Info</span>
+                    </div>
+                    <div class="step" id="step2">
+                        <div class="step-number">2</div>
+                        <span>Select Counselor</span>
+                    </div>
+                    <div class="step" id="step3">
+                        <div class="step-number">3</div>
+                        <span>Schedule & Privacy</span>
+                    </div>
+                    <div class="step" id="step4">
+                        <div class="step-number">4</div>
+                        <span>Confirmation</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Personal Information -->
+                <div class="booking-step active" id="bookingStep1">
+                    <h3>Personal Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age *</label>
+                            <input type="number" id="age" min="13" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="concerns">Primary Concerns (Optional)</label>
+                            <textarea id="concerns"
+                                placeholder="Briefly describe what you'd like to discuss..."></textarea>
+                        </div>
+                    </div>
+                    <div class="step-navigation">
+                        <button class="btn secondary" disabled>Back</button>
+                        <button class="btn primary" onclick="nextStep(1)" disabled id="nextBtn1">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Select Counselor - 9 COUNSELORS -->
+                <div class="booking-step" id="bookingStep2">
+                    <h3>Select Your Counselor</h3>
+                    <div class="counselors-grid-extended">
+                        <div class="counselor-card" data-counselor="dr-sarah">
+                            <div class="counselor-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="counselor-info">
+                                <h4>Dr. Karthik Raja</h4>
+                                <p class="specialty">Anxiety & Depression Specialist</p>
+                                <div class="counselor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="counselor-experience">8+ years experience</p>
+                            </div>
+                        </div>
+                        <div class="counselor-card" data-counselor="dr-michael">
+                            <div class="counselor-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="counselor-info">
+                                <h4>Dr. Lakshmi Priya</h4>
+                                <p class="specialty">Relationship & Family Therapy</p>
+                                <div class="counselor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="counselor-experience">6+ years experience</p>
+                            </div>
+                        </div>
+                        <div class="counselor-card" data-counselor="dr-emma">
+                            <div class="counselor-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="counselor-info">
+                                <h4>Dr. Revathi</h4>
+                                <p class="specialty">Stress & Trauma Counselor</p>
+                                <div class="counselor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="counselor-experience">10+ years experience</p>
+                            </div>
+                        </div>
+                        <div class="counselor-card" data-counselor="dr-james">
+                            <div class="counselor-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="counselor-info">
+                                <h4>Dr. Senthil Kumar</h4>
+                                <p class="specialty">Addiction & Recovery Specialist</p>
+                                <div class="counselor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="counselor-experience">12+ years experience</p>
+                            </div>
+                        </div>
+                        <div class="counselor-card" data-counselor="dr-lisa">
+                            <div class="counselor-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="counselor-info">
+                                <h4>Dr. Aravind Swamy</h4>
+                                <p class="specialty">Child & Adolescent Psychology</p>
+                                <div class="counselor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="counselor-experience">9+ years experience</p>
+                            </div>
+                        </div>
+                        <div class="counselor-card" data-counselor="dr-david">
+                            <div class="counselor-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="counselor-info">
+                                <h4>Dr. Siva Kumar</h4>
+                                <p class="specialty">PTSD & Mental Health</p>
+                                <div class="counselor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="counselor-experience">15+ years experience</p>
+                            </div>
+                        </div>
+                        <div class="counselor-card" data-counselor="dr-maria">
+                            <div class="counselor-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="counselor-info">
+                                <h4>Dr. Ranjith</h4>
+                                <p class="specialty">Couples & Marriage Therapy</p>
+                                <div class="counselor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="counselor-experience">11+ years experience</p>
+                            </div>
+                        </div>
+                        <div class="counselor-card" data-counselor="dr-robert">
+                            <div class="counselor-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="counselor-info">
+                                <h4>Dr. Keerthana</h4>
+                                <p class="specialty">Behavioral Therapy Expert</p>
+                                <div class="counselor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="counselor-experience">7+ years experience</p>
+                            </div>
+                        </div>
+                        <div class="counselor-card" data-counselor="dr-priya">
+                            <div class="counselor-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="counselor-info">
+                                <h4>Dr. Priya Darshini</h4>
+                                <p class="specialty">Mindfulness & Wellness Coach</p>
+                                <div class="counselor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="counselor-experience">5+ years experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-navigation">
+                        <button class="btn secondary" onclick="prevStep(2)">Back</button>
+                        <button class="btn primary" onclick="nextStep(2)" disabled id="nextBtn2">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Schedule & Privacy -->
+                <div class="booking-step" id="bookingStep3">
+                    <h3>Schedule & Privacy Settings</h3>
+
+                    <!-- Date Selection -->
+                    <div class="form-group">
+                        <label for="sessionDate">Preferred Date *</label>
+                        <input type="date" id="sessionDate" required>
+                    </div>
+
+                    <!-- Time Slots -->
+                    <div class="form-group">
+                        <label>Available Time Slots *</label>
+                        <div class="time-slots" id="timeSlots">
+                            <button class="time-slot" data-time="09:00">9:00 AM</button>
+                            <button class="time-slot" data-time="10:00">10:00 AM</button>
+                            <button class="time-slot" data-time="11:00">11:00 AM</button>
+                            <button class="time-slot" data-time="14:00">2:00 PM</button>
+                            <button class="time-slot" data-time="15:00">3:00 PM</button>
+                            <button class="time-slot" data-time="16:00">4:00 PM</button>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Settings -->
+                    <div class="privacy-section">
+                        <h4>Privacy Settings</h4>
+                        <div class="privacy-option">
+                            <label class="privacy-label">
+                                <input type="radio" name="privacy" value="share" checked>
+                                <span class="privacy-text">
+                                    <strong>Share personal information with counselor</strong>
+                                    <small>Your name, age, and concerns will be shared to provide personalized
+                                        care</small>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="privacy-option">
+                            <label class="privacy-label">
+                                <input type="radio" name="privacy" value="anonymous">
+                                <span class="privacy-text">
+                                    <strong>Keep session anonymous</strong>
+                                    <small>No personal information will be shared. You'll be identified as "Anonymous
+                                        User"</small>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="privacy-note">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>All sessions are confidential and secure regardless of your choice</span>
+                        </div>
+                    </div>
+
+                    <div class="step-navigation">
+                        <button class="btn secondary" onclick="prevStep(3)">Back</button>
+                        <button class="btn primary" onclick="nextStep(3)" disabled id="nextBtn3">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Confirmation -->
+                <div class="booking-step" id="bookingStep4">
+                    <h3>Confirm Your Session</h3>
+                    <div class="booking-summary">
+                        <div class="summary-header">
+                            <i class="fas fa-calendar-check"></i>
+                            <h4>Session Summary</h4>
+                        </div>
+                        <div class="summary-details" id="summaryDetails">
+                            <!-- Dynamic content will be populated here -->
+                        </div>
+                    </div>
+                    <div class="confirmation-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p>You will receive a confirmation email with session details and join link. This is a free
+                            service.</p>
+                    </div>
+                    <div class="step-navigation">
+                        <button class="btn secondary" onclick="prevStep(4)">Back</button>
+                        <button class="btn primary" onclick="confirmBooking()" id="confirmBtn">
+                            <span>Confirm Booking</span>
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Session Booked Successfully!</h2>
+                <p>Your counseling session has been scheduled. You will receive a confirmation email shortly with all
+                    the details including the join link.</p>
+                <div class="success-actions">
+                    <button class="btn primary" onclick="closeSuccessModal()">Got it</button>
+                    <button class="btn secondary" onclick="bookAnother()">Book Another</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Session Modal - UPDATED LAYOUT -->
+    <div class="live-session-modal" id="liveSessionModal">
+        <div class="modal-overlay" onclick="closeLiveSessionModal()"></div>
+        <div class="modal-content live-session-content">
+            <div class="modal-header">
+                <h2>Live Session</h2>
+                <button class="modal-close" onclick="closeLiveSessionModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="video-conference-container">
+                    <!-- Main Video and Chat Container -->
+                    <div class="video-chat-layout">
+                        <!-- Video Area -->
+                        <div class="video-area">
+                            <div class="local-video">
+                                <div class="video-placeholder">
+                                    <i class="fas fa-user"></i>
+                                    <span>You</span>
+                                </div>
+                            </div>
+                            <div class="remote-video">
+                                <div class="video-placeholder">
+                                    <i class="fas fa-user-md"></i>
+                                    <span id="counselorName">Dr. Geetha</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Panel - RIGHT SIDE -->
+                        <div class="chat-panel" id="chatPanel">
+                            <div class="chat-header">
+                                <h4>Session Chat</h4>
+                                <button class="chat-close" onclick="toggleChat()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="chat-messages" id="sessionChatMessages">
+                                <div class="chat-message counselor">
+                                    <strong>Dr. Geetha:</strong> Hello! How are you feeling today?
+                                </div>
+                            </div>
+                            <div class="chat-input-area">
+                                <input type="text" id="chatInput" placeholder="Type your message...">
+                                <button onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Session Controls -->
+                    <div class="session-controls">
+                        <button class="control-btn" id="muteBtn" onclick="toggleMute()">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="control-btn" id="videoBtn" onclick="toggleVideo()">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="control-btn chat-toggle" onclick="toggleChat()">
+                            <i class="fas fa-comment"></i>
+                        </button>
+                        <button class="control-btn end-call" onclick="endSession()">
+                            <i class="fas fa-phone-slash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer - Same as homepage -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MentAura</span>
+                    </div>
+                    <p>Your trusted partner in mental health and wellness.</p>
+                </div>
+
+                <div class="footer-support">
+                    <h3>Support</h3>
+                    <div class="footer-links">
+                        <a href="help-center.html">Help Center</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <a href="mailto:support@mentaura.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        support@mentaura.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 MentAura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCc3U-JuAKv7og6rmbGPsrSZDUKEAWIVsA",
+            authDomain: "mentaura-psycho.firebaseapp.com",
+            projectId: "mentaura-psycho",
+            storageBucket: "mentaura-psycho.firebasestorage.app",
+            messagingSenderId: "494209814922",
+            appId: "1:494209814922:web:1e848bc224730a29d5f873",
+            measurementId: "G-GNCMBLJPHT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        window.firebaseAuth = firebase.auth();
+        window.firebaseDB = firebase.firestore();
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/language-switcher.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - MentAura</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation - Same as homepage -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Language Dropdown (Top Left) -->
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">हिंदी</a>
+                    <a href="#" data-lang="ta">Tamil</a>
+                    <a href="#" data-lang="te">Telugu</a>
+                    <a href="#" data-lang="kn">Kannada</a>
+                    <a href="#" data-lang="ml">Malayalam</a>
+                </div>
+            </div>
+
+
+            <!-- Centered Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link" id="aiChatNav">AI Chat</a></li>
+                <li><a href="#" class="nav-link" id="bookSessionNav">Book Session</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="forum.html" class="nav-link">Community</a></li>
+                <li><a href="admin.html" class="nav-link">Admin Dashboard</a></li>
+                <li><a href="analytics.html" class="nav-link" data-translate="nav_analytics">Analytics</a></li>
+
+            </ul>
+
+            <!-- Auth Buttons -->
+            <div class="nav-auth-buttons">
+                <a href="mentaura-auth/signup.html" class="btn btn-signup" id="signupBtn">Signup</a>
+                <a href="mentaura-auth/index.html" class="btn btn-login" id="loginBtn">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Terms of Service Hero Section - Compact -->
+    <section class="terms-hero-mini">
+        <div class="container">
+            <h1 class="terms-title-mini">Terms of Service</h1>
+            <p class="terms-subtitle-mini">Review our terms and conditions for using MentAura services.</p>
+            <p class="terms-date-mini">Last Updated: September 19, 2025</p>
+            <a href="index.html" class="back-home-btn-mini">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </section>
+
+    <!-- Terms of Service Content Section -->
+    <section class="terms-content-section">
+        <div class="container-updated">
+            <div class="terms-content-box">
+
+                <!-- Introduction -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-handshake"></i>
+                        Agreement to Terms
+                    </h2>
+                    <p>Welcome to MentAura. These Terms of Service ("Terms") constitute a legally binding agreement
+                        between you ("User" or "you") and MentAura ("we," "us," or "our") governing your use of our
+                        mental health platform, services, and applications.</p>
+                    <p>By accessing or using MentAura, you acknowledge that you have read, understood, and agree to be
+                        bound by these Terms. If you do not agree to these Terms, please do not use our services.</p>
+                </div>
+
+                <!-- Service Description -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-heart"></i>
+                        Our Services
+                    </h2>
+                    <div class="service-categories-fixed">
+                        <div class="service-category">
+                            <h3><i class="fas fa-user-md"></i> Professional Counseling</h3>
+                            <ul>
+                                <li>Licensed mental health professionals</li>
+                                <li>Individual and group therapy sessions</li>
+                                <li>Specialized treatment programs</li>
+                                <li>Crisis intervention services</li>
+                            </ul>
+                        </div>
+                        <div class="service-category">
+                            <h3><i class="fas fa-robot"></i> AI-Powered Support</h3>
+                            <ul>
+                                <li>24/7 automated mental health guidance</li>
+                                <li>Mood tracking and analysis</li>
+                                <li>Personalized wellness recommendations</li>
+                                <li>Educational content delivery</li>
+                            </ul>
+                        </div>
+                        <div class="service-category">
+                            <h3><i class="fas fa-users"></i> Community Features</h3>
+                            <ul>
+                                <li>Peer support forums</li>
+                                <li>Group discussions and activities</li>
+                                <li>Resource sharing platform</li>
+                                <li>Educational workshops</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Responsibilities -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-user-check"></i>
+                        User Responsibilities
+                    </h2>
+                    <div class="responsibility-grid-fixed">
+                        <div class="responsibility-item">
+                            <div class="responsibility-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>Accurate Information</h4>
+                            <p>Provide truthful, accurate, and complete information when creating your account and using
+                                our services</p>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="responsibility-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Account Security</h4>
+                            <p>Maintain the confidentiality of your login credentials and notify us immediately of any
+                                unauthorized access</p>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="responsibility-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Respectful Conduct</h4>
+                            <p>Treat all users, therapists, and staff with respect and refrain from harmful or
+                                inappropriate behavior</p>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="responsibility-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <h4>Legal Compliance</h4>
+                            <p>Use our services only for lawful purposes and in accordance with all applicable local,
+                                state, and federal laws</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prohibited Activities -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-ban"></i>
+                        Prohibited Activities
+                    </h2>
+                    <div class="prohibited-activities-fixed">
+                        <div class="prohibited-item">
+                            <h4><i class="fas fa-times-circle"></i> Misuse of Platform</h4>
+                            <p>Attempting to hack, disrupt, or compromise the security of our platform or other users'
+                                accounts.</p>
+                        </div>
+                        <div class="prohibited-item">
+                            <h4><i class="fas fa-user-times"></i> Impersonation</h4>
+                            <p>Impersonating mental health professionals, other users, or MentAura staff members.</p>
+                        </div>
+                        <div class="prohibited-item">
+                            <h4><i class="fas fa-comment-slash"></i> Inappropriate Content</h4>
+                            <p>Sharing offensive, discriminatory, or harmful content in forums or communications.</p>
+                        </div>
+                        <div class="prohibited-item">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Violation of Privacy</h4>
+                            <p>Sharing personal information of other users without their explicit consent.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment and Billing -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-credit-card"></i>
+                        Payment and Billing
+                    </h2>
+                    <div class="billing-policies-fixed">
+                        <div class="billing-item">
+                            <div class="billing-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h4>Service Fees</h4>
+                            <p>Professional counseling sessions and premium features require payment as specified in our
+                                pricing plans</p>
+                        </div>
+                        <div class="billing-item">
+                            <div class="billing-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h4>Subscription Terms</h4>
+                            <p>Subscriptions automatically renew unless cancelled at least 24 hours before the renewal
+                                date</p>
+                        </div>
+                        <div class="billing-item">
+                            <div class="billing-icon">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <h4>Refund Policy</h4>
+                            <p>Refunds are available within 30 days of purchase for unused sessions, subject to our
+                                refund policy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cancellation and Termination -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-times"></i>
+                        Cancellation and Termination
+                    </h2>
+                    <div class="termination-info">
+                        <div class="termination-section">
+                            <h4><i class="fas fa-user"></i> User Termination</h4>
+                            <p>You may terminate your account at any time through your account settings or by contacting
+                                our support team. Upon termination, you will lose access to all premium features and
+                                scheduled sessions.</p>
+                        </div>
+                        <div class="termination-section">
+                            <h4><i class="fas fa-building"></i> Our Termination Rights</h4>
+                            <p>We reserve the right to suspend or terminate your account if you violate these Terms,
+                                engage in prohibited activities, or fail to pay for services. We will provide reasonable
+                                notice when possible.</p>
+                        </div>
+                        <div class="termination-section">
+                            <h4><i class="fas fa-database"></i> Data Retention</h4>
+                            <p>After account termination, we may retain certain information as required by law or for
+                                legitimate business purposes, as outlined in our Privacy Policy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Limitation of Liability -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-balance-scale"></i>
+                        Limitation of Liability
+                    </h2>
+                    <div class="liability-disclaimer">
+                        <div class="disclaimer-box important">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h4>
+                            <p>MentAura provides a platform for mental health support but is not responsible for the
+                                outcomes of therapy sessions or the advice provided by licensed professionals on our
+                                platform.</p>
+                        </div>
+                        <div class="liability-limits">
+                            <div class="liability-item">
+                                <h4>Service Availability</h4>
+                                <p>We strive for 99.9% uptime but cannot guarantee uninterrupted service availability
+                                </p>
+                            </div>
+                            <div class="liability-item">
+                                <h4>Professional Advice</h4>
+                                <p>Licensed therapists on our platform are independent contractors responsible for their
+                                    own professional conduct</p>
+                            </div>
+                            <div class="liability-item">
+                                <h4>Emergency Situations</h4>
+                                <p>MentAura is not an emergency service; users should contact emergency services for
+                                    immediate crisis intervention</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intellectual Property -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-copyright"></i>
+                        Intellectual Property
+                    </h2>
+                    <p>All content, features, and functionality on MentAura, including but not limited to text,
+                        graphics, logos, software, and design, are owned by MentAura and protected by copyright,
+                        trademark, and other intellectual property laws.</p>
+                    <div class="ip-guidelines-fixed">
+                        <div class="ip-item">
+                            <h4>Your Content Rights</h4>
+                            <p>You retain ownership of content you create, but grant us a license to use it for service
+                                provision</p>
+                        </div>
+                        <div class="ip-item">
+                            <h4>Our Platform Rights</h4>
+                            <p>MentAura trademark, logo, and platform design remain our exclusive intellectual property
+                            </p>
+                        </div>
+                        <div class="ip-item">
+                            <h4>Usage Restrictions</h4>
+                            <p>You may not reproduce, distribute, or create derivative works from our platform without
+                                permission</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dispute Resolution -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-handshake"></i>
+                        Dispute Resolution
+                    </h2>
+                    <p>We encourage users to contact us first to resolve any disputes informally. If informal resolution
+                        is not possible, disputes will be resolved through binding arbitration in accordance with
+                        applicable laws.</p>
+                    <div class="dispute-process">
+                        <div class="dispute-step">
+                            <div class="step-number">1</div>
+                            <h4>Contact Support</h4>
+                            <p>Reach out to our customer support team to discuss the issue</p>
+                        </div>
+                        <div class="dispute-step">
+                            <div class="step-number">2</div>
+                            <h4>Formal Complaint</h4>
+                            <p>Submit a formal written complaint if the issue remains unresolved</p>
+                        </div>
+                        <div class="dispute-step">
+                            <div class="step-number">3</div>
+                            <h4>Arbitration Process</h4>
+                            <p>Participate in binding arbitration as a final resolution method</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Changes to Terms -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-sync-alt"></i>
+                        Changes to Terms
+                    </h2>
+                    <p>We may update these Terms periodically to reflect changes in our services, legal requirements, or
+                        business practices. We will notify users of significant changes through email or platform
+                        notifications.</p>
+                    <div class="changes-policy">
+                        <div class="change-notification">
+                            <h4><i class="fas fa-bell"></i> Notification Process</h4>
+                            <p>You will receive advance notice of material changes via email and in-app notifications
+                            </p>
+                        </div>
+                        <div class="change-acceptance">
+                            <h4><i class="fas fa-check"></i> Acceptance of Changes</h4>
+                            <p>Continued use of our services after changes become effective constitutes acceptance of
+                                the new terms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="terms-section">
+                    <h2 class="terms-section-title">
+                        <i class="fas fa-envelope-open-text"></i>
+                        Contact Information
+                    </h2>
+                    <p>If you have questions about these Terms of Service or need assistance with our services, please
+                        contact us using the information below:</p>
+                    <div class="contact-info">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <strong>Legal Inquiries:</strong> legal@mentaura.com
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-headset"></i>
+                            <strong>Customer Support:</strong> <a href="contact.html">Contact Form</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-question-circle"></i>
+                            <strong>Help Center:</strong> <a href="help-center.html">Visit Help Center</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-shield-alt"></i>
+                            <strong>Privacy Questions:</strong> <a href="privacy-policy.html">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Same as homepage -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MentAura</span>
+                    </div>
+                    <p>Your trusted partner in mental health and wellness.</p>
+                </div>
+
+                <div class="footer-support">
+                    <h3>Support</h3>
+                    <div class="footer-links">
+                        <a href="help-center.html">Help Center</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <a href="mailto:support@mentaura.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        support@mentaura.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 MentAura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal (Same as homepage) -->
+    <div id="loginModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Login</h2>
+                <button id="loginCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="modal-submit-btn">Login</button>
+            </form>
+            <p class="modal-footer-text">
+                Don't have an account? <a href="#" id="switchToSignup">Create one</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal (Same as homepage) -->
+    <div id="signupModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+                <button id="signupCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" name="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" name="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" required>
+                </div>
+                <button type="submit" class="modal-submit-btn">Sign Up</button>
+            </form>
+            <p class="modal-footer-text">
+                Already have an account? <a href="#" id="switchToLogin">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script src="js/terms-of-service.js"></script>
+    <script src="js/language-switcher.js"></script>
+
+</body>
+
+</html>

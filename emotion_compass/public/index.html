@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotion Compass - Enhanced</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(45deg, #a3aee1 0%, #ba87ee 50%, #e486ee 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: titlePulse 3s ease-in-out infinite;
+    }
+
+    @keyframes titlePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .compass {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.4);
+      margin: 0 auto 30px;
+      position: relative;
+      animation: compassFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes compassFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+
+    .emotion {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .emotion::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .emotion:hover {
+      transform: scale(1.1);
+      z-index: 10;
+      box-shadow: 0 0 25px rgba(255,255,255,0.5);
+    }
+
+    .emotion:hover::before {
+      left: 100%;
+    }
+
+    .emotion.clicked {
+      animation: emotionClick 0.6s ease;
+    }
+
+    @keyframes emotionClick {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2) rotate(5deg); }
+      100% { transform: scale(1); }
+    }
+
+    .happy { 
+      background: linear-gradient(135deg, #ffd727, #d57119);
+      border-top-left-radius: 50%;
+    }
+    .sad { 
+      background: linear-gradient(135deg, #34a4ff, #076ed4);
+      border-top-right-radius: 50%;
+    }
+    .angry { 
+      background: linear-gradient(135deg, #f23936, #c71414);
+      border-bottom-left-radius: 50%;
+    }
+    .calm { 
+      background: linear-gradient(135deg, #37c93e, #05810b);
+      border-bottom-right-radius: 50%;
+    }
+
+    #suggestionBox {
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 100%;
+      min-height: 120px;
+      font-size: 1.2em;
+      color: #333;
+      opacity: 0.7;
+      transition: all 0.5s ease;
+    }
+
+    #suggestionBox.active {
+      opacity: 1;
+      transform: scale(1.02);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover::before {
+      width: 200px;
+      height: 200px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .btn-reset {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    }
+
+    .btn-sound {
+      background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    }
+
+    .btn-random {
+      background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+    }
+
+    .btn-mood {
+      background: linear-gradient(135deg, #ffd93d, #ff9a56);
+    }
+
+    .sound-indicator {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5em;
+      z-index: 1000;
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      animation: float 6s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .mood-tracker {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    .mood-history {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .mood-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid white;
+      animation: moodPulse 2s infinite;
+    }
+
+    @keyframes moodPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @media (max-width: 480px) {
+      .compass {
+        width: 280px;
+        height: 280px;
+      }
+      
+      h1 {
+        font-size: 2em;
+      }
+      
+      .controls {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles" id="particles"></div>
+  
+  <div class="sound-indicator" id="soundIndicator">🔊</div>
+  
+  <div class="container">
+    <h1>🌈 Emotion Compass</h1>
+    
+    <div class="compass" id="compass">
+      <div class="emotion happy" onclick="selectEmotion('happy')">
+        😊<br>Happy
+      </div>
+      <div class="emotion sad" onclick="selectEmotion('sad')">
+        😢<br>Sad
+      </div>
+      <div class="emotion angry" onclick="selectEmotion('angry')">
+        😡<br>Angry
+      </div>
+      <div class="emotion calm" onclick="selectEmotion('calm')">
+        😌<br>Calm
+      </div>
+    </div>
+    
+    <div id="suggestionBox">
+      Select an emotion to discover personalized suggestions...
+    </div>
+    
+    <div class="controls">
+      <button class="btn btn-reset" onclick="resetCompass()">
+        🔄 Reset
+      </button>
+      <button class="btn btn-sound" onclick="toggleSound()" id="soundBtn">
+        🎵 Sound: ON
+      </button>
+      <button class="btn btn-random" onclick="randomEmotion()">
+        🎲 Random
+      </button>
+      <button class="btn btn-mood" onclick="toggleMoodTracker()">
+        📊 Track Mood
+      </button>
+    </div>
+    
+    <div class="mood-tracker" id="moodTracker" style="display: none;">
+      <h3 style="color: white; margin-bottom: 10px;">Your Recent Moods</h3>
+      <div class="mood-history" id="moodHistory"></div>
+    </div>
+  </div>
+
+  <script>
+    let soundEnabled = true;
+    let selectedEmotion = null;
+    let moodHistory = [];
+    
+    const suggestions = {
+      happy: [
+        "Share your joy with someone special! 💛",
+        "Dance to your favorite upbeat song! 🎶",
+        "Write down this positive moment in a journal ✨",
+        "Treat yourself to something nice! 🎉",
+        "Spread your happiness by helping others! 🌟"
+      ],
+      sad: [
+        "Listen to some calming music 🎧",
+        "Write about your feelings in a journal 📖",
+        "Talk to someone you trust 💬",
+        "Take a warm, relaxing bath 🛁",
+        "Watch a comforting movie or show 📺"
+      ],
+      angry: [
+        "Take 10 deep breaths slowly 🌬️",
+        "Go for a brisk walk outside 🚶",
+        "Try some physical exercise 💪",
+        "Count to 100 before reacting 🔢",
+        "Write down what's bothering you ✍️"
+      ],
+      calm: [
+        "Enjoy this peaceful moment 🌿",
+        "Practice some mindfulness meditation 🧘",
+        "Read a favorite book 📚",
+        "Appreciate nature around you 🌸",
+        "Do some gentle stretching 🤸"
+      ]
+    };
+
+    const emotionSounds = {
+      happy: () => playTone([523, 659, 784], 0.5),
+      sad: () => playTone([294, 349, 415], 0.7),
+      angry: () => playTone([220, 277, 330], 0.4),
+      calm: () => playTone([440, 554, 660], 0.8)
+    };
+
+    // Create floating particles
+    function createParticles() {
+      const particles = document.getElementById('particles');
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        particles.appendChild(particle);
+      }
+    }
+
+    // Play tone using Web Audio API
+    function playTone(frequencies, duration) {
+      if (!soundEnabled) return;
+      
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      frequencies.forEach((freq, index) => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.value = freq;
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.01);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + duration);
+        
+        oscillator.start(audioContext.currentTime + index * 0.1);
+        oscillator.stop(audioContext.currentTime + duration + index * 0.1);
+      });
+    }
+
+    function selectEmotion(emotion) {
+      selectedEmotion = emotion;
+      
+      // Add click animation
+      const emotionElement = event.target;
+      emotionElement.classList.add('clicked');
+      setTimeout(() => emotionElement.classList.remove('clicked'), 600);
+      
+      // Play sound
+      if (emotionSounds[emotion]) {
+        emotionSounds[emotion]();
+      }
+      
+      // Show suggestion
+      const suggestionBox = document.getElementById('suggestionBox');
+      const randomIndex = Math.floor(Math.random() * suggestions[emotion].length);
+      suggestionBox.textContent = suggestions[emotion][randomIndex];
+      suggestionBox.classList.add('active');
+      
+      // Add to mood history
+      addToMoodHistory(emotion);
+      
+      // Create burst effect
+      createBurstEffect(emotionElement);
+    }
+
+    function createBurstEffect(element) {
+      const rect = element.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      for (let i = 0; i < 10; i++) {
+        const burst = document.createElement('div');
+        burst.style.position = 'fixed';
+        burst.style.left = centerX + 'px';
+        burst.style.top = centerY + 'px';
+        burst.style.width = '8px';
+        burst.style.height = '8px';
+        burst.style.background = '#fff';
+        burst.style.borderRadius = '50%';
+        burst.style.pointerEvents = 'none';
+        burst.style.zIndex = '1000';
+        
+        const angle = (i / 10) * 2 * Math.PI;
+        const distance = 100;
+        const endX = centerX + Math.cos(angle) * distance;
+        const endY = centerY + Math.sin(angle) * distance;
+        
+        burst.animate([
+          { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+          { transform: `translate(${endX - centerX}px, ${endY - centerY}px) scale(0)`, opacity: 0 }
+        ], {
+          duration: 800,
+          easing: 'ease-out'
+        }).onfinish = () => burst.remove();
+        
+        document.body.appendChild(burst);
+      }
+    }
+
+    function resetCompass() {
+      selectedEmotion = null;
+      const suggestionBox = document.getElementById('suggestionBox');
+      suggestionBox.textContent = "Select an emotion to discover personalized suggestions...";
+      suggestionBox.classList.remove('active');
+      
+      if (soundEnabled) {
+        playTone([800, 600, 400], 0.3);
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const indicator = document.getElementById('soundIndicator');
+      const btn = document.getElementById('soundBtn');
+      
+      if (soundEnabled) {
+        indicator.textContent = '🔊';
+        btn.textContent = '🎵 Sound: ON';
+        playTone([440, 554], 0.3);
+      } else {
+        indicator.textContent = '🔇';
+        btn.textContent = '🔇 Sound: OFF';
+      }
+    }
+
+    function randomEmotion() {
+      const emotions = ['happy', 'sad', 'angry', 'calm'];
+      const randomEmotion = emotions[Math.floor(Math.random() * emotions.length)];
+      
+      // Simulate click on random emotion
+      const compass = document.getElementById('compass');
+      const emotionElements = compass.querySelectorAll('.emotion');
+      const targetElement = Array.from(emotionElements).find(el => 
+        el.textContent.toLowerCase().includes(randomEmotion)
+      );
+      
+      if (targetElement) {
+        // Create event object for the function
+        const fakeEvent = { target: targetElement };
+        window.event = fakeEvent;
+        selectEmotion(randomEmotion);
+      }
+    }
+
+    function addToMoodHistory(emotion) {
+      moodHistory.push({
+        emotion: emotion,
+        timestamp: new Date()
+      });
+      
+      // Keep only last 7 entries
+      if (moodHistory.length > 7) {
+        moodHistory.shift();
+      }
+      
+      updateMoodDisplay();
+    }
+
+    function updateMoodDisplay() {
+      const moodHistoryElement = document.getElementById('moodHistory');
+      moodHistoryElement.innerHTML = '';
+      
+      const colors = {
+        happy: '#fdd835',
+        sad: '#42a5f5',
+        angry: '#ef5350',
+        calm: '#66bb6a'
+      };
+      
+      moodHistory.forEach(mood => {
+        const dot = document.createElement('div');
+        dot.className = 'mood-dot';
+        dot.style.backgroundColor = colors[mood.emotion];
+        dot.title = `${mood.emotion} - ${mood.timestamp.toLocaleDateString()}`;
+        moodHistoryElement.appendChild(dot);
+      });
+    }
+
+    function toggleMoodTracker() {
+      const tracker = document.getElementById('moodTracker');
+      const isVisible = tracker.style.display !== 'none';
+      tracker.style.display = isVisible ? 'none' : 'block';
+      
+      if (soundEnabled) {
+        playTone([523, 659], 0.2);
+      }
+    }
+
+    // Initialize
+    createParticles();
+    
+    // Add keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      switch(e.key) {
+        case '1': selectEmotion('happy'); break;
+        case '2': selectEmotion('sad'); break;
+        case '3': selectEmotion('angry'); break;
+        case '4': selectEmotion('calm'); break;
+        case 'r': resetCompass(); break;
+        case 's': toggleSound(); break;
+        case ' ': e.preventDefault(); randomEmotion(); break;
+      }
+    });
+    
+    // Add touch feedback for mobile
+    document.querySelectorAll('.emotion').forEach(element => {
+      element.addEventListener('touchstart', () => {
+        element.style.transform = 'scale(1.05)';
+      });
+      element.addEventListener('touchend', () => {
+        element.style.transform = '';
+      });
+    });
+
+  </script>
+</body>
+</html>

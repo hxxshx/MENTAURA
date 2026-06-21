@@ -1,0 +1,53 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="forumGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#forumGradient)"/>
+  
+  <!-- Forum posts representation -->
+  <g transform="translate(50, 50)">
+    <!-- Post 1 -->
+    <rect x="0" y="0" width="300" height="60" fill="#ffffff" opacity="0.9" rx="8"/>
+    <circle cx="20" cy="30" r="15" fill="#6366f1" opacity="0.3"/>
+    <text x="45" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">Community Discussion</text>
+    <text x="45" y="40" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Share your thoughts and experiences...</text>
+    <text x="45" y="55" font-family="Arial, sans-serif" font-size="10" fill="#9ca3af">2 hours ago • 12 replies</text>
+    
+    <!-- Post 2 -->
+    <rect x="0" y="80" width="300" height="60" fill="#ffffff" opacity="0.9" rx="8"/>
+    <circle cx="20" cy="110" r="15" fill="#10b981" opacity="0.3"/>
+    <text x="45" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">Success Story</text>
+    <text x="45" y="120" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">One year of therapy - my journey...</text>
+    <text x="45" y="135" font-family="Arial, sans-serif" font-size="10" fill="#9ca3af">1 day ago • 23 replies</text>
+    
+    <!-- Post 3 -->
+    <rect x="0" y="160" width="300" height="60" fill="#ffffff" opacity="0.9" rx="8"/>
+    <circle cx="20" cy="190" r="15" fill="#f59e0b" opacity="0.3"/>
+    <text x="45" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">Support Request</text>
+    <text x="45" y="200" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Feeling overwhelmed with work stress...</text>
+    <text x="45" y="215" font-family="Arial, sans-serif" font-size="10" fill="#9ca3af">3 hours ago • 8 replies</text>
+  </g>
+  
+  <!-- Community elements -->
+  <g transform="translate(320, 50)">
+    <!-- Online indicator -->
+    <circle cx="0" cy="0" r="8" fill="#10b981"/>
+    <text x="15" y="5" font-family="Arial, sans-serif" font-size="12" fill="#1f2937">Online</text>
+    
+    <!-- Members -->
+    <circle cx="0" cy="25" r="8" fill="#6366f1"/>
+    <text x="15" y="30" font-family="Arial, sans-serif" font-size="12" fill="#1f2937">Members</text>
+    
+    <!-- Posts -->
+    <circle cx="0" cy="50" r="8" fill="#f59e0b"/>
+    <text x="15" y="55" font-family="Arial, sans-serif" font-size="12" fill="#1f2937">Posts</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937">Community Forum</text>
+</svg>

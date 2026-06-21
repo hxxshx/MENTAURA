@@ -1,0 +1,160 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wheelGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wheelGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wheelGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wheelGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wheelGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wheelGradient6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wheelGradient7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wheelGradient8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#65a30d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="300" cy="300" r="280" fill="#f8fafc" stroke="#e5e7eb" stroke-width="2"/>
+  
+  <!-- Center circle -->
+  <circle cx="300" cy="300" r="60" fill="#ffffff" stroke="#6366f1" stroke-width="3"/>
+  <text x="300" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#6366f1">Wellness</text>
+  <text x="300" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Wheel</text>
+  
+  <!-- Wellness segments -->
+  <!-- Physical Health -->
+  <path d="M300 20 A280 280 0 0 1 520 300 L300 300 Z" fill="url(#wheelGradient1)"/>
+  <text x="410" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" transform="rotate(45 410 160)">Physical</text>
+  <text x="410" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" transform="rotate(45 410 180)">Health</text>
+  
+  <!-- Emotional Health -->
+  <path d="M520 300 A280 280 0 0 1 300 580 L300 300 Z" fill="url(#wheelGradient2)"/>
+  <text x="410" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" transform="rotate(135 410 440)">Emotional</text>
+  <text x="410" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" transform="rotate(135 410 460)">Health</text>
+  
+  <!-- Mental Health -->
+  <path d="M300 580 A280 280 0 0 1 80 300 L300 300 Z" fill="url(#wheelGradient3)"/>
+  <text x="190" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" transform="rotate(225 190 440)">Mental</text>
+  <text x="190" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" transform="rotate(225 190 460)">Health</text>
+  
+  <!-- Spiritual Health -->
+  <path d="M80 300 A280 280 0 0 1 300 20 L300 300 Z" fill="url(#wheelGradient4)"/>
+  <text x="190" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" transform="rotate(315 190 160)">Spiritual</text>
+  <text x="190" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" transform="rotate(315 190 180)">Health</text>
+  
+  <!-- Social Health -->
+  <path d="M300 20 A280 280 0 0 1 520 300 L300 300 Z" fill="url(#wheelGradient5)" opacity="0.7"/>
+  <text x="410" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" transform="rotate(45 410 160)">Social</text>
+  <text x="410" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" transform="rotate(45 410 180)">Health</text>
+  
+  <!-- Intellectual Health -->
+  <path d="M520 300 A280 280 0 0 1 300 580 L300 300 Z" fill="url(#wheelGradient6)" opacity="0.7"/>
+  <text x="410" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" transform="rotate(135 410 440)">Intellectual</text>
+  <text x="410" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" transform="rotate(135 410 460)">Health</text>
+  
+  <!-- Environmental Health -->
+  <path d="M300 580 A280 280 0 0 1 80 300 L300 300 Z" fill="url(#wheelGradient7)" opacity="0.7"/>
+  <text x="190" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" transform="rotate(225 190 440)">Environmental</text>
+  <text x="190" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" transform="rotate(225 190 460)">Health</text>
+  
+  <!-- Occupational Health -->
+  <path d="M80 300 A280 280 0 0 1 300 20 L300 300 Z" fill="url(#wheelGradient8)" opacity="0.7"/>
+  <text x="190" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" transform="rotate(315 190 160)">Occupational</text>
+  <text x="190" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" transform="rotate(315 190 180)">Health</text>
+  
+  <!-- Icons for each segment -->
+  <!-- Physical Health Icon -->
+  <g transform="translate(410, 160)">
+    <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.9"/>
+    <path d="M-10 -5 L10 -5 L10 5 L-10 5 Z" fill="#6366f1"/>
+    <circle cx="-5" cy="0" r="2" fill="#ffffff"/>
+    <circle cx="5" cy="0" r="2" fill="#ffffff"/>
+  </g>
+  
+  <!-- Emotional Health Icon -->
+  <g transform="translate(410, 440)">
+    <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.9"/>
+    <path d="M0 -10 C-5 -5, -5 5, 0 10 C5 5, 5 -5, 0 -10 Z" fill="#10b981"/>
+  </g>
+  
+  <!-- Mental Health Icon -->
+  <g transform="translate(190, 440)">
+    <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.9"/>
+    <path d="M-8 -8 L8 -8 L8 8 L-8 8 Z" fill="#f59e0b"/>
+    <circle cx="-3" cy="-3" r="1" fill="#ffffff"/>
+    <circle cx="3" cy="-3" r="1" fill="#ffffff"/>
+    <path d="M-5 3 Q0 6 5 3" stroke="#ffffff" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Spiritual Health Icon -->
+  <g transform="translate(190, 160)">
+    <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.9"/>
+    <path d="M0 -10 L5 5 L-5 5 Z" fill="#ef4444"/>
+    <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+  </g>
+  
+  <!-- Social Health Icon -->
+  <g transform="translate(410, 160)">
+    <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.9"/>
+    <circle cx="-8" cy="0" r="5" fill="#06b6d4"/>
+    <circle cx="8" cy="0" r="5" fill="#06b6d4"/>
+    <path d="M-3 0 L3 0" stroke="#06b6d4" stroke-width="2"/>
+  </g>
+  
+  <!-- Intellectual Health Icon -->
+  <g transform="translate(410, 440)">
+    <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.9"/>
+    <path d="M-8 -8 L8 -8 L8 8 L-8 8 Z" fill="#8b5cf6"/>
+    <path d="M-5 -5 L5 -5 L5 5 L-5 5 Z" fill="#ffffff"/>
+  </g>
+  
+  <!-- Environmental Health Icon -->
+  <g transform="translate(190, 440)">
+    <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.9"/>
+    <path d="M0 -10 L5 5 L-5 5 Z" fill="#ec4899"/>
+    <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+  </g>
+  
+  <!-- Occupational Health Icon -->
+  <g transform="translate(190, 160)">
+    <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.9"/>
+    <rect x="-8" y="-5" width="16" height="10" fill="#84cc16"/>
+    <rect x="-6" y="-3" width="12" height="6" fill="#ffffff"/>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 50)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1f2937">Wellness Wheel</text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">A holistic approach to mental health and well-being</text>
+  </g>
+  
+  <!-- Key -->
+  <g transform="translate(50, 500)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">Key Areas:</text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">• Physical: Exercise, nutrition, sleep</text>
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">• Emotional: Self-awareness, expression</text>
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">• Mental: Learning, problem-solving</text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">• Spiritual: Purpose, values, meaning</text>
+  </g>
+</svg>

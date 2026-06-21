@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Support - MentAura</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Navigation - Same as homepage -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Language Dropdown (Top Left) -->
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">हिंदी</a>
+                    <a href="#" data-lang="ta">Tamil</a>
+                    <a href="#" data-lang="te">Telugu</a>
+                    <a href="#" data-lang="kn">Kannada</a>
+                    <a href="#" data-lang="ml">Malayalam</a>
+                </div>
+            </div>
+
+            <!-- Centered Navigation Menu -->
+            <!-- Centered Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" id="homeNav">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" id="servicesNav">Services</a></li>
+                <li><a href="#" class="nav-link active" id="aiChatNav">AI Chat</a></li>
+                <li><a href="booking.html" class="nav-link" id="bookSessionNav">Book Session</a></li>
+                <li><a href="resources.html" class="nav-link" id="resourcesNav">Resources</a></li>
+                <li><a href="admin.html" class="nav-link" id="adminNav">Admin Dashboard</a></li>
+                <li><a href="analytics.html" class="nav-link" id="analyticsNav">Analytics</a></li>
+                <li><a href="forum.html" class="nav-link" id="communityNav">Community</a></li>
+            </ul>
+
+            <!-- Auth Buttons -->
+            <div class="nav-auth-buttons">
+                <a href="mentaura-auth/signup.html" class="btn btn-signup" id="signupBtn">Signup</a>
+                <a href="mentaura-auth/index.html" class="btn btn-login" id="loginBtn">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- AI Chat Hero Section - Reduced & Centered -->
+    <section class="ai-chat-hero-centered">
+        <div class="container">
+            <!-- Background Robot Icon with Ripple Effect -->
+            <div class="robot-background-centered">
+                <div class="ai-chat-icon-centered">
+                    <i class="fas fa-robot"></i>
+                    <div class="pulse-ring-centered"></div>
+                    <div class="pulse-ring-centered-2"></div>
+                </div>
+            </div>
+
+            <!-- Hero Text Content - Only Title -->
+            <div class="hero-text-overlay-centered">
+                <h1 class="ai-chat-title-centered">AI Mental Health Assistant</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Chat Interface - Same as before -->
+    <section class="main-chat-section-fitted">
+        <div class="container">
+            <div class="chat-interface-fitted-width">
+
+                <!-- Chat Interface -->
+                <div class="chat-main-interface-fitted">
+
+                    <!-- Chat Header -->
+                    <div class="chat-header">
+                        <div class="ai-assistant-info">
+                            <div class="assistant-avatar">
+                                <i class="fas fa-robot"></i>
+                                <div class="status-indicator online"></div>
+                            </div>
+                            <div class="assistant-details">
+                                <h3>MentAura AI Assistant</h3>
+                                <span class="status-text">Online • Ready to help</span>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="action-btn" id="settingsBtn" onclick="showSettings()" title="Settings">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Chat Messages Area -->
+                    <div class="chat-messages-container-fitted" id="chatMessages">
+                        <div class="welcome-message">
+                            <div class="welcome-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="welcome-content">
+                                <h4>Welcome to MentAura AI!</h4>
+                                <p>I'm here to provide mental health support and guidance. I can help with anxiety,
+                                    stress, depression, relationships, and general wellness. How are you feeling today?
+                                </p>
+                                <div class="ai-capabilities-mini">
+                                    <span class="capability">🧠 Mental Health Support</span>
+                                    <span class="capability">💬 Active Listening</span>
+                                    <span class="capability">🎯 Personalized Guidance</span>
+                                    <span class="capability">📚 Resource Recommendations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions-container-fitted">
+                        <div class="quick-actions-header">
+                            <span>Quick Start Topics</span>
+                        </div>
+                        <div class="quick-actions-grid-fitted">
+                            <button class="quick-action-btn-fitted"
+                                onclick="sendQuickMessage('I\'m feeling anxious and overwhelmed')">
+                                <i class="fas fa-heart-broken"></i>
+                                <span>Feeling Anxious</span>
+                            </button>
+                            <button class="quick-action-btn-fitted"
+                                onclick="sendQuickMessage('I\'m struggling with depression')">
+                                <i class="fas fa-cloud-rain"></i>
+                                <span>Depression Support</span>
+                            </button>
+                            <button class="quick-action-btn-fitted"
+                                onclick="sendQuickMessage('I need stress management techniques')">
+                                <i class="fas fa-leaf"></i>
+                                <span>Stress Management</span>
+                            </button>
+                            <button class="quick-action-btn-fitted"
+                                onclick="sendQuickMessage('I\'m having relationship problems')">
+                                <i class="fas fa-users"></i>
+                                <span>Relationship Issues</span>
+                            </button>
+                            <button class="quick-action-btn-fitted"
+                                onclick="sendQuickMessage('I can\'t sleep and feel tired')">
+                                <i class="fas fa-moon"></i>
+                                <span>Sleep Problems</span>
+                            </button>
+                            <button class="quick-action-btn-fitted"
+                                onclick="sendQuickMessage('I want to build better habits')">
+                                <i class="fas fa-target"></i>
+                                <span>Build Habits</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Chat Input Area -->
+                    <div class="chat-input-container-fitted">
+                        <div class="typing-indicator" id="typingIndicator">
+                            <div class="typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span class="typing-text">AI is thinking...</span>
+                        </div>
+                        <div class="chat-input-wrapper-fitted">
+                            <div class="input-actions-left">
+                                <button class="input-action-btn" id="voiceBtn" title="Voice Input">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                                <button class="input-action-btn" id="emojiBtn" title="Add Emoji">
+                                    <i class="fas fa-smile"></i>
+                                </button>
+                            </div>
+                            <div class="message-input-container-fitted">
+                                <textarea id="messageInput"
+                                    placeholder="Share what's on your mind... I'm here to listen and help." rows="1"
+                                    maxlength="1000"></textarea>
+                                <div class="character-count">
+                                    <span id="charCount">0</span>/1000
+                                </div>
+                            </div>
+                            <button class="send-button" id="sendBtn" title="Send Message">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="input-suggestions-fitted">
+                            <span class="suggestion-text">Try asking about:</span>
+                            <button class="suggestion-btn" data-message="How can I manage my anxiety?">Managing
+                                anxiety</button>
+                            <button class="suggestion-btn" data-message="What are some self-care practices?">Self-care
+                                tips</button>
+                            <button class="suggestion-btn" data-message="I need coping strategies">Coping
+                                strategies</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Sections Below Chat - Same as before -->
+    <section class="chat-additional-sections">
+        <div class="container">
+
+            <!-- Recent Conversations - Horizontal -->
+            <div class="section-horizontal">
+                <h3><i class="fas fa-history"></i> Recent Conversations</h3>
+                <div class="horizontal-items">
+                    <div class="conversation-card">
+                        <div class="conversation-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <div class="conversation-content">
+                            <span class="conversation-topic">Anxiety Management</span>
+                            <span class="conversation-time">Today, 2:30 PM</span>
+                        </div>
+                        <button class="conversation-action">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="conversation-card">
+                        <div class="conversation-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <div class="conversation-content">
+                            <span class="conversation-topic">Sleep Issues</span>
+                            <span class="conversation-time">Yesterday, 8:45 PM</span>
+                        </div>
+                        <button class="conversation-action">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="conversation-card">
+                        <div class="conversation-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <div class="conversation-content">
+                            <span class="conversation-topic">Relationship Advice</span>
+                            <span class="conversation-time">2 days ago</span>
+                        </div>
+                        <button class="conversation-action">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="conversation-card">
+                        <div class="conversation-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <div class="conversation-content">
+                            <span class="conversation-topic">Stress Relief</span>
+                            <span class="conversation-time">3 days ago</span>
+                        </div>
+                        <button class="conversation-action">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Resources - Horizontal -->
+            <div class="section-horizontal">
+                <h3><i class="fas fa-book-open"></i> Quick Resources</h3>
+                <div class="horizontal-items">
+                    <a href="resources.html" class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="resource-content">
+                            <span class="resource-title">Mental Health Articles</span>
+                            <span class="resource-desc">Evidence-based guides and tips</span>
+                        </div>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="booking.html" class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="resource-content">
+                            <span class="resource-title">Book Professional Session</span>
+                            <span class="resource-desc">Schedule with licensed therapists</span>
+                        </div>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="forum.html" class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="resource-content">
+                            <span class="resource-title">Community Support</span>
+                            <span class="resource-desc">Connect with others on similar journeys</span>
+                        </div>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="help-center.html" class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="resource-content">
+                            <span class="resource-title">Help Center</span>
+                            <span class="resource-desc">FAQs and support documentation</span>
+                        </div>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Crisis Support - Horizontal -->
+            <div class="section-horizontal crisis-horizontal">
+                <h3><i class="fas fa-shield-heart"></i> Crisis Support</h3>
+                <div class="crisis-content-horizontal">
+                    <div class="crisis-text">
+                        <p>If you're in immediate danger or having thoughts of self-harm, please reach out for help
+                            immediately.</p>
+                    </div>
+                    <div class="crisis-contacts-horizontal">
+                        <div class="crisis-contact-card">
+                            <strong>Emergency Services</strong>
+                            <a href="tel:911" class="crisis-number">911</a>
+                        </div>
+                        <div class="crisis-contact-card">
+                            <strong>Crisis Text Line</strong>
+                            <a href="sms:741741?body=HOME" class="crisis-number">Text HOME to 741741</a>
+                        </div>
+                        <div class="crisis-contact-card">
+                            <strong>National Suicide Prevention</strong>
+                            <a href="tel:988" class="crisis-number">988</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer - Same as homepage -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MentAura</span>
+                    </div>
+                    <p>Your trusted partner in mental health and wellness.</p>
+                </div>
+
+                <div class="footer-support">
+                    <h3>Support</h3>
+                    <div class="footer-links">
+                        <a href="help-center.html">Help Center</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <a href="mailto:support@mentaura.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        support@mentaura.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 MentAura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button class="close-btn" onclick="closeSettings()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Voice Settings -->
+                <div class="settings-section">
+                    <h3>🔊 Voice Settings</h3>
+                    <div class="setting-item">
+                        <label for="voiceSelect">Voice:</label>
+                        <select id="voiceSelect">
+                            <option value="">Loading voices...</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="voiceSpeed">Speed: <span id="speedValue">1.0x</span></label>
+                        <input type="range" id="voiceSpeed" min="0.5" max="2" step="0.1" value="1.0">
+                    </div>
+                    <div class="setting-item">
+                        <label for="voicePitch">Pitch: <span id="pitchValue">1.0</span></label>
+                        <input type="range" id="voicePitch" min="0.5" max="2" step="0.1" value="1.0">
+                    </div>
+                </div>
+
+                <!-- Mental Health Assessment -->
+                <div class="settings-section">
+                    <h3>🧠 Mental Health Assessment</h3>
+                    <p>Take a quick assessment to understand your current mental health status.</p>
+                    <button class="btn btn-primary" onclick="startAssessment()">Start Assessment</button>
+                </div>
+
+                <!-- Conversation History -->
+                <div class="settings-section">
+                    <h3>📚 Recent Conversations</h3>
+                    <div id="recentConversations" class="conversation-list">
+                        <!-- Conversations will be loaded here -->
+                    </div>
+                    <button class="btn btn-secondary" onclick="clearConversationHistory()">Clear History</button>
+                </div>
+
+                <!-- Connection Status -->
+                <div class="settings-section">
+                    <h3>🌐 Connection Status</h3>
+                    <div id="connectionStatus" class="connection-status">
+                        <div class="status-dot"></div>
+                        <span>MentAura AI • Online • Ready to help</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assessment Modal -->
+    <div id="assessmentModal" class="modal">
+        <div class="modal-content assessment-modal">
+            <div class="modal-header">
+                <h2>🧠 Mental Health Assessment</h2>
+                <button class="close-btn" onclick="closeAssessment()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="assessmentContent">
+                    <!-- Assessment questions and results will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Input Button -->
+    <button id="voiceBtn" class="voice-input-btn" onclick="toggleVoiceInput()" title="Voice Input">
+        <i class="fas fa-microphone"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCc3U-JuAKv7og6rmbGPsrSZDUKEAWIVsA",
+            authDomain: "mentaura-psycho.firebaseapp.com",
+            projectId: "mentaura-psycho",
+            storageBucket: "mentaura-psycho.firebasestorage.app",
+            messagingSenderId: "494209814922",
+            appId: "1:494209814922:web:1e848bc224730a29d5f873",
+            measurementId: "G-GNCMBLJPHT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        window.firebaseAuth = firebase.auth();
+        window.firebaseDB = firebase.firestore();
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/language-switcher.js"></script>
+
+
+
+</body>
+
+</html>

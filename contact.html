@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MentAura</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation - Same as homepage -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Language Dropdown (Top Left) -->
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">हिंदी</a>
+                    <a href="#" data-lang="ta">Tamil</a>
+                    <a href="#" data-lang="te">Telugu</a>
+                    <a href="#" data-lang="kn">Kannada</a>
+                    <a href="#" data-lang="ml">Malayalam</a>
+                </div>
+            </div>
+
+
+            <!-- Centered Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link" id="aiChatNav">AI Chat</a></li>
+                <li><a href="#" class="nav-link" id="bookSessionNav">Book Session</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="forum.html" class="nav-link">Community</a></li>
+                <li><a href="admin.html" class="nav-link">Admin Dashboard</a></li>
+                <li><a href="analytics.html" class="nav-link" data-translate="nav_analytics">Analytics</a></li>
+
+            </ul>
+
+            <!-- Auth Buttons -->
+            <div class="nav-auth-buttons">
+                <a href="mentaura-auth/signup.html" class="btn btn-signup" id="signupBtn">Signup</a>
+                <a href="mentaura-auth/index.html" class="btn btn-login" id="loginBtn">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section - Compact -->
+    <section class="contact-hero-mini">
+        <div class="container">
+            <h1 class="contact-title-mini">Contact Us</h1>
+            <p class="contact-subtitle-mini">Get in touch with our support team.</p>
+            <p class="contact-email-mini">Email: <a href="mailto:support@mentaura.com">support@mentaura.com</a></p>
+            <a href="index.html" class="back-home-btn-mini">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container-updated">
+            <h2 class="form-title-updated">Send Us Your Query</h2>
+            <div class="contact-form-box">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group-updated">
+                            <label for="contactName">Full Name</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        <div class="form-group-updated">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-group-updated">
+                        <label for="contactSubject">Subject</label>
+                        <select id="contactSubject" name="contactSubject" required>
+                            <option value="">Select a subject...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="booking">Booking Issues</option>
+                            <option value="billing">Billing Question</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group-updated">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="contactMessage" rows="6"
+                            placeholder="Please describe your query or concern in detail..." required></textarea>
+                    </div>
+                    <div class="form-group-updated checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="contactConsent" name="contactConsent" required>
+                            <span class="checkbox-text">I agree to be contacted regarding my inquiry and understand my
+                                information will be handled according to our <a href="privacy-policy.html">Privacy
+                                    Policy</a>.</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="contact-submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Info Section -->
+    <section class="quick-contact-info">
+        <div class="container">
+            <div class="contact-info-cards">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>Get help via email</p>
+                    <a href="mailto:support@mentaura.com">support@mentaura.com</a>
+                </div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Help Center</h3>
+                    <p>Find answers to common questions</p>
+                    <a href="help-center.html">Visit Help Center</a>
+                </div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Forum</h3>
+                    <p>Connect with other users</p>
+                    <a href="forum.html">Join Discussion</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Same as homepage -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MentAura</span>
+                    </div>
+                    <p>Your trusted partner in mental health and wellness.</p>
+                </div>
+
+                <div class="footer-support">
+                    <h3>Support</h3>
+                    <div class="footer-links">
+                        <a href="help-center.html">Help Center</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <a href="mailto:support@mentaura.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        support@mentaura.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 MentAura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal (Same as homepage) -->
+    <div id="loginModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Login</h2>
+                <button id="loginCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="modal-submit-btn">Login</button>
+            </form>
+            <p class="modal-footer-text">
+                Don't have an account? <a href="#" id="switchToSignup">Create one</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal (Same as homepage) -->
+    <div id="signupModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+                <button id="signupCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" name="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" name="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" required>
+                </div>
+                <button type="submit" class="modal-submit-btn">Sign Up</button>
+            </form>
+            <p class="modal-footer-text">
+                Already have an account? <a href="#" id="switchToLogin">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Message Sent!</h2>
+                <button id="successCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Thank you for contacting us!</h3>
+                <p>We've received your message and will get back to you within 24 hours.</p>
+                <button class="contact-submit-btn" onclick="closeSuccessModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/language-switcher.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,614 @@
+{
+  "test_user_1": {
+    "user_id": "test_user_1",
+    "first_interaction": "2026-01-22T01:13:24.658713",
+    "interaction_count": 5,
+    "messages": [
+      {
+        "timestamp": "2026-01-22T01:13:24.658726",
+        "text": "I'm feeling really anxious about my exams",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T01:14:21.718479",
+        "text": "I'm feeling really anxious about my exams",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T01:15:16.126113",
+        "text": "I'm feeling really anxious about my exams",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 3
+      },
+      {
+        "timestamp": "2026-01-22T01:45:49.405786",
+        "text": "I'm feeling really anxious about my exams",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 4
+      },
+      {
+        "timestamp": "2026-01-22T02:04:41.674057",
+        "text": "I'm feeling really anxious about my exams",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 5
+      }
+    ],
+    "emotions": [
+      {
+        "timestamp": "2026-01-22T01:13:24.658726",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.6957122013394482,
+        "interaction_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T01:14:21.718479",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.6957122013394482,
+        "interaction_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T01:15:16.126113",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.6957122013394482,
+        "interaction_number": 3
+      },
+      {
+        "timestamp": "2026-01-22T01:45:49.405786",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.6957122013394482,
+        "interaction_number": 4
+      },
+      {
+        "timestamp": "2026-01-22T02:04:41.674057",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.6880633521650401,
+        "interaction_number": 5
+      }
+    ],
+    "created_at": "2026-01-22T01:13:24.658723",
+    "last_interaction": "2026-01-22T02:04:41.674057",
+    "updated_at": "2026-01-22T02:04:41.674057"
+  },
+  "test_user_2": {
+    "user_id": "test_user_2",
+    "first_interaction": "2026-01-22T01:13:24.665232",
+    "interaction_count": 5,
+    "messages": [
+      {
+        "timestamp": "2026-01-22T01:13:24.665245",
+        "text": "I'm so happy today!",
+        "emotion": "happiness",
+        "intensity": "high",
+        "message_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T01:14:21.728497",
+        "text": "I'm so happy today!",
+        "emotion": "happiness",
+        "intensity": "high",
+        "message_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T01:15:16.131897",
+        "text": "I'm so happy today!",
+        "emotion": "happiness",
+        "intensity": "high",
+        "message_number": 3
+      },
+      {
+        "timestamp": "2026-01-22T01:45:49.427032",
+        "text": "Hello there!",
+        "emotion": "neutral",
+        "intensity": "medium",
+        "message_number": 4
+      },
+      {
+        "timestamp": "2026-01-22T02:04:41.692584",
+        "text": "Hello there!",
+        "emotion": "neutral",
+        "intensity": "medium",
+        "message_number": 5
+      }
+    ],
+    "emotions": [
+      {
+        "timestamp": "2026-01-22T01:13:24.665245",
+        "emotion": "happiness",
+        "intensity": "high",
+        "confidence": 0.6867075343612927,
+        "interaction_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T01:14:21.728497",
+        "emotion": "happiness",
+        "intensity": "high",
+        "confidence": 0.6867075343612927,
+        "interaction_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T01:15:16.131897",
+        "emotion": "happiness",
+        "intensity": "high",
+        "confidence": 0.6867075343612927,
+        "interaction_number": 3
+      },
+      {
+        "timestamp": "2026-01-22T01:45:49.427032",
+        "emotion": "neutral",
+        "intensity": "medium",
+        "confidence": 0.4221268411961904,
+        "interaction_number": 4
+      },
+      {
+        "timestamp": "2026-01-22T02:04:41.692584",
+        "emotion": "neutral",
+        "intensity": "medium",
+        "confidence": 0.4282418154734886,
+        "interaction_number": 5
+      }
+    ],
+    "created_at": "2026-01-22T01:13:24.665240",
+    "last_interaction": "2026-01-22T02:04:41.692584",
+    "updated_at": "2026-01-22T02:04:41.692584"
+  },
+  "test_user_3": {
+    "user_id": "test_user_3",
+    "first_interaction": "2026-01-22T01:13:24.672129",
+    "interaction_count": 3,
+    "messages": [
+      {
+        "timestamp": "2026-01-22T01:13:24.672138",
+        "text": "I feel hopeless and alone",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T01:14:21.737184",
+        "text": "I feel hopeless and alone",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T01:15:16.138464",
+        "text": "I feel hopeless and alone",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 3
+      }
+    ],
+    "emotions": [
+      {
+        "timestamp": "2026-01-22T01:13:24.672138",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.6422822138108788,
+        "interaction_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T01:14:21.737184",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.6422822138108788,
+        "interaction_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T01:15:16.138464",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.6422822138108788,
+        "interaction_number": 3
+      }
+    ],
+    "created_at": "2026-01-22T01:13:24.672135",
+    "last_interaction": "2026-01-22T01:15:16.138464",
+    "updated_at": "2026-01-22T01:15:16.138464"
+  },
+  "user_mkogdkbepfjf5pgp1ok": {
+    "user_id": "user_mkogdkbepfjf5pgp1ok",
+    "first_interaction": "2026-01-22T01:35:51.842674",
+    "interaction_count": 1,
+    "messages": [
+      {
+        "timestamp": "2026-01-22T01:35:51.842726",
+        "text": "I need stress management techniques",
+        "emotion": "anxiety",
+        "intensity": "low",
+        "message_number": 1
+      }
+    ],
+    "emotions": [
+      {
+        "timestamp": "2026-01-22T01:35:51.842726",
+        "emotion": "anxiety",
+        "intensity": "low",
+        "confidence": 0.2686508141176396,
+        "interaction_number": 1
+      }
+    ],
+    "created_at": "2026-01-22T01:35:51.842689",
+    "last_interaction": "2026-01-22T01:35:51.842726",
+    "updated_at": "2026-01-22T01:35:51.842726"
+  },
+  "user_mkogicglzp8yzmr76r": {
+    "user_id": "user_mkogicglzp8yzmr76r",
+    "first_interaction": "2026-01-22T01:39:34.891368",
+    "interaction_count": 24,
+    "messages": [
+      {
+        "timestamp": "2026-01-22T02:28:03.989390",
+        "text": "give few ideas to eliminate negative thoughts in my brain and feel better",
+        "emotion": "anger",
+        "intensity": "medium",
+        "message_number": 15
+      },
+      {
+        "timestamp": "2026-01-22T02:28:30.388399",
+        "text": "yes",
+        "emotion": "neutral",
+        "intensity": "medium",
+        "message_number": 16
+      },
+      {
+        "timestamp": "2026-01-22T02:39:29.856089",
+        "text": "I need stress management techniques",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 17
+      },
+      {
+        "timestamp": "2026-01-22T02:39:38.818784",
+        "text": "I'm having relationship problems",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 18
+      },
+      {
+        "timestamp": "2026-01-22T02:39:54.312010",
+        "text": "I can't sleep and feel tired",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 19
+      },
+      {
+        "timestamp": "2026-01-22T02:40:02.328956",
+        "text": "I want to build better habits",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 20
+      },
+      {
+        "timestamp": "2026-01-22T02:40:08.136243",
+        "text": "I'm feeling anxious and overwhelmed",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 21
+      },
+      {
+        "timestamp": "2026-01-22T02:40:24.154004",
+        "text": "my friend betrayed me",
+        "emotion": "anger",
+        "intensity": "medium",
+        "message_number": 22
+      },
+      {
+        "timestamp": "2026-01-22T04:32:14.528659",
+        "text": "I need stress management techniques",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 23
+      },
+      {
+        "timestamp": "2026-01-22T04:44:38.259816",
+        "text": "I'm struggling with depression",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 24
+      }
+    ],
+    "emotions": [
+      {
+        "timestamp": "2026-01-22T02:28:03.989390",
+        "emotion": "anger",
+        "intensity": "medium",
+        "confidence": 0.49504898769281863,
+        "interaction_number": 15
+      },
+      {
+        "timestamp": "2026-01-22T02:28:30.388399",
+        "emotion": "neutral",
+        "intensity": "medium",
+        "confidence": 0.8120850018914706,
+        "interaction_number": 16
+      },
+      {
+        "timestamp": "2026-01-22T02:39:29.856089",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.9385331073161148,
+        "interaction_number": 17
+      },
+      {
+        "timestamp": "2026-01-22T02:39:38.818784",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.6448965772679888,
+        "interaction_number": 18
+      },
+      {
+        "timestamp": "2026-01-22T02:39:54.312010",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.6833682177787649,
+        "interaction_number": 19
+      },
+      {
+        "timestamp": "2026-01-22T02:40:02.328956",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.6599294315233878,
+        "interaction_number": 20
+      },
+      {
+        "timestamp": "2026-01-22T02:40:08.136243",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.9468042789481869,
+        "interaction_number": 21
+      },
+      {
+        "timestamp": "2026-01-22T02:40:24.154004",
+        "emotion": "anger",
+        "intensity": "medium",
+        "confidence": 0.4598654351548746,
+        "interaction_number": 22
+      },
+      {
+        "timestamp": "2026-01-22T04:32:14.528659",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.9385331073161148,
+        "interaction_number": 23
+      },
+      {
+        "timestamp": "2026-01-22T04:44:38.259816",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.8057057335508405,
+        "interaction_number": 24
+      }
+    ],
+    "created_at": "2026-01-22T01:39:34.891381",
+    "last_interaction": "2026-01-22T04:44:38.259816",
+    "updated_at": "2026-01-22T04:44:38.259816"
+  },
+  "verification_user": {
+    "user_id": "verification_user",
+    "first_interaction": "2026-01-22T02:05:33.473291",
+    "interaction_count": 5,
+    "messages": [
+      {
+        "timestamp": "2026-01-22T02:05:33.473424",
+        "text": "I need stress management techniques",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T02:13:20.663533",
+        "text": "I need stress management techniques",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T02:19:51.599474",
+        "text": "I need stress management techniques",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 3
+      },
+      {
+        "timestamp": "2026-01-22T02:22:15.893958",
+        "text": "I need stress management techniques",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 4
+      },
+      {
+        "timestamp": "2026-01-22T02:23:30.318644",
+        "text": "I need stress management techniques",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "message_number": 5
+      }
+    ],
+    "emotions": [
+      {
+        "timestamp": "2026-01-22T02:05:33.473424",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.8693355682431501,
+        "interaction_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T02:13:20.663533",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.8693355682431501,
+        "interaction_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T02:19:51.599474",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.8693355682431501,
+        "interaction_number": 3
+      },
+      {
+        "timestamp": "2026-01-22T02:22:15.893958",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.8693355682431501,
+        "interaction_number": 4
+      },
+      {
+        "timestamp": "2026-01-22T02:23:30.318644",
+        "emotion": "anxiety",
+        "intensity": "high",
+        "confidence": 0.8693355682431501,
+        "interaction_number": 5
+      }
+    ],
+    "created_at": "2026-01-22T02:05:33.473410",
+    "last_interaction": "2026-01-22T02:23:30.318644",
+    "updated_at": "2026-01-22T02:23:30.318644"
+  },
+  "new_lonely_user": {
+    "user_id": "new_lonely_user",
+    "first_interaction": "2026-01-22T02:19:51.618229",
+    "interaction_count": 3,
+    "messages": [
+      {
+        "timestamp": "2026-01-22T02:19:51.618248",
+        "text": "I feel so lonely today",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T02:22:15.926079",
+        "text": "I feel so lonely today",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T02:23:30.339641",
+        "text": "I feel so lonely today",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 3
+      }
+    ],
+    "emotions": [
+      {
+        "timestamp": "2026-01-22T02:19:51.618248",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.44463972619221004,
+        "interaction_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T02:22:15.926079",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.44463972619221004,
+        "interaction_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T02:23:30.339641",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.44463972619221004,
+        "interaction_number": 3
+      }
+    ],
+    "created_at": "2026-01-22T02:19:51.618243",
+    "last_interaction": "2026-01-22T02:23:30.339641",
+    "updated_at": "2026-01-22T02:23:30.339641"
+  },
+  "new_sleep_user": {
+    "user_id": "new_sleep_user",
+    "first_interaction": "2026-01-22T02:19:51.637437",
+    "interaction_count": 3,
+    "messages": [
+      {
+        "timestamp": "2026-01-22T02:19:51.637455",
+        "text": "I can't sleep lately",
+        "emotion": "anxiety",
+        "intensity": "medium",
+        "message_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T02:22:15.942040",
+        "text": "I can't sleep lately",
+        "emotion": "anxiety",
+        "intensity": "medium",
+        "message_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T02:23:30.356779",
+        "text": "I can't sleep lately",
+        "emotion": "anxiety",
+        "intensity": "medium",
+        "message_number": 3
+      }
+    ],
+    "emotions": [
+      {
+        "timestamp": "2026-01-22T02:19:51.637455",
+        "emotion": "anxiety",
+        "intensity": "medium",
+        "confidence": 0.39243779399261064,
+        "interaction_number": 1
+      },
+      {
+        "timestamp": "2026-01-22T02:22:15.942040",
+        "emotion": "anxiety",
+        "intensity": "medium",
+        "confidence": 0.39243779399261064,
+        "interaction_number": 2
+      },
+      {
+        "timestamp": "2026-01-22T02:23:30.356779",
+        "emotion": "anxiety",
+        "intensity": "medium",
+        "confidence": 0.39243779399261064,
+        "interaction_number": 3
+      }
+    ],
+    "created_at": "2026-01-22T02:19:51.637451",
+    "last_interaction": "2026-01-22T02:23:30.356779",
+    "updated_at": "2026-01-22T02:23:30.356779"
+  },
+  "returning_user_123": {
+    "user_id": "returning_user_123",
+    "first_interaction": "2026-01-22T02:38:15.129449",
+    "interaction_count": 1,
+    "messages": [
+      {
+        "timestamp": "2026-01-22T02:38:15.129482",
+        "text": "I'm struggling with depression",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "message_number": 1
+      }
+    ],
+    "emotions": [
+      {
+        "timestamp": "2026-01-22T02:38:15.129482",
+        "emotion": "sadness",
+        "intensity": "medium",
+        "confidence": 0.8057057335508405,
+        "interaction_number": 1
+      }
+    ],
+    "created_at": "2026-01-22T02:38:15.129476",
+    "last_interaction": "2026-01-22T02:38:15.129482",
+    "updated_at": "2026-01-22T02:38:15.129482"
+  }
+}

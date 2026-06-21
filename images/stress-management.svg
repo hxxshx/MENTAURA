@@ -1,0 +1,133 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="stressGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stressGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stressGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1f2937">Stress Management Techniques</text>
+  <text x="400" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">Proven methods to reduce stress and improve mental well-being</text>
+  
+  <!-- Technique 1: Meditation -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="200" height="200" fill="url(#stressGradient1)" rx="15"/>
+    <circle cx="100" cy="80" r="40" fill="#ffffff" opacity="0.9"/>
+    <circle cx="100" cy="80" r="30" fill="#10b981" opacity="0.3"/>
+    <circle cx="100" cy="80" r="20" fill="#10b981" opacity="0.5"/>
+    <circle cx="100" cy="80" r="10" fill="#10b981" opacity="0.7"/>
+    <circle cx="100" cy="80" r="5" fill="#10b981"/>
+    
+    <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Meditation</text>
+    <text x="100" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">10 min daily</text>
+    <text x="100" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Reduces stress</text>
+    <text x="100" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Improves focus</text>
+  </g>
+  
+  <!-- Technique 2: Exercise -->
+  <g transform="translate(300, 100)">
+    <rect x="0" y="0" width="200" height="200" fill="url(#stressGradient2)" rx="15"/>
+    <g transform="translate(100, 80)">
+      <!-- Person figure -->
+      <circle cx="0" cy="-20" r="15" fill="#ffffff" opacity="0.9"/>
+      <ellipse cx="0" cy="0" rx="20" ry="30" fill="#ffffff" opacity="0.9"/>
+      <ellipse cx="-15" cy="10" rx="8" ry="25" fill="#ffffff" opacity="0.9" transform="rotate(-20 -15 10)"/>
+      <ellipse cx="15" cy="10" rx="8" ry="25" fill="#ffffff" opacity="0.9" transform="rotate(20 15 10)"/>
+      <ellipse cx="-10" cy="30" rx="8" ry="20" fill="#ffffff" opacity="0.9"/>
+      <ellipse cx="10" cy="30" rx="8" ry="20" fill="#ffffff" opacity="0.9"/>
+    </g>
+    
+    <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Exercise</text>
+    <text x="100" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">30 min daily</text>
+    <text x="100" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Releases endorphins</text>
+    <text x="100" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Boosts mood</text>
+  </g>
+  
+  <!-- Technique 3: Sleep -->
+  <g transform="translate(550, 100)">
+    <rect x="0" y="0" width="200" height="200" fill="url(#stressGradient3)" rx="15"/>
+    <g transform="translate(100, 80)">
+      <!-- Moon and stars -->
+      <circle cx="0" cy="0" r="25" fill="#ffffff" opacity="0.9"/>
+      <circle cx="-8" cy="-8" r="15" fill="#f59e0b" opacity="0.3"/>
+      <circle cx="5" y="-15" r="3" fill="#ffffff" opacity="0.8"/>
+      <circle cx="15" y="5" r="2" fill="#ffffff" opacity="0.8"/>
+      <circle cx="-15" y="10" r="2" fill="#ffffff" opacity="0.8"/>
+      <circle cx="10" y="15" r="2" fill="#ffffff" opacity="0.8"/>
+    </g>
+    
+    <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Quality Sleep</text>
+    <text x="100" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">8 hours nightly</text>
+    <text x="100" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Improves clarity</text>
+    <text x="100" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Reduces anxiety</text>
+  </g>
+  
+  <!-- Additional techniques -->
+  <g transform="translate(50, 350)">
+    <rect x="0" y="0" width="700" height="200" fill="#ffffff" rx="15" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1f2937">Additional Stress Management Techniques</text>
+    
+    <!-- Breathing exercise -->
+    <g transform="translate(50, 60)">
+      <circle cx="0" cy="0" r="20" fill="#6366f1" opacity="0.2"/>
+      <circle cx="0" cy="0" r="15" fill="#6366f1" opacity="0.4"/>
+      <circle cx="0" cy="0" r="10" fill="#6366f1" opacity="0.6"/>
+      <circle cx="0" cy="0" r="5" fill="#6366f1"/>
+      <text x="0" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">Deep Breathing</text>
+    </g>
+    
+    <!-- Time management -->
+    <g transform="translate(200, 60)">
+      <rect x="-15" y="-15" width="30" height="30" fill="#10b981" opacity="0.3" rx="5"/>
+      <rect x="-10" y="-10" width="20" height="20" fill="#10b981" opacity="0.5" rx="3"/>
+      <rect x="-5" y="-5" width="10" height="10" fill="#10b981" rx="2"/>
+      <text x="0" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">Time Management</text>
+    </g>
+    
+    <!-- Social support -->
+    <g transform="translate(350, 60)">
+      <circle cx="-10" cy="0" r="8" fill="#f59e0b" opacity="0.6"/>
+      <circle cx="10" cy="0" r="8" fill="#f59e0b" opacity="0.6"/>
+      <circle cx="0" cy="-10" r="8" fill="#f59e0b" opacity="0.6"/>
+      <circle cx="0" y="10" r="8" fill="#f59e0b" opacity="0.6"/>
+      <text x="0" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">Social Support</text>
+    </g>
+    
+    <!-- Healthy eating -->
+    <g transform="translate(500, 60)">
+      <ellipse cx="0" cy="0" rx="15" ry="10" fill="#ef4444" opacity="0.6"/>
+      <ellipse cx="-8" cy="-5" rx="8" ry="5" fill="#10b981" opacity="0.6"/>
+      <ellipse cx="8" cy="5" rx="8" ry="5" fill="#f59e0b" opacity="0.6"/>
+      <text x="0" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">Healthy Eating</text>
+    </g>
+    
+    <!-- Mindfulness -->
+    <g transform="translate(650, 60)">
+      <circle cx="0" cy="0" r="15" fill="#8b5cf6" opacity="0.3"/>
+      <circle cx="0" cy="0" r="10" fill="#8b5cf6" opacity="0.5"/>
+      <circle cx="0" cy="0" r="5" fill="#8b5cf6"/>
+      <text x="0" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">Mindfulness</text>
+    </g>
+    
+    <!-- Benefits section -->
+    <g transform="translate(20, 120)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">Benefits of Stress Management:</text>
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">• Improved mental clarity and focus</text>
+      <text x="0" y="35" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">• Better emotional regulation</text>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">• Enhanced physical health</text>
+      <text x="0" y="65" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">• Stronger relationships and social connections</text>
+    </g>
+  </g>
+</svg>

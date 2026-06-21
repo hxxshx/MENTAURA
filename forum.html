@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum - MentAura</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation - Same as homepage -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Language Dropdown Top Left -->
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">हिंदी</a>
+                    <a href="#" data-lang="ta">Tamil</a>
+                    <a href="#" data-lang="te">Telugu</a>
+                    <a href="#" data-lang="kn">Kannada</a>
+                    <a href="#" data-lang="ml">Malayalam</a>
+                </div>
+            </div>
+
+
+            <!-- Centered Navigation Menu -->
+
+
+            <!-- Centered Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" id="homeNav">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" id="servicesNav">Services</a></li>
+                <li><a href="chatbot.html" class="nav-link" id="aiChatNav">AI Chat</a></li>
+                <li><a href="booking.html" class="nav-link" id="bookSessionNav">Book Session</a></li>
+                <li><a href="resources.html" class="nav-link" id="resourcesNav">Resources</a></li>
+                <li><a href="admin.html" class="nav-link" id="adminNav">Admin Dashboard</a></li>
+                <li><a href="analytics.html" class="nav-link" id="analyticsNav">Analytics</a></li>
+                <li><a href="forum.html" class="nav-link active" id="communityNav">Community</a></li>
+            </ul>
+
+            <!-- Auth Buttons Right Side -->
+            <div class="nav-auth-buttons">
+                <a href="mentaura-auth/index.html" class="btn-login" id="loginBtn">Login</a>
+                <a href="mentaura-auth/signup.html" class="btn-signup" id="signupBtn">Sign Up</a>
+            </div>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="forum-hero-centered">
+        <div class="hero-text-overlay-centered">
+            <h1 class="forum-title-centered">Community Forum</h1>
+        </div>
+        <div class="forum-background-centered">
+            <div class="forum-icon-centered">
+                <i class="fas fa-users"></i>
+                <div class="pulse-ring-centered"></div>
+                <div class="pulse-ring-centered-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forum Content Section -->
+    <section class="forum-content-section">
+        <div class="container">
+            <!-- Forum Header -->
+            <div class="forum-header-compact">
+                <div class="forum-description-compact">
+                    <h2>Connect with others on their mental health journey</h2>
+                    <p>Share experiences, find support, and build meaningful connections in our safe community.</p>
+                </div>
+
+                <div class="forum-stats-compact">
+                    <div class="stat-item">
+                        <div class="stat-number">1,234</div>
+                        <div class="stat-label">Members</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5,678</div>
+                        <div class="stat-label">Posts</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12,345</div>
+                        <div class="stat-label">Replies</div>
+                    </div>
+                </div>
+
+                <div class="forum-actions">
+                    <button class="new-post-btn-compact" onclick="openNewPostModal()">
+                        <i class="fas fa-plus"></i>
+                        New Post
+                    </button>
+                    <button class="private-chat-btn-compact" onclick="openPrivateChatModal()">
+                        <i class="fas fa-comments"></i>
+                        Private Chat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Posts - Horizontal Format -->
+            <div class="recent-posts-horizontal">
+                <h3 class="section-title">
+                    <i class="fas fa-clock"></i>
+                    Recent Posts
+                </h3>
+
+                <div class="posts-horizontal-scroll">
+                    <div class="post-card-horizontal" data-post-id="1">
+                        <div class="post-header-horizontal">
+                            <div class="post-category anxiety">Anxiety Support</div>
+                            <button class="post-delete-btn" onclick="deletePost(1)" title="Delete Post">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <h4 class="post-title-horizontal">Feeling overwhelmed with work stress</h4>
+                        <p class="post-excerpt-horizontal">I've been struggling with work stress lately and it's
+                            affecting my sleep and mood. Has anyone found effective ways to manage this?</p>
+                        <div class="post-meta-horizontal">
+                            <div class="post-author-horizontal">
+                                <div class="author-avatar-horizontal">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Sarah M.</span>
+                            </div>
+                            <div class="post-stats-horizontal">
+                                <span class="post-time">2 hours ago</span>
+                                <span class="post-replies">
+                                    <i class="fas fa-reply"></i>
+                                    12 replies
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card-horizontal" data-post-id="2">
+                        <div class="post-header-horizontal">
+                            <div class="post-category wellness">Wellness & Self-Care</div>
+                            <button class="post-delete-btn" onclick="deletePost(2)" title="Delete Post">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <h4 class="post-title-horizontal">Meditation has changed my life</h4>
+                        <p class="post-excerpt-horizontal">After 3 months of daily meditation, I can honestly say it's
+                            been transformative. Here's what I've learned...</p>
+                        <div class="post-meta-horizontal">
+                            <div class="post-author-horizontal">
+                                <div class="author-avatar-horizontal">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Mike R.</span>
+                            </div>
+                            <div class="post-stats-horizontal">
+                                <span class="post-time">4 hours ago</span>
+                                <span class="post-replies">
+                                    <i class="fas fa-reply"></i>
+                                    8 replies
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card-horizontal" data-post-id="3">
+                        <div class="post-header-horizontal">
+                            <div class="post-category relationships">Relationships</div>
+                            <button class="post-delete-btn" onclick="deletePost(3)" title="Delete Post">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <h4 class="post-title-horizontal">Relationship boundaries - need advice</h4>
+                        <p class="post-excerpt-horizontal">I'm having trouble setting boundaries with my family. They
+                            always seem to overstep and I feel guilty when I try to say no...</p>
+                        <div class="post-meta-horizontal">
+                            <div class="post-author-horizontal">
+                                <div class="author-avatar-horizontal">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Alex T.</span>
+                            </div>
+                            <div class="post-stats-horizontal">
+                                <span class="post-time">6 hours ago</span>
+                                <span class="post-replies">
+                                    <i class="fas fa-reply"></i>
+                                    15 replies
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card-horizontal" data-post-id="4">
+                        <div class="post-header-horizontal">
+                            <div class="post-category success">Success Stories</div>
+                            <button class="post-delete-btn" onclick="deletePost(4)" title="Delete Post">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <h4 class="post-title-horizontal">One year therapy anniversary!</h4>
+                        <p class="post-excerpt-horizontal">Today marks one year since I started therapy. I wanted to
+                            share my journey and encourage anyone who's hesitant...</p>
+                        <div class="post-meta-horizontal">
+                            <div class="post-author-horizontal">
+                                <div class="author-avatar-horizontal">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Emma L.</span>
+                            </div>
+                            <div class="post-stats-horizontal">
+                                <span class="post-time">1 day ago</span>
+                                <span class="post-replies">
+                                    <i class="fas fa-reply"></i>
+                                    23 replies
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card-horizontal" data-post-id="5">
+                        <div class="post-header-horizontal">
+                            <div class="post-category depression">Depression Support</div>
+                            <button class="post-delete-btn" onclick="deletePost(5)" title="Delete Post">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <h4 class="post-title-horizontal">Finding hope in dark times</h4>
+                        <p class="post-excerpt-horizontal">I wanted to share some strategies that have helped me during
+                            my darkest moments with depression...</p>
+                        <div class="post-meta-horizontal">
+                            <div class="post-author-horizontal">
+                                <div class="author-avatar-horizontal">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Jordan K.</span>
+                            </div>
+                            <div class="post-stats-horizontal">
+                                <span class="post-time">2 days ago</span>
+                                <span class="post-replies">
+                                    <i class="fas fa-reply"></i>
+                                    18 replies
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-navigation">
+                    <button class="scroll-btn scroll-left" onclick="scrollPosts('left')">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="scroll-btn scroll-right" onclick="scrollPosts('right')">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Discussion Categories -->
+            <div class="forum-categories">
+                <h3 class="section-title">
+                    <i class="fas fa-list"></i>
+                    Discussion Categories
+                </h3>
+
+                <div class="categories-grid">
+                    <div class="category-card" data-category="general">
+                        <div class="category-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="category-content">
+                            <h4>General Discussion</h4>
+                            <p>Share your thoughts, experiences, and connect with the community</p>
+                            <div class="category-stats">
+                                <span>234 posts</span>
+                                <span>•</span>
+                                <span>1,567 replies</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card" data-category="anxiety">
+                        <div class="category-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="category-content">
+                            <h4>Anxiety Support</h4>
+                            <p>Find support and share coping strategies for anxiety</p>
+                            <div class="category-stats">
+                                <span>189 posts</span>
+                                <span>•</span>
+                                <span>892 replies</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card" data-category="depression">
+                        <div class="category-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="category-content">
+                            <h4>Depression Support</h4>
+                            <p>A safe space to discuss depression and find hope</p>
+                            <div class="category-stats">
+                                <span>156 posts</span>
+                                <span>•</span>
+                                <span>743 replies</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card" data-category="relationships">
+                        <div class="category-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="category-content">
+                            <h4>Relationships</h4>
+                            <p>Discuss relationship challenges and healthy communication</p>
+                            <div class="category-stats">
+                                <span>98 posts</span>
+                                <span>•</span>
+                                <span>456 replies</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card" data-category="wellness">
+                        <div class="category-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="category-content">
+                            <h4>Wellness & Self-Care</h4>
+                            <p>Share tips and experiences about mental wellness</p>
+                            <div class="category-stats">
+                                <span>167 posts</span>
+                                <span>•</span>
+                                <span>789 replies</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card" data-category="success">
+                        <div class="category-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="category-content">
+                            <h4>Success Stories</h4>
+                            <p>Celebrate victories and inspire others with your journey</p>
+                            <div class="category-stats">
+                                <span>89 posts</span>
+                                <span>•</span>
+                                <span>234 replies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Guidelines -->
+            <div class="community-guidelines">
+                <h3 class="section-title">
+                    <i class="fas fa-shield-alt"></i>
+                    Community Guidelines
+                </h3>
+
+                <div class="guidelines-container">
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Be Kind & Respectful</h4>
+                            <p>Treat all community members with kindness, empathy, and respect regardless of their
+                                background or experiences.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Respect Privacy</h4>
+                            <p>Keep personal information confidential and respect others' privacy. What's shared here
+                                stays here.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Share Experiences, Not Medical Advice</h4>
+                            <p>Share your personal experiences and coping strategies, but avoid giving specific medical
+                                or therapeutic advice.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Report Inappropriate Content</h4>
+                            <p>Help keep our community safe by reporting posts or comments that violate our guidelines.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Support Each Other</h4>
+                            <p>Offer encouragement and support to fellow community members on their mental health
+                                journey.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="guideline-content">
+                            <h4>Crisis Support</h4>
+                            <p>If you're in immediate danger, please contact emergency services: 911, Crisis Text Line:
+                                741741, or National Suicide Prevention: 988</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MentAura</span>
+                    </div>
+                    <p>Your trusted companion for mental wellness and personal growth.</p>
+                </div>
+
+                <div class="footer-support">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="help-center.html">Help Center</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Support</h3>
+                    <a href="mailto:support@mentaura.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        support@mentaura.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 MentAura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Post Detail Modal -->
+    <div id="postDetailModal" class="modal-overlay hidden">
+        <div class="modal-container modal-xl">
+            <div class="modal-header">
+                <h2><i class="fas fa-eye"></i> Post Details</h2>
+                <button class="modal-close" onclick="closePostDetailModal()">&times;</button>
+            </div>
+            <div class="modal-body modal-scroll">
+                <div class="post-detail-content">
+                    <div class="post-detail-card">
+                        <div class="post-detail-header-info">
+                            <div class="post-category-large" id="detailPostCategory">Anxiety Support</div>
+                            <h1 class="post-detail-title" id="detailPostTitle">Feeling overwhelmed with work stress</h1>
+                            <div class="post-detail-meta">
+                                <div class="post-detail-author">
+                                    <div class="author-avatar-large">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="author-info">
+                                        <span class="author-name-large" id="detailAuthorName">Sarah M.</span>
+                                        <span class="post-detail-time" id="detailPostTime">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="post-actions">
+                                    <button class="action-btn like-btn">
+                                        <i class="fas fa-heart"></i>
+                                        <span>24</span>
+                                    </button>
+                                    <button class="action-btn share-btn">
+                                        <i class="fas fa-share"></i>
+                                        Share
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="post-detail-body">
+                            <p id="detailPostContent">I've been struggling with work stress lately and it's really
+                                starting to affect my sleep and overall mood...</p>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="comments-section">
+                        <div class="comments-header">
+                            <h3><i class="fas fa-comments"></i> Comments (12)</h3>
+                            <button class="sort-btn">
+                                <i class="fas fa-sort"></i>
+                                Sort by: Newest
+                            </button>
+                        </div>
+
+                        <!-- Add Comment Form -->
+                        <div class="add-comment-form">
+                            <div class="comment-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comment-input-container">
+                                <textarea id="commentText" placeholder="Share your thoughts and support..."
+                                    rows="3"></textarea>
+                                <div class="comment-actions">
+                                    <label class="anonymous-comment">
+                                        <input type="checkbox" id="anonymousComment">
+                                        <span>Post anonymously</span>
+                                    </label>
+                                    <button class="comment-btn" onclick="addComment()">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Comment
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comments List -->
+                        <div class="comments-list" id="commentsList">
+                            <!-- Comments will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Posts Modal -->
+    <div id="categoryPostsModal" class="modal-overlay hidden">
+        <div class="modal-container modal-xl">
+            <div class="modal-header">
+                <h2><i class="fas fa-folder"></i> <span id="modalCategoryTitle">Category Posts</span></h2>
+                <button class="modal-close" onclick="closeCategoryPostsModal()">&times;</button>
+            </div>
+            <div class="modal-body modal-scroll">
+                <div class="category-posts-content">
+                    <div class="category-description">
+                        <p id="modalCategoryDescription">Category description will appear here</p>
+                    </div>
+                    <div class="category-posts-list" id="modalCategoryPostsList">
+                        <!-- Posts will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Post Modal -->
+    <div id="newPostModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2><i class="fas fa-edit"></i> Create New Post</h2>
+                <button class="modal-close" onclick="closeNewPostModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="newPostForm" class="new-post-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postCategory"><i class="fas fa-folder"></i> Category</label>
+                            <select id="postCategory" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="general">General Discussion</option>
+                                <option value="anxiety">Anxiety Support</option>
+                                <option value="depression">Depression Support</option>
+                                <option value="relationships">Relationships</option>
+                                <option value="wellness">Wellness & Self-Care</option>
+                                <option value="success">Success Stories</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postTitle"><i class="fas fa-heading"></i> Post Title</label>
+                            <input type="text" id="postTitle" name="title" placeholder="What would you like to discuss?"
+                                required maxlength="100">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postContent"><i class="fas fa-align-left"></i> Content</label>
+                        <textarea id="postContent" name="content"
+                            placeholder="Share your thoughts, experiences, or questions with the community..." required
+                            rows="8" maxlength="2000"></textarea>
+                        <div class="character-count">
+                            <span id="characterCount">0</span>/2000 characters
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="postAnonymous" name="anonymous">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">Post anonymously</span>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeNewPostModal()">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Publish Post
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIXED Private Chat Modal - Perfect Layout and All Elements Visible -->
+    <div id="privateChatModal" class="modal-overlay hidden">
+        <div class="modal-container modal-chat-perfect">
+            <div class="modal-header chat-modal-header">
+                <h2><i class="fas fa-comments"></i> Private Chat Area</h2>
+                <button class="modal-close" onclick="closePrivateChatModal()">&times;</button>
+            </div>
+            <div class="modal-body modal-no-padding">
+                <div class="private-chat-container-perfect">
+                    <!-- Chat Users List - Left Panel -->
+                    <div class="chat-users-panel-perfect">
+                        <div class="users-header-perfect">
+                            <h3><i class="fas fa-users"></i> Connect</h3>
+                            <button class="new-chat-btn-perfect" onclick="startNewChat()">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <div class="user-search-perfect">
+                            <input type="text" placeholder="Search users..." id="userSearchInput">
+                            <i class="fas fa-search"></i>
+                        </div>
+
+                        <div class="chat-options-perfect">
+                            <label class="chat-option-perfect">
+                                <input type="radio" name="chatMode" value="anonymous" checked>
+                                <span class="radio-text">Anonymous Chat</span>
+                            </label>
+                            <label class="chat-option-perfect">
+                                <input type="radio" name="chatMode" value="identified">
+                                <span class="radio-text">Identified Chat</span>
+                            </label>
+                        </div>
+
+                        <div class="available-users-perfect" id="availableUsers">
+                            <div class="user-item-perfect" onclick="selectChatUser('user1')">
+                                <div class="user-avatar-perfect">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info-perfect">
+                                    <span class="user-name-perfect">Anonymous User #1</span>
+                                    <span class="user-status-perfect online">Online now</span>
+                                </div>
+                            </div>
+
+                            <div class="user-item-perfect" onclick="selectChatUser('user2')">
+                                <div class="user-avatar-perfect">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info-perfect">
+                                    <span class="user-name-perfect">Mike R.</span>
+                                    <span class="user-status-perfect online">Online now</span>
+                                </div>
+                            </div>
+
+                            <div class="user-item-perfect" onclick="selectChatUser('user3')">
+                                <div class="user-avatar-perfect">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info-perfect">
+                                    <span class="user-name-perfect">Anonymous User #2</span>
+                                    <span class="user-status-perfect away">Away</span>
+                                </div>
+                            </div>
+
+                            <div class="user-item-perfect" onclick="selectChatUser('user4')">
+                                <div class="user-avatar-perfect">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info-perfect">
+                                    <span class="user-name-perfect">Sarah M.</span>
+                                    <span class="user-status-perfect offline">Last seen 1h ago</span>
+                                </div>
+                            </div>
+
+                            <div class="user-item-perfect" onclick="selectChatUser('user5')">
+                                <div class="user-avatar-perfect">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info-perfect">
+                                    <span class="user-name-perfect">Dr. Amanda K.</span>
+                                    <span class="user-status-perfect online">Online now</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Messages Area - Right Panel -->
+                    <div class="chat-messages-panel-perfect">
+                        <div class="chat-header-perfect">
+                            <div class="chat-user-info-perfect">
+                                <div class="chat-avatar-perfect">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="chat-user-details-perfect">
+                                    <span class="chat-user-name-perfect" id="activeChatUser">Select a user to start
+                                        chatting</span>
+                                    <span class="chat-user-status-perfect" id="activeChatStatus">Choose anonymous or
+                                        identified mode</span>
+                                </div>
+                            </div>
+                            <div class="chat-actions-perfect">
+                                <button class="chat-action-btn-perfect" title="Report User">
+                                    <i class="fas fa-flag"></i>
+                                </button>
+                                <button class="chat-action-btn-perfect" title="Block User">
+                                    <i class="fas fa-ban"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="chat-messages-perfect" id="chatMessages">
+                            <div class="chat-welcome-perfect">
+                                <div class="welcome-icon-perfect">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h4>Welcome to Private Chat</h4>
+                                <p>Connect with community members privately. Choose anonymous mode for complete privacy
+                                    or identified mode to chat with your profile.</p>
+
+                                <div class="chat-guidelines-perfect">
+                                    <h5><i class="fas fa-shield-alt"></i> Chat Guidelines:</h5>
+                                    <div class="guidelines-grid-perfect">
+                                        <div class="guideline-item-perfect">
+                                            <i class="fas fa-heart"></i>
+                                            <span>Be respectful and supportive</span>
+                                        </div>
+                                        <div class="guideline-item-perfect">
+                                            <i class="fas fa-comments"></i>
+                                            <span>Keep conversations helpful</span>
+                                        </div>
+                                        <div class="guideline-item-perfect">
+                                            <i class="fas fa-flag"></i>
+                                            <span>Report inappropriate behavior</span>
+                                        </div>
+                                        <div class="guideline-item-perfect">
+                                            <i class="fas fa-user-md"></i>
+                                            <span>Seek professional advice when needed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat-input-area-perfect">
+                            <div class="chat-input-container-perfect">
+                                <div class="input-wrapper-perfect">
+                                    <textarea id="chatMessageInput" placeholder="Type your message..." rows="2"
+                                        disabled></textarea>
+                                    <button class="send-message-btn-perfect" onclick="sendMessage()" disabled>
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                                <div class="chat-options-bar-perfect">
+                                    <button class="emoji-btn-perfect" title="Add Emoji">
+                                        <i class="fas fa-smile"></i>
+                                    </button>
+                                    <span class="typing-indicator-perfect" id="typingIndicator"></span>
+                                    <div class="message-info-perfect">
+                                        <small>Press Enter to send, Shift+Enter for new line</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteConfirmModal" class="modal-overlay hidden">
+        <div class="modal-container modal-small">
+            <div class="modal-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> Delete Post</h2>
+                <button class="modal-close" onclick="closeDeleteModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this post? This action cannot be undone.</p>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeDeleteModal()">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete()">
+                        <i class="fas fa-trash"></i>
+                        Delete Post
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/forum.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCc3U-JuAKv7og6rmbGPsrSZDUKEAWIVsA",
+            authDomain: "mentaura-psycho.firebaseapp.com",
+            projectId: "mentaura-psycho",
+            storageBucket: "mentaura-psycho.firebasestorage.app",
+            messagingSenderId: "494209814922",
+            appId: "1:494209814922:web:1e848bc224730a29d5f873",
+            measurementId: "G-GNCMBLJPHT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        window.firebaseAuth = firebase.auth();
+        window.firebaseDB = firebase.firestore();
+    </script>
+    <script src="js/language-switcher.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

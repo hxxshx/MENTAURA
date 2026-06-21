@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MentaAura</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation - Same as other pages -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Language Dropdown (Top Left) -->
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">हिंदी</a>
+                    <a href="#" data-lang="ta">Tamil</a>
+                    <a href="#" data-lang="te">Telugu</a>
+                    <a href="#" data-lang="kn">Kannada</a>
+                    <a href="#" data-lang="ml">Malayalam</a>
+                </div>
+            </div>
+
+
+            <!-- Centered Navigation Menu -->
+            <!-- Centered Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" id="homeNav">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" id="servicesNav">Services</a></li>
+                <li><a href="chatbot.html" class="nav-link" id="aiChatNav">AI Chat</a></li>
+                <li><a href="booking.html" class="nav-link" id="bookSessionNav">Book Session</a></li>
+                <li><a href="resources.html" class="nav-link" id="resourcesNav">Resources</a></li>
+                <li><a href="admin.html" class="nav-link active" id="adminNav">Admin Dashboard</a></li>
+                <li><a href="analytics.html" class="nav-link" id="analyticsNav">Analytics</a></li>
+                <li><a href="forum.html" class="nav-link" id="communityNav">Community</a></li>
+
+            </ul>
+
+            <!-- Auth Buttons (Right Side) -->
+            <div class="nav-auth-buttons">
+                <a href="mentaura-auth/signup.html" class="btn-signup" id="signupBtn">Sign Up</a>
+                <a href="mentaura-auth/index.html" class="btn-login" id="loginBtn">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Matching Forum Hero Size -->
+    <section class="admin-hero-centered">
+        <div class="admin-background-centered">
+            <div class="admin-icon-centered">
+                <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <div class="pulse-ring-centered"></div>
+            <div class="pulse-ring-centered-2"></div>
+        </div>
+        <div class="hero-text-overlay-centered">
+            <h1 class="admin-title-centered">ADMIN DASHBOARD</h1>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Content -->
+    <section class="admin-dashboard">
+        <div class="container">
+            <!-- Counsellor Management Portal Description -->
+            <div class="admin-header-compact">
+                <div class="admin-description-compact">
+                    <h2>Counsellor Management Portal</h2>
+                    <p>Monitor clients, manage appointments, track interactions, and post to community forums.</p>
+                </div>
+            </div>
+
+            <!-- Dashboard Stats - Smaller Cards -->
+            <div class="admin-stats-grid-compact">
+                <div class="stat-card-compact">
+                    <div class="stat-icon-compact">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content-compact">
+                        <h3 id="totalClients">127</h3>
+                        <p>Total Clients</p>
+                        <span class="stat-change-purple">+8 this month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card-compact">
+                    <div class="stat-icon-compact">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content-compact">
+                        <h3 id="todayAppointments">12</h3>
+                        <p>Today's Appointments</p>
+                        <span class="stat-change-purple">+3 pending</span>
+                    </div>
+                </div>
+
+                <div class="stat-card-compact">
+                    <div class="stat-icon-compact">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-content-compact">
+                        <h3 id="activeChats">23</h3>
+                        <p>Active Chat Sessions</p>
+                        <span class="stat-change-purple">5 urgent</span>
+                    </div>
+                </div>
+
+                <div class="stat-card-compact">
+                    <div class="stat-icon-compact">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stat-content-compact">
+                        <h3 id="forumPosts">89</h3>
+                        <p>Forum Posts</p>
+                        <span class="stat-change-purple">+15 this week</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Content Grid -->
+            <div class="admin-main-grid">
+                <!-- Client Management Section -->
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-friends"></i> Client Management</h3>
+                        <button class="btn-icon" id="refreshClientsBtn">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search clients..." class="search-input"
+                                id="clientSearchInput">
+                        </div>
+                        <div class="client-list" id="clientList">
+                            <div class="client-item">
+                                <div class="client-avatar">
+                                    <i class="fas fa-user-secret"></i>
+                                </div>
+                                <div class="client-info">
+                                    <h4>Anonymous User</h4>
+                                    <p>Last session: 1 day ago</p>
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                                <div class="client-actions">
+                                    <button class="btn-action" title="View Profile" data-client="Anonymous User">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-action" title="Send Message" data-client="Anonymous User">
+                                        <i class="fas fa-message"></i>
+                                    </button>
+                                    <button class="btn-action" title="Schedule Appointment"
+                                        data-client="Anonymous User">
+                                        <i class="fas fa-calendar-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Real South Indian User 1 -->
+                            <div class="client-item">
+                                <div class="client-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="client-info">
+                                    <h4>Lakshmi Narayanan</h4>
+                                    <p>Last session: 2 days ago</p>
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                                <div class="client-actions">
+                                    <button class="btn-action" title="View Profile" data-client="Lakshmi Narayanan">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-action" title="Send Message" data-client="Lakshmi Narayanan">
+                                        <i class="fas fa-message"></i>
+                                    </button>
+                                    <button class="btn-action" title="Schedule Appointment"
+                                        data-client="Lakshmi Narayanan">
+                                        <i class="fas fa-calendar-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Real South Indian User 2 -->
+                            <div class="client-item">
+                                <div class="client-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="client-info">
+                                    <h4>Arjun Reddy</h4>
+                                    <p>Last session: Today, 2:00 PM</p>
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                                <div class="client-actions">
+                                    <button class="btn-action" title="View Profile" data-client="Arjun Reddy">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-action" title="Send Message" data-client="Arjun Reddy">
+                                        <i class="fas fa-message"></i>
+                                    </button>
+                                    <button class="btn-action" title="Schedule Appointment" data-client="Arjun Reddy">
+                                        <i class="fas fa-calendar-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-view-all" data-modal="allClients">View All Clients</button>
+                    </div>
+                </div>
+
+                <!-- Appointments & Schedule Section -->
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calendar-alt"></i> Today's Schedule</h3>
+                        <button class="btn-icon" id="addAppointmentBtn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <div class="appointment-list" id="appointmentList">
+                            <div class="appointment-item">
+                                <div class="appointment-time">
+                                    <span class="time">09:00 AM</span>
+                                    <span class="duration">60 min</span>
+                                </div>
+                                <div class="appointment-info">
+                                    <h4>Lakshmi Narayanan</h4>
+                                    <p>Individual Therapy Session</p>
+                                    <span class="appointment-type">Video Call</span>
+                                </div>
+                                <div class="appointment-status">
+                                    <span class="status-badge confirmed">Confirmed</span>
+                                </div>
+                            </div>
+
+                            <div class="appointment-item">
+                                <div class="appointment-time">
+                                    <span class="time">11:30 AM</span>
+                                    <span class="duration">45 min</span>
+                                </div>
+                                <div class="appointment-info">
+                                    <h4>Arjun Reddy</h4>
+                                    <p>Follow-up Session</p>
+                                    <span class="appointment-type">In-Person</span>
+                                </div>
+                                <div class="appointment-status">
+                                    <span class="status-badge confirmed">Confirmed</span>
+                                </div>
+                            </div>
+
+                            <div class="appointment-item">
+                                <div class="appointment-time">
+                                    <span class="time">02:15 PM</span>
+                                    <span class="duration">60 min</span>
+                                </div>
+                                <div class="appointment-info">
+                                    <h4>Karthik Iyer</h4>
+                                    <p>Initial Consultation</p>
+                                    <span class="appointment-type">Video Call</span>
+                                </div>
+                                <div class="appointment-status">
+                                    <span class="status-badge pending">Pending</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-view-all" data-modal="fullSchedule">View Full Schedule</button>
+                    </div>
+                </div>
+
+                <!-- Chat & Communication Section -->
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-comments"></i> Active Conversations</h3>
+                        <span class="notification-badge">1</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="chat-list" id="chatList">
+                            <div class="chat-item unread" data-client="Priya Krishnan">
+                                <div class="chat-avatar">
+                                    <i class="fas fa-user"></i>
+                                    <span class="online-indicator"></span>
+                                </div>
+                                <div class="chat-info">
+                                    <h4>Priya Krishnan</h4>
+                                    <p>I've been feeling much better since our last session...</p>
+                                    <span class="chat-time">5 min ago</span>
+                                </div>
+                                <div class="chat-actions">
+                                    <span class="message-count">3</span>
+                                    <button class="btn-action" title="Reply" data-client="Priya Krishnan">
+                                        <i class="fas fa-reply"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="chat-item" data-client="Lakshmi Narayanan">
+                                <div class="chat-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="chat-info">
+                                    <h4>Lakshmi Narayanan</h4>
+                                    <p>Thank you for the resources you shared!</p>
+                                    <span class="chat-time">2 hours ago</span>
+                                </div>
+                                <div class="chat-actions">
+                                    <button class="btn-action" title="Reply" data-client="Lakshmi Narayanan">
+                                        <i class="fas fa-reply"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="chat-item" data-client="Arjun Reddy">
+                                <div class="chat-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="chat-info">
+                                    <h4>Arjun Reddy</h4>
+                                    <p>Can we reschedule tomorrow's appointment?</p>
+                                    <span class="chat-time">1 day ago</span>
+                                </div>
+                                <div class="chat-actions">
+                                    <button class="btn-action" title="Reply" data-client="Arjun Reddy">
+                                        <i class="fas fa-reply"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-view-all" data-modal="allMessages">View All Messages</button>
+                    </div>
+                </div>
+
+                <!-- Forum Management Section -->
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-users"></i> Community Forum</h3>
+                        <button class="btn-icon" id="createPostBtn">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <div class="forum-stats">
+                            <div class="forum-stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">New Posts</span>
+                            </div>
+                            <div class="forum-stat">
+                                <span class="stat-number">42</span>
+                                <span class="stat-label">Responses</span>
+                            </div>
+                            <div class="forum-stat">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Your Posts</span>
+                            </div>
+                        </div>
+
+                        <div class="forum-recent">
+                            <h4>Recent Posts</h4>
+                            <div class="forum-post">
+                                <h5>Managing Anxiety During Work Hours</h5>
+                                <p>By Dr. Meera Nair • 23 responses • 2 hours ago</p>
+                            </div>
+                            <div class="forum-post">
+                                <h5>Sleep Hygiene Tips for Better Mental Health</h5>
+                                <p>By Dr. Rahul Rao • 15 responses • 1 day ago</p>
+                            </div>
+                            <div class="forum-post">
+                                <h5>Building Resilience in Challenging Times</h5>
+                                <p>By Dr. Divya Pillai • 31 responses • 3 days ago</p>
+                            </div>
+                        </div>
+
+                        <button class="btn-view-all" data-modal="forumPosts">Manage Forum Posts</button>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Section -->
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" data-action="addClient">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Add New Client</span>
+                            </button>
+                            <button class="quick-action-btn" data-action="scheduleAppointment">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>Schedule Appointment</span>
+                            </button>
+                            <button class="quick-action-btn" data-action="createReport">
+                                <i class="fas fa-file-medical"></i>
+                                <span>Create Report</span>
+                            </button>
+                            <button class="quick-action-btn" data-action="sendReminder">
+                                <i class="fas fa-bell"></i>
+                                <span>Send Reminder</span>
+                            </button>
+                            <button class="quick-action-btn" data-action="settings">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Section -->
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-history"></i> Recent Activity</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="activity-timeline" id="activityTimeline">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New client registered:</strong> Priya Krishnan</p>
+                                    <span class="activity-time">10 minutes ago</span>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>Appointment scheduled:</strong> Arjun Reddy - Tomorrow 2:00 PM</p>
+                                    <span class="activity-time">1 hour ago</span>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>Forum post published:</strong> "Managing Stress at Work"</p>
+                                    <span class="activity-time">3 hours ago</span>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-message"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>Message received:</strong> From Lakshmi Narayanan</p>
+                                    <span class="activity-time">5 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-view-all" data-modal="allActivity">View All Activity</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Modals -->
+
+    <!-- View All Clients Modal -->
+    <div id="allClientsModal" class="admin-modal clients-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-users"></i> All Clients</h2>
+                <button class="modal-close" onclick="closeModal('allClientsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-search-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search clients..." class="search-input" id="modalClientSearch">
+                    </div>
+                    <div class="filter-options">
+                        <select id="clientStatusFilter">
+                            <option value="all">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="pending">Pending</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="clients-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Last Session</th>
+                                <th>Total Sessions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="allClientsTableBody">
+                            <!-- Clients will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-pagination">
+                    <button class="pagination-btn" id="prevPageClients">Previous</button>
+                    <span class="page-info" id="clientsPageInfo">Page 1 of 5</span>
+                    <button class="pagination-btn" id="nextPageClients">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Schedule Modal -->
+    <div id="fullScheduleModal" class="admin-modal schedule-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-calendar-alt"></i> Full Schedule</h2>
+                <button class="modal-close" onclick="closeModal('fullScheduleModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="schedule-navigation">
+                    <button class="schedule-nav-btn" id="prevWeek">
+                        <i class="fas fa-chevron-left"></i> Previous Week
+                    </button>
+                    <span class="current-week" id="currentWeekDisplay">September 16 - 22, 2025</span>
+                    <button class="schedule-nav-btn" id="nextWeek">
+                        Next Week <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="schedule-calendar">
+                    <div class="calendar-week" id="scheduleCalendar">
+                        <!-- Calendar will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- All Messages Modal -->
+    <div id="allMessagesModal" class="admin-modal large-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-comments"></i> All Messages</h2>
+                <button class="modal-close" onclick="closeModal('allMessagesModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="messages-container">
+                    <div class="message-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="unread">Unread</button>
+                        <button class="filter-btn" data-filter="urgent">Urgent</button>
+                    </div>
+                    <div class="messages-list" id="allMessagesList">
+                        <!-- Messages will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forum Posts Management Modal -->
+    <div id="forumPostsModal" class="admin-modal large-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-users"></i> Manage Forum Posts</h2>
+                <button class="modal-close" onclick="closeModal('forumPostsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="forum-actions">
+                    <button class="btn-primary" onclick="openCreatePostModal()">
+                        <i class="fas fa-plus"></i> Create New Post
+                    </button>
+                </div>
+                <div class="forum-posts-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Replies</th>
+                                <th>Created</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="forumPostsTableBody">
+                            <!-- Posts will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- All Activity Modal -->
+    <div id="allActivityModal" class="admin-modal large-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-history"></i> All Activity</h2>
+                <button class="modal-close" onclick="closeModal('allActivityModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="activity-filters">
+                    <select id="activityTypeFilter">
+                        <option value="all">All Activities</option>
+                        <option value="clients">Client Activities</option>
+                        <option value="appointments">Appointments</option>
+                        <option value="messages">Messages</option>
+                        <option value="forum">Forum Posts</option>
+                    </select>
+                    <input type="date" id="activityDateFilter" class="date-filter">
+                </div>
+                <div class="activity-log" id="allActivityLog">
+                    <!-- Activities will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add New Client Modal -->
+    <div id="addClientModal" class="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-plus"></i> Add New Client</h2>
+                <button class="modal-close" onclick="closeModal('addClientModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addClientForm" class="admin-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="clientFirstName">First Name *</label>
+                            <input type="text" id="clientFirstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientLastName">Last Name *</label>
+                            <input type="text" id="clientLastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Email *</label>
+                            <input type="email" id="clientEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientPhone">Phone</label>
+                            <input type="tel" id="clientPhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientAge">Age</label>
+                            <input type="number" id="clientAge" min="1" max="120">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientGender">Gender</label>
+                            <select id="clientGender">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="clientNotes">Initial Notes</label>
+                            <textarea id="clientNotes" rows="4"
+                                placeholder="Any initial observations or notes..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary"
+                            onclick="closeModal('addClientModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Add Client</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Appointment Modal -->
+    <div id="scheduleAppointmentModal" class="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-calendar-plus"></i> Schedule Appointment</h2>
+                <button class="modal-close" onclick="closeModal('scheduleAppointmentModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="scheduleAppointmentForm" class="admin-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="appointmentClient">Client *</label>
+                            <select id="appointmentClient" required>
+                                <option value="">Select Client</option>
+                                <!-- Options will be populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentDate">Date *</label>
+                            <input type="date" id="appointmentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentTime">Time *</label>
+                            <input type="time" id="appointmentTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentDuration">Duration (minutes) *</label>
+                            <select id="appointmentDuration" required>
+                                <option value="">Select Duration</option>
+                                <option value="30">30 minutes</option>
+                                <option value="45">45 minutes</option>
+                                <option value="60">60 minutes</option>
+                                <option value="90">90 minutes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentType">Session Type *</label>
+                            <select id="appointmentType" required>
+                                <option value="">Select Type</option>
+                                <option value="individual">Individual Therapy</option>
+                                <option value="group">Group Therapy</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="follow-up">Follow-up</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentMode">Mode *</label>
+                            <select id="appointmentMode" required>
+                                <option value="">Select Mode</option>
+                                <option value="video-call">Video Call</option>
+                                <option value="phone-call">Phone Call</option>
+                                <option value="in-person">In-Person</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="appointmentNotes">Notes</label>
+                            <textarea id="appointmentNotes" rows="3"
+                                placeholder="Any specific notes for this appointment..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary"
+                            onclick="closeModal('scheduleAppointmentModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Schedule Appointment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Report Modal -->
+    <div id="createReportModal" class="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-file-medical"></i> Create Report</h2>
+                <button class="modal-close" onclick="closeModal('createReportModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="createReportForm" class="admin-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="reportType">Report Type *</label>
+                            <select id="reportType" required>
+                                <option value="">Select Report Type</option>
+                                <option value="session">Session Report</option>
+                                <option value="progress">Progress Report</option>
+                                <option value="assessment">Assessment Report</option>
+                                <option value="monthly">Monthly Summary</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportClient">Client *</label>
+                            <select id="reportClient" required>
+                                <option value="">Select Client</option>
+                                <!-- Options will be populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportDate">Report Date *</label>
+                            <input type="date" id="reportDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportTitle">Title *</label>
+                            <input type="text" id="reportTitle" required placeholder="Report title...">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="reportContent">Content *</label>
+                            <textarea id="reportContent" rows="8" required
+                                placeholder="Report content and observations..."></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="reportRecommendations">Recommendations</label>
+                            <textarea id="reportRecommendations" rows="4"
+                                placeholder="Treatment recommendations and next steps..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary"
+                            onclick="closeModal('createReportModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Create Report</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Reminder Modal -->
+    <div id="sendReminderModal" class="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-bell"></i> Send Reminder</h2>
+                <button class="modal-close" onclick="closeModal('sendReminderModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="sendReminderForm" class="admin-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="reminderClient">Client *</label>
+                            <select id="reminderClient" required>
+                                <option value="">Select Client</option>
+                                <option value="all">All Clients</option>
+                                <!-- Individual options will be populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reminderType">Reminder Type *</label>
+                            <select id="reminderType" required>
+                                <option value="">Select Type</option>
+                                <option value="appointment">Appointment Reminder</option>
+                                <option value="follow-up">Follow-up Reminder</option>
+                                <option value="medication">Medication Reminder</option>
+                                <option value="exercise">Exercise Reminder</option>
+                                <option value="custom">Custom Reminder</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reminderMethod">Method *</label>
+                            <select id="reminderMethod" required>
+                                <option value="">Select Method</option>
+                                <option value="email">Email</option>
+                                <option value="sms">SMS</option>
+                                <option value="both">Both Email & SMS</option>
+                                <option value="in-app">In-App Notification</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reminderDateTime">Send At *</label>
+                            <input type="datetime-local" id="reminderDateTime" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="reminderSubject">Subject *</label>
+                            <input type="text" id="reminderSubject" required placeholder="Reminder subject...">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="reminderMessage">Message *</label>
+                            <textarea id="reminderMessage" rows="5" required
+                                placeholder="Reminder message content..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary"
+                            onclick="closeModal('sendReminderModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Send Reminder</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Profile Modal -->
+    <div id="clientProfileModal" class="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-id-card"></i> Client Profile</h2>
+                <button class="modal-close" onclick="closeModal('clientProfileModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="profile-info-main">
+                        <h3 id="profileName">Loading...</h3>
+                        <span id="profileStatus" class="status-badge">Active</span>
+                    </div>
+                </div>
+
+                <div class="profile-details-grid">
+                    <div class="detail-item">
+                        <label>Email</label>
+                        <p id="profileEmail">email@example.com</p>
+                    </div>
+                    <div class="detail-item">
+                        <label>Phone</label>
+                        <p id="profilePhone">555-1234</p>
+                    </div>
+                    <div class="detail-item">
+                        <label>Age</label>
+                        <p id="profileAge">25</p>
+                    </div>
+                    <div class="detail-item">
+                        <label>Gender</label>
+                        <p id="profileGender">Female</p>
+                    </div>
+                    <div class="detail-item">
+                        <label>Last Session</label>
+                        <p id="profileLastSession">2 days ago</p>
+                    </div>
+                    <div class="detail-item">
+                        <label>Total Sessions</label>
+                        <p id="profileTotalSessions">12</p>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3><i class="fas fa-sticky-note"></i> Clinical Notes</h3>
+                    <div class="profile-notes" id="profileNotes">
+                        <p>No notes available.</p>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn-primary" id="profileMessageBtn">
+                        <i class="fas fa-message"></i> Message
+                    </button>
+                    <button class="btn-primary" id="profileScheduleBtn">
+                        <i class="fas fa-calendar-plus"></i> Schedule
+                    </button>
+                    <button class="btn-secondary" onclick="closeModal('clientProfileModal')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> Settings</h2>
+                <button class="modal-close" onclick="closeModal('settingsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-tabs">
+                    <button class="settings-tab active" data-tab="profile">Profile</button>
+                    <button class="settings-tab" data-tab="notifications">Notifications</button>
+                    <button class="settings-tab" data-tab="preferences">Preferences</button>
+                    <button class="settings-tab" data-tab="security">Security</button>
+                </div>
+
+                <div id="profileSettings" class="settings-content active">
+                    <form class="admin-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="settingsFirstName">First Name</label>
+                                <input type="text" id="settingsFirstName" value="Dr. Sarah">
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsLastName">Last Name</label>
+                                <input type="text" id="settingsLastName" value="Wilson">
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsEmail">Email</label>
+                                <input type="email" id="settingsEmail" value="sarah.wilson@mentaura.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsPhone">Phone</label>
+                                <input type="tel" id="settingsPhone" value="+1 (555) 123-4567">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="settingsBio">Bio</label>
+                                <textarea id="settingsBio"
+                                    rows="4">Licensed clinical psychologist with 10+ years of experience...</textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Save Profile</button>
+                    </form>
+                </div>
+
+                <div id="notificationsSettings" class="settings-content">
+                    <form class="admin-form">
+                        <div class="settings-section">
+                            <h4>Email Notifications</h4>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider">New client registrations</span>
+                            </label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider">Appointment reminders</span>
+                            </label>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider">Forum activity</span>
+                            </label>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>SMS Notifications</h4>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider">Urgent messages</span>
+                            </label>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider">Daily summaries</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Save Notifications</button>
+                    </form>
+                </div>
+
+                <div id="preferencesSettings" class="settings-content">
+                    <form class="admin-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="settingsTimezone">Timezone</label>
+                                <select id="settingsTimezone">
+                                    <option value="America/New_York">Eastern Time</option>
+                                    <option value="America/Chicago">Central Time</option>
+                                    <option value="America/Denver">Mountain Time</option>
+                                    <option value="America/Los_Angeles">Pacific Time</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsLanguage">Language</label>
+                                <select id="settingsLanguage">
+                                    <option value="en">English</option>
+                                    <option value="es">Spanish</option>
+                                    <option value="fr">French</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsTheme">Theme</label>
+                                <select id="settingsTheme">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                    <option value="auto">Auto</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Save Preferences</button>
+                    </form>
+                </div>
+
+                <div id="securitySettings" class="settings-content">
+                    <form class="admin-form">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword">
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>Two-Factor Authentication</h4>
+                            <label class="switch">
+                                <input type="checkbox" id="enable2FA">
+                                <span class="slider">Enable 2FA</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Update Security</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-comments"></i> Chat with <span id="chatClientName"></span></h2>
+                <button class="modal-close" onclick="closeModal('chatModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Messages will be populated here -->
+                    </div>
+                    <div class="chat-input-container">
+                        <div class="chat-input-wrapper">
+                            <input type="text" id="chatInput" placeholder="Type your message..." class="chat-input">
+                            <button id="sendChatMessage" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="chat-action-btn" title="Attach File">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="chat-action-btn" title="Schedule Appointment">
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                            <button class="chat-action-btn" title="Send Resources">
+                                <i class="fas fa-book"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Forum Post Modal -->
+    <div id="createForumPostModal" class="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-pen"></i> Create Forum Post</h2>
+                <button class="modal-close" onclick="closeModal('createForumPostModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="createForumPostForm" class="admin-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="postTitle">Title *</label>
+                            <input type="text" id="postTitle" required placeholder="Post title...">
+                        </div>
+                        <div class="form-group">
+                            <label for="postCategory">Category *</label>
+                            <select id="postCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="anxiety">Anxiety Support</option>
+                                <option value="depression">Depression Support</option>
+                                <option value="wellness">Wellness & Self-Care</option>
+                                <option value="relationships">Relationships</option>
+                                <option value="success">Success Stories</option>
+                                <option value="general">General Discussion</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="postContent">Content *</label>
+                            <textarea id="postContent" rows="8" required
+                                placeholder="Write your post content here..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="postTags">Tags</label>
+                            <input type="text" id="postTags"
+                                placeholder="mental health, therapy, support (comma separated)">
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="postPinned">
+                                <span class="checkmark"></span>
+                                Pin this post
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary"
+                            onclick="closeModal('createForumPostModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Publish Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer - Same as other pages -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MentaAura</span>
+                    </div>
+                    <p>Your trusted partner in mental health and wellness.</p>
+                </div>
+
+                <div class="footer-support">
+                    <h3>Support</h3>
+                    <div class="footer-links">
+                        <a href="help-center.html">Help Center</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <a href="mailto:support@mentaura.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        support@mentaura.com
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MentaAura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-compat.js"></script>
+    <script>
+        // Initialize Firebase with compat SDK 
+        // (Copied from index.html - ideally should be in a shared file but keeping inline for now as per index.html pattern)
+        const firebaseConfig = {
+            apiKey: "AIzaSyCc3U-JuAKv7og6rmbGPsrSZDUKEAWIVsA",
+            authDomain: "mentaura-psycho.firebaseapp.com",
+            projectId: "mentaura-psycho",
+            storageBucket: "mentaura-psycho.firebasestorage.app",
+            messagingSenderId: "494209814922",
+            appId: "1:494209814922:web:1e848bc224730a29d5f873",
+            measurementId: "G-GNCMBLJPHT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        window.firebaseAuth = firebase.auth();
+        window.firebaseDB = firebase.firestore();
+    </script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentAura - Your Mental Health Journey Starts Here</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation - Non-Fixed -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Language Dropdown Top Left -->
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">हिंदी</a>
+                    <a href="#" data-lang="ta">Tamil</a>
+                    <a href="#" data-lang="te">Telugu</a>
+                    <a href="#" data-lang="kn">Kannada</a>
+                    <a href="#" data-lang="ml">Malayalam</a>
+                </div>
+            </div>
+
+            <!-- Centered Navigation Menu - REORDERED as requested -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link" id="homeNav" data-translate="nav_home">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" id="servicesNav"
+                        data-translate="nav_services">Services</a></li>
+                <li><a href="#" class="nav-link" id="aiChatNav" data-translate="nav_ai_chat">AI Chat</a></li>
+                <li><a href="#" class="nav-link" id="bookSessionNav" data-translate="nav_book_session">Book Session</a>
+                </li>
+                <li><a href="resources.html" class="nav-link" id="resourcesNav"
+                        data-translate="nav_resources">Resources</a></li>
+                <li><a href="admin.html" class="nav-link" id="adminNav" data-translate="nav_admin">Admin Dashboard</a>
+                </li>
+                <li><a href="analytics.html" class="nav-link" id="analyticsNav"
+                        data-translate="nav_analytics">Analytics</a></li>
+                <li><a href="forum.html" class="nav-link" id="communityNav" data-translate="nav_community">Community</a>
+                </li>
+
+            </ul>
+
+            <!-- Auth Buttons Right Side -->
+            <div class="nav-auth-buttons">
+                <a href="#" class="btn btn-signup" id="signupBtn" data-translate="btn_signup">Sign Up</a>
+                <a href="#" class="btn btn-login" id="loginBtn" data-translate="btn_login">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Very Compact to Fit with Services -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-translate="hero_title">MENTAURA</h1>
+                <p class="hero-tagline" data-translate="hero_tagline">Your Mental Health Journey Starts Here</p>
+                <p class="hero-subtitle" data-translate="hero_subtitle">Professional counseling, AI-powered support, and
+                    a supportive community to help you thrive.</p>
+
+
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary btn-large" id="bookSessionHero"
+                        data-translate="btn_book_session">Book a Session</a>
+                    <a href="#" class="btn btn-secondary btn-large" id="aiChatHero" data-translate="btn_try_ai">Try AI
+                        Chat</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simplified Ripple Effect - Only Ripple Circles -->
+        <div class="hero-image">
+            <div class="hero-graphic">
+                <div class="ripple ripple-1"></div>
+                <div class="ripple ripple-2"></div>
+                <div class="ripple ripple-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - Compact to Fit in Single Screen -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title" data-translate="services_title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 data-translate="service_counseling_title">Professional Counseling</h3>
+                    <p data-translate="service_counseling_desc">One-on-one sessions with licensed mental health
+                        professionals tailored to your needs.</p>
+                    <a href="booking.html" class="service-link" id="counselingServiceBtn"
+                        data-translate="service_learn_more">Learn More</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 data-translate="service_ai_title">AI-Powered Support</h3>
+                    <p data-translate="service_ai_desc">24/7 AI chatbot providing immediate support and guidance
+                        whenever you need it.</p>
+                    <a href="#" class="service-link" id="aiChatService" data-translate="service_try_now">Try Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-translate="service_community_title">Community Forum</h3>
+                    <p data-translate="service_community_desc">Connect with others on similar journeys in our supportive
+                        and moderated community.</p>
+                    <a href="forum.html" class="service-link" id="communityServiceBtn"
+                        data-translate="service_join_community">Join Community</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 data-translate="service_resources_title">Mental Health Resources</h3>
+                    <p data-translate="service_resources_desc">Access to articles, guides, and tools to support your
+                        mental wellness journey.</p>
+                    <a href="resources.html" class="service-link" id="resourcesServiceBtn"
+                        data-translate="service_explore_resources">Explore
+                        Resources</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 data-translate="service_admin_title">Admin Dashboard</h3>
+                    <p data-translate="service_admin_desc">Comprehensive management tools for administrators to monitor
+                        and manage the platform.</p>
+                    <a href="admin.html" class="service-link" id="adminServiceBtn"
+                        data-translate="service_access_dashboard">Access
+                        Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Single Screen for All Remaining Content -->
+    <section class="all-content-screen">
+        <!-- Features Section (Why Choose MentAura?) - Compact -->
+        <div class="features">
+            <div class="container">
+                <h2 class="section-title small" data-translate="features_title">Why Choose MentAura?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 data-translate="feature_privacy_title">Privacy & Security</h3>
+                        <p data-translate="feature_privacy_desc">Your data is protected with enterprise-grade security
+                            and complete confidentiality.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 data-translate="feature_scheduling_title">Flexible Scheduling</h3>
+                        <p data-translate="feature_scheduling_desc">Book sessions at your convenience with our flexible
+                            scheduling system.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 data-translate="feature_mobile_title">Mobile Friendly</h3>
+                        <p data-translate="feature_mobile_desc">Access support anywhere, anytime with our
+                            mobile-optimized platform.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 data-translate="feature_licensed_title">Licensed Professionals</h3>
+                        <p data-translate="feature_licensed_desc">All our counselors are licensed and experienced mental
+                            health professionals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section - Compact -->
+        <div class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 data-translate="cta_title">Ready to Start Your Mental Health Journey?</h2>
+                    <p data-translate="cta_subtitle">Take the first step towards better mental health today.</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-large" id="bookSessionCTA"
+                        data-translate="cta_book_first">Book Your First Session</a>
+                    <a href="#" class="btn btn-secondary btn-large" id="aiChatCTA"
+                        data-translate="cta_try_ai_support">Try AI Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Footer - Compact -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span data-translate="hero_title">MentAura</span>
+                    </div>
+                    <p data-translate="footer_tagline">Your trusted partner in mental health and wellness.</p>
+                </div>
+
+                <div class="footer-support">
+                    <h3 data-translate="footer_support">Support</h3>
+                    <div class="footer-links">
+                        <a href="help-center.html" data-translate="footer_help_center">Help Center</a>
+                        <a href="contact.html" data-translate="footer_contact_us">Contact Us</a>
+                        <a href="privacy-policy.html" data-translate="footer_privacy_policy">Privacy Policy</a>
+                        <a href="terms-of-service.html" data-translate="footer_terms_service">Terms of Service</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 data-translate="footer_contact_info">Contact Info</h3>
+                    <a href="mailto:support@mentaura.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        support@mentaura.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-translate="footer_copyright">© 2025 MentAura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 data-translate="modal_login_title">Login</h2>
+                <button id="loginCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail" data-translate="modal_email">Email</label>
+                    <input type="email" id="loginEmail" name="loginEmail" placeholder="Email"
+                        data-translate="modal_email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword" data-translate="modal_password">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Password"
+                        data-translate="modal_password" required>
+                </div>
+                <button type="submit" class="modal-submit-btn" data-translate="modal_login_btn">Login</button>
+            </form>
+            <p class="modal-footer-text">
+                <span data-translate="modal_no_account">Don't have an account?</span>
+                <a href="#" id="switchToSignup" data-translate="modal_create_one">Create one</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 data-translate="modal_signup_title">Sign Up</h2>
+                <button id="signupCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName" data-translate="modal_full_name">Full Name</label>
+                    <input type="text" id="signupName" name="signupName" placeholder="Full Name"
+                        data-translate="modal_full_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupCategory" data-translate="modal_category">User Category</label>
+                    <select id="signupCategory" name="signupCategory" data-translate="modal_category" required>
+                        <option value="" disabled selected data-translate="modal_select_category">Select Category
+                        </option>
+                        <option value="user" data-translate="modal_category_user">User</option>
+                        <option value="counselor" data-translate="modal_category_counselor">Counselor</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail" data-translate="modal_email">Email</label>
+                    <input type="email" id="signupEmail" name="signupEmail" placeholder="Email"
+                        data-translate="modal_email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword" data-translate="modal_password">Password</label>
+                    <input type="password" id="signupPassword" name="signupPassword" placeholder="Password"
+                        data-translate="modal_password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword" data-translate="modal_confirm_password">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" name="signupConfirmPassword"
+                        placeholder="Confirm Password" data-translate="modal_confirm_password" required>
+                </div>
+                <button type="submit" class="modal-submit-btn" data-translate="modal_signup_btn">Sign Up</button>
+            </form>
+            <p class="modal-footer-text">
+                <span data-translate="modal_have_account">Already have an account?</span>
+                <a href="#" id="switchToLogin" data-translate="btn_login">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+
+    <script src="js/language-switcher.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-compat.js"></script>
+
+    <script>
+        // Initialize Firebase with compat SDK
+        const firebaseConfig = {
+            apiKey: "AIzaSyCc3U-JuAKv7og6rmbGPsrSZDUKEAWIVsA",
+            authDomain: "mentaura-psycho.firebaseapp.com",
+            projectId: "mentaura-psycho",
+            storageBucket: "mentaura-psycho.firebasestorage.app",
+            messagingSenderId: "494209814922",
+            appId: "1:494209814922:web:1e848bc224730a29d5f873",
+            measurementId: "G-GNCMBLJPHT"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Make Firebase services globally available
+        window.firebaseAuth = firebase.auth();
+        window.firebaseDB = firebase.firestore();
+        window.firebaseAnalytics = firebase.analytics();
+    </script>
+
+    <!-- Your authentication script -->
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

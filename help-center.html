@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - MentAura</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation - Same as homepage -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Language Dropdown (Top Left) -->
+            <div class="language-dropdown">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="hi">हिंदी</a>
+                    <a href="#" data-lang="ta">Tamil</a>
+                    <a href="#" data-lang="te">Telugu</a>
+                    <a href="#" data-lang="kn">Kannada</a>
+                    <a href="#" data-lang="ml">Malayalam</a>
+                </div>
+            </div>
+
+            <!-- Centered Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link" id="aiChatNav">AI Chat</a></li>
+                <li><a href="#" class="nav-link" id="bookSessionNav">Book Session</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="forum.html" class="nav-link">Community</a></li>
+                <li><a href="admin.html" class="nav-link">Admin Dashboard</a></li>
+                <li><a href="analytics.html" class="nav-link" data-translate="nav_analytics">Analytics</a></li>
+
+            </ul>
+
+            <!-- Auth Buttons -->
+            <div class="nav-auth-buttons">
+                <a href="mentaura-auth/signup.html" class="btn btn-signup" id="signupBtn">Signup</a>
+                <a href="mentaura-auth/index.html" class="btn btn-login" id="loginBtn">Login</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Help Center Hero Section - REDUCED SIZE -->
+    <section class="help-hero-mini">
+        <div class="container">
+            <h1 class="help-title-mini">Help Center</h1>
+            <p class="help-subtitle-mini">Find answers to frequently asked questions and get support.</p>
+            <a href="index.html" class="back-home-btn-mini">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section - With Color Palette -->
+    <section class="faq-section-updated">
+        <div class="container-updated">
+            <h2 class="faq-main-title-updated">Frequently Asked Questions</h2>
+
+            <!-- Getting Started Category -->
+            <div class="faq-category-updated">
+                <h3 class="category-title-updated">
+                    <i class="fas fa-rocket"></i>
+                    Getting Started
+                </h3>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        How do I create an account on MentAura?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>To create an account, click on the "Signup" button in the top-right corner of any page. Fill
+                            out the registration form with your full name, email address, and create a secure password.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        What services does MentAura offer?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>MentAura offers professional counseling sessions, 24/7 AI-powered support, community forums,
+                            mental health resources, and educational content.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        Is MentAura free to use?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>MentAura offers both free and premium services. Basic features like AI support and community
+                            forums are free. Professional counseling sessions require payment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Counseling & Sessions Category -->
+            <div class="faq-category-updated">
+                <h3 class="category-title-updated">
+                    <i class="fas fa-user-md"></i>
+                    Counseling & Sessions
+                </h3>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        How do I book a counseling session?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>After logging in, click "Book Session" from the navigation menu. Choose from available
+                            therapists, select your preferred date and time, and complete the booking.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        Are your counselors licensed professionals?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>Yes, all our counselors are licensed mental health professionals with proper credentials and
+                            extensive experience in their respective fields.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        Can I reschedule or cancel a session?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>Yes, you can reschedule or cancel appointments up to 24 hours before your scheduled session
+                            through your account dashboard.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Support Category -->
+            <div class="faq-category-updated">
+                <h3 class="category-title-updated">
+                    <i class="fas fa-robot"></i>
+                    AI Support
+                </h3>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        Is AI support available 24/7?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>Yes, our AI support is available 24/7 to provide immediate assistance and guidance whenever
+                            you need it.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        How accurate is the AI support?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>Our AI is trained on extensive mental health data and provides evidence-based responses.
+                            However, it's designed to supplement, not replace, professional therapy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy & Security Category -->
+            <div class="faq-category-updated">
+                <h3 class="category-title-updated">
+                    <i class="fas fa-shield-alt"></i>
+                    Privacy & Security
+                </h3>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        How is my data and privacy protected?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>We use industry-standard security protocols including SSL encryption, secure data storage,
+                            and regular security audits to protect your personal information.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        Are my conversations with AI confidential?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>Yes, all interactions with our AI and human therapists are completely confidential and
+                            protected under strict privacy guidelines.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Support Category -->
+            <div class="faq-category-updated">
+                <h3 class="category-title-updated">
+                    <i class="fas fa-cogs"></i>
+                    Technical Support
+                </h3>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        Can I use MentAura on my mobile device?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>Yes, MentAura is fully mobile-responsive and works seamlessly on smartphones, tablets, and
+                            desktop computers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        What browsers are supported?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>MentAura works on all modern browsers including Chrome, Firefox, Safari, and Edge. We
+                            recommend keeping your browser updated.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-updated">
+                    <button class="faq-question-updated">
+                        I'm having technical difficulties. How can I get help?
+                        <span class="faq-toggle-updated">+</span>
+                    </button>
+                    <div class="faq-answer-updated">
+                        <p>Contact our technical support team immediately through the contact form or email
+                            support@mentaura.com for quick assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Still Need Help Section - UPDATED -->
+    <section class="still-help-updated">
+        <div class="container">
+            <div class="help-content-updated">
+                <h2>Still need help?</h2>
+                <p>Can't find what you're looking for? Our support team is here to help you get the most out of
+                    MentAura.</p>
+                <div class="help-buttons-updated">
+                    <a href="contact.html" class="contact-us-btn">
+                        <i class="fas fa-headset"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Same as homepage -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MentAura</span>
+                    </div>
+                    <p>Your trusted partner in mental health and wellness.</p>
+                </div>
+
+                <div class="footer-support">
+                    <h3>Support</h3>
+                    <div class="footer-links">
+                        <a href="help-center.html">Help Center</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <a href="mailto:support@mentaura.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        support@mentaura.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 MentAura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal (Same as homepage) -->
+    <div id="loginModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Login</h2>
+                <button id="loginCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="modal-submit-btn">Login</button>
+            </form>
+            <p class="modal-footer-text">
+                Don't have an account? <a href="#" id="switchToSignup">Create one</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal (Same as homepage) -->
+    <div id="signupModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+                <button id="signupCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" name="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" name="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" required>
+                </div>
+                <button type="submit" class="modal-submit-btn">Sign Up</button>
+            </form>
+            <p class="modal-footer-text">
+                Already have an account? <a href="#" id="switchToLogin">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script src="js/help-center.js"></script>
+    <script src="js/language-switcher.js"></script>
+
+</body>
+
+</html>
