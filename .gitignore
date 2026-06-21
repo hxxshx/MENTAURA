@@ -3,6 +3,34 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+env/
+.env
+
+# Virtual environments
+venv/
+venv*/
+python_backend/venv/
+venv_new/
+venv_old/
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# IDEs
+.vscode/
+.idea/
+
+# Build
+dist/
+build/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
 *.pyc
 
 # Virtual environments
